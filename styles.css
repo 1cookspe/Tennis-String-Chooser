@@ -21,6 +21,7 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    left: 50%;
 }
 
 /* Dropdown Button */
@@ -67,3 +68,11 @@ button {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: inline-block;
+}

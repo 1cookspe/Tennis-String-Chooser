@@ -1,5 +1,9 @@
 // variables
 var racquet = 0;
+var spin = 0;
+var power = 0;
+var control = 0;
+var feel = 0;
 
 function start() {
 	document.getElementById("intro").style.visibility = "hidden";  
@@ -7,7 +11,7 @@ function start() {
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction() {
+function dropFunc() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
@@ -27,5 +31,15 @@ window.onclick = function(event) {
 }
 
 function getRacquet(num) {
-	alert(num);
+	racquet = num;
+
+	//document.getElementById("playingStyle").classList.remove('hidden');
+	//document.getElementById("downfall").classList.remove('hidden');
+	document.getElementById("playingStyle").classList.toggle('show');
+	document.getElementById("downfall").classList.toggle('show');
+
+}
+
+function styleOfPlay(style) {
+
 }

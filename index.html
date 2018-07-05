@@ -16,26 +16,47 @@
 
 <div class="dropdown">
 <p>Choose your line of racquet!</p>
-  <button onclick="myFunction()" class="dropbtn">Choose!</button>
+  <button onclick="dropFunc()" class="dropbtn">Choose!</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="javascript:void(0);" onclick="getRacquet(0)">Babolat Pure Aero</a>
-    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Pure Drive</a>
-    <a href="javascript:void(0);" onclick="getRacquet(2)">Babolat Pure Strike</a>
-    <a href="javascript:void(0);" onclick="getRacquet(3)">Head Extreme</a>
-    <a href="javascript:void(0);" onclick="getRacquet(4)">Head Instinct</a>
-    <a href="javascript:void(0);" onclick="getRacquet(5)">Head Prestige</a>
-    <a href="javascript:void(0);" onclick="getRacquet(6)">Head Radical</a>
-    <a href="javascript:void(0);" onclick="getRacquet(7)">Head Speed</a>
-    <a href="javascript:void(0);" onclick="getRacquet(8)">Prince Beast</a>
-    <a href="javascript:void(0);" onclick="getRacquet(9)">Prince Tour</a>
-    <a href="javascript:void(0);" onclick="getRacquet(10)">Wilson Blade</a>
-    <a href="javascript:void(0);" onclick="getRacquet(11)">Wilson Burn</a>
-    <a href="javascript:void(0);" onclick="getRacquet(12)">Wilson Pro Staff</a>
-    <a href="javascript:void(0);" onclick="getRacquet(13)">Wilson Ultra</a>
-    <a href="javascript:void(0);" onclick="getRacquet(14)">Yonex VCORE</a>
-    <a href="javascript:void(0);" onclick="getRacquet(15)">Yonex EZONE</a>
+    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Pure Aero</a>
+    <a href="javascript:void(0);" onclick="getRacquet(2)">Babolat Pure Drive</a>
+    <a href="javascript:void(0);" onclick="getRacquet(3)">Babolat Pure Strike</a>
+    <a href="javascript:void(0);" onclick="getRacquet(4)">Head Extreme</a>
+    <a href="javascript:void(0);" onclick="getRacquet(5)">Head Instinct</a>
+    <a href="javascript:void(0);" onclick="getRacquet(6)">Head Prestige</a>
+    <a href="javascript:void(0);" onclick="getRacquet(7)">Head Radical</a>
+    <a href="javascript:void(0);" onclick="getRacquet(8)">Head Speed</a>
+    <a href="javascript:void(0);" onclick="getRacquet(9)">Prince Beast</a>
+    <a href="javascript:void(0);" onclick="getRacquet(10)">Prince Tour</a>
+    <a href="javascript:void(0);" onclick="getRacquet(11)">Wilson Blade</a>
+    <a href="javascript:void(0);" onclick="getRacquet(12)">Wilson Burn</a>
+    <a href="javascript:void(0);" onclick="getRacquet(13)">Wilson Pro Staff</a>
+    <a href="javascript:void(0);" onclick="getRacquet(14)">Wilson Ultra</a>
+    <a href="javascript:void(0);" onclick="getRacquet(15)">Yonex VCORE</a>
+    <a href="javascript:void(0);" onclick="getRacquet(16)">Yonex EZONE</a>
   </div>
-  <button onclick="skip()" class="skipbutton">Skip!</button>
+  <button onclick="getRacquet(0)">Skip!</button>
+</div>
+
+<div id="playingStyle" class="hidden">
+	<p>How would you describe your playing style?</p>
+	<button onclick="styleOfPlay(0)">Agressive, offensive player who likes to shorten points by hitting winners</button>
+	<button onclick="styleOfPlay(1)">Consistent baseliner who likes to have long rallies to force the opponent into an error</button>
+	<button onclick="styleOfPlay(2)">Not sure</button>
+</div>
+
+<div id="downfall" class="hidden">
+	<p>Of the options presented, what would you say is your biggest downfall?</p>
+	<button onclick="styleOfPlay(3)">I hit the ball too long</button>
+	<button onclick="styleOfPlay(4)">I don't hit the ball deep enough, and my opponent often attacks it</button>
+	<button onclick="styleOfPlay(5)">I can't hit my targets too often</button>
+</div>
+
+<div id="comfort" class="hidden">
+	<p>Do you find that sometimes your arm is uncomfortable when hitting the ball? Does the impact of the ball ever jar your arm?</p>
+	<button onclick="styleOfPlay(6)">Yes</button>
+	<button onclick="styleOfPlay(7)">No</button>
+	<button onclick="styleOfPlay(8)">Not sure</button>
 </div>
 
 </body>
