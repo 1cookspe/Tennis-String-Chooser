@@ -8,9 +8,35 @@
 <body>
 
 <h1>String Chooser!</h1>
-<p>Looking for the perfect new strings for your racquet? Just answer a couple of questions about your playing style and you'll get your ideal strings in no time!</p>
 
-<button type="button" onclick="start()">Start!</button>
+<div id="intro">
+	<p>Looking for the perfect new strings for your racquet? Just answer a couple of questions about your playing style and you'll get your ideal strings in no time!</p>
+	<button type="button" onclick="start()">Start!</button>
+</div>
+
+<div class="dropdown">
+<p>Choose your line of racquet!</p>
+  <button onclick="myFunction()" class="dropbtn">Choose!</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="javascript:void(0);" onclick="getRacquet(0)">Babolat Pure Aero</a>
+    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Pure Drive</a>
+    <a href="javascript:void(0);" onclick="getRacquet(2)">Babolat Pure Strike</a>
+    <a href="javascript:void(0);" onclick="getRacquet(3)">Head Extreme</a>
+    <a href="javascript:void(0);" onclick="getRacquet(4)">Head Instinct</a>
+    <a href="javascript:void(0);" onclick="getRacquet(5)">Head Prestige</a>
+    <a href="javascript:void(0);" onclick="getRacquet(6)">Head Radical</a>
+    <a href="javascript:void(0);" onclick="getRacquet(7)">Head Speed</a>
+    <a href="javascript:void(0);" onclick="getRacquet(8)">Prince Beast</a>
+    <a href="javascript:void(0);" onclick="getRacquet(9)">Prince Tour</a>
+    <a href="javascript:void(0);" onclick="getRacquet(10)">Wilson Blade</a>
+    <a href="javascript:void(0);" onclick="getRacquet(11)">Wilson Burn</a>
+    <a href="javascript:void(0);" onclick="getRacquet(12)">Wilson Pro Staff</a>
+    <a href="javascript:void(0);" onclick="getRacquet(13)">Wilson Ultra</a>
+    <a href="javascript:void(0);" onclick="getRacquet(14)">Yonex VCORE</a>
+    <a href="javascript:void(0);" onclick="getRacquet(15)">Yonex EZONE</a>
+  </div>
+  <button onclick="skip()" class="skipbutton">Skip!</button>
+</div>
 
 </body>
 </html>
