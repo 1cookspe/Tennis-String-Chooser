@@ -33,10 +33,21 @@ window.onclick = function(event) {
 function getRacquet(num) {
 	racquet = num;
 
-	//document.getElementById("playingStyle").classList.remove('hidden');
+	document.getElementById("playingStyle").classList.remove('hidden');
 	//document.getElementById("downfall").classList.remove('hidden');
 	document.getElementById("playingStyle").classList.toggle('show');
-	document.getElementById("downfall").classList.toggle('show');
+	//document.getElementById("downfall").classList.toggle('show');
+
+	switch (racquet) {
+		case 0:
+		break;
+		case 1:
+		break;
+		case 2:
+		break;
+		default:
+		break;
+	}
 
 }
 
