@@ -4,6 +4,7 @@ var spin = 0;
 var power = 0;
 var control = 0;
 var feel = 0;
+var touch = 0;
 
 function start() {
 	document.getElementById("intro").style.visibility = "hidden";  
@@ -86,6 +87,14 @@ function styleOfPlay(style) {
 		case 12: // does not break strings
 		break;
 		case 13: // unsure about strings
+		break;
+		case 14: // volleys a lot
+		// needs touch
+		touch = touch + 100;
+		break;
+		case 15: // does not volley a lot
+		break;
+		case 16: // unsure about volleying
 		break;
 		default:
 		break;
