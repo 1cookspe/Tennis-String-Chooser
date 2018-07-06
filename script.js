@@ -65,17 +65,26 @@ function getRacquet(num) {
 
 function styleOfPlay(style) {
 	switch (style) {
+		// current playing
 		case 0: // agressive, offensive player
-			power = power + 60;
+			power = power + 80;
 			break;
 		case 1: // consistent player with long rallies
 			spin = spin + 80;
 			control = control + 60;
 			break;
 		case 2: // all around player
-		break;
+			power = power + 70;
+			spin = spin + 70;
+			control = control + 70;
+			touch = touch + 70;
+			break;
 		case 3: // not sure about TYPE OF PLAYER
-		break;
+			power = power + 50;
+			spin = spin + 50;
+			control = control + 50;
+			touch = touch + 50;
+			break;
 		case 4: // hits ball too long
 			// needs control
 			control = control + 100;
@@ -85,22 +94,25 @@ function styleOfPlay(style) {
 		case 5: // not deep enough
 			// needs spin
 			spin = spin + 100;
-		break;
+			power = power + 80;
+			break;
 		case 6: // can't hit targets
 			// needs control
 			control = control + 100;
+			spin = spin + 50;
 		break;
 		case 7: // not sure about downfall
 		break;
 		case 8: // arm uncomfortable
 			// needs comfort
-			comfort = comfort + 100;
+			feel = feel + 100;
 		break;
 		case 9: // arm comfortable
-			comfort = comfort + 10;
+			feel = feel + 10;
 		break;
 		case 10: // unsure about arm
-		break;
+			feel = feel + 40;
+			break;
 		case 11: // breaks strings a lot
 			longevity = longevity + 100;
 			break;
@@ -108,16 +120,20 @@ function styleOfPlay(style) {
 			longevity = longevity + 10;
 			break;
 		case 13: // unsure about strings
-		break;
+			longevity = longevity + 40;
+			break;
 		case 14: // volleys a lot
 			// needs touch
 			touch = touch + 100;
+			feel = feel + 70;
 			break;
 		case 15: // does not volley a lot
 			touch = touch + 10;
 			break;
 		case 16: // unsure about volleying
-		break;
+			touch = touch + 40;
+			feel = feel + 30;
+			break;
 		default:
 		break;
 	}
