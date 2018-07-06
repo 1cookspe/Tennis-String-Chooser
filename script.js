@@ -207,5 +207,5 @@ function calculatePreferences() {
 	var touchPercentage = (touch / totalScore) * 100;
 	var longevityPercentage = (longevity / totalScore) * 100;
 
-	alert(powerPercentage);
+	document.getElementById('resultsText').innerHTML = "Spin: " + spinPercentage + "\nyo";
 }
