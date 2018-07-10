@@ -43,9 +43,10 @@ function getRacquet(num) {
 	removeOrAdd("playingStyle");
 
 	switch (racquet) {
-		case 0:
+		case 0: // no racquet
 		break;
-		case 1:
+		case 1: // Babolat Aero
+			
 		break;
 		case 2:
 		break;
@@ -65,103 +66,150 @@ function styleOfPlay(style) {
 	switch (style) {
 		// current playing
 		case 0: // agressive, offensive player
-			power = power + 80;
-			spin = spin + 30;
-			control = control + 10;
-			longevity = longevity + 20;
+			power = power + 30;
+			control = control + 5;
+			longevity = longevity + 10;
+			touch = touch + 5;
+			spin = spin + 10;
+			feel = feel + 5;
 			removeOrAdd("downfall");
 			break;
 		case 1: // consistent player with long rallies
-			spin = spin + 80;
-			control = control + 60;
-			feel = feel + 40;
-			touch = touch + 30;
+			power = power + 5;
+			spin = spin + 30;
+			control = control + 20;
+			feel = feel + 5;
+			touch = touch + 5;
+			longevity = longevity + 15;
 			removeOrAdd("downfall");
 			break;
 		case 2: // all around player
-			power = power + 70;
-			spin = spin + 70;
-			control = control + 70;
-			touch = touch + 70;
+			power = power + 10;
+			spin = spin + 20;
+			control = control + 10;
+			touch = touch + 10;
+			longevity = longevity + 10;
+			feel = feel + 10;
 			removeOrAdd("downfall");
 			break;
 		case 3: // not sure about TYPE OF PLAYER
-			power = power + 50;
-			spin = spin + 50;
-			control = control + 50;
-			touch = touch + 50;
+			power = power + 10;
+			spin = spin + 10;
+			control = control + 10;
+			touch = touch + 10;
+			longevity = longevity + 5;
+			feel = feel + 5;
 			removeOrAdd("downfall");
 			break;
 		case 4: // hits ball too long
 			// needs control
-			control = control + 100;
+			control = control + 30;
 			// spin as well
-			spin = spin + 60;
+			spin = spin + 15;
+			power = power + 5;
+			touch = touch + 10;
+			longevity = longevity + 10;
 			removeOrAdd("comfort");
 			break;
 		case 5: // not deep enough
 			// needs spin
-			spin = spin + 100;
-			power = power + 80;
+			spin = spin + 25;
+			power = power + 20;
+			control = control + 5;
+			touch = touch + 5;
+			longevity = longevity + 5;
+			feel = feel + 5;
 			removeOrAdd("comfort");
 			break;
 		case 6: // can't hit targets
 			// needs control
-			control = control + 100;
-			spin = spin + 50;
+			control = control + 25;
+			spin = spin + 20;
+			power = power + 10;
+			touch = touch + 10;
 			removeOrAdd("comfort");
 			break;
 		case 7: // not sure about downfall
+			power = power + 10;
+			control = control + 10;
+			touch = touch + 5;
+			longevity = longevity + 5;
+			spin = spin + 10;
+			feel = feel + 5;
 			removeOrAdd("comfort");
 			break;
-		case 8: // arm uncomfortable
+		case 8: // hit ball as hard as possible
+			power = power + 20;
+			control = control + 10;
+			spin = spin + 5;
+			break;
+		case 9: // hit ball with topspin to ensure that it stays in
+			power = power + 10;
+			control = control + 20;
+			touch = touch + 5;
+			spin = spin + 15;
+			break;
+		case 10: // slice approach
+			power = power + 5;
+			control = control + 15;
+			touch = touch + 30;
+			spin = spin + 10;
+			break;
+		case 11: // not sure about approach
+			power = power + 10;
+			control = control + 10;
+			touch = touch + 10;
+			spin = spin + 5;
+			break;
+		case 12: // arm uncomfortable
 			// needs comfort
-			feel = feel + 100;
-			touch = touch + 50;
+			feel = feel + 70;
 			feelPriority = true;
 			removeOrAdd("durability");
 		break;
-		case 9: // arm comfortable
+		case 13: // arm comfortable
 			feel = feel + 10;
 			feelPriority = false;
 			removeOrAdd("durability");
 		break;
-		case 10: // unsure about arm
-			feel = feel + 50;
+		case 14: // unsure about arm
+			feel = feel + 20;
 			feelPriority = false;
 			removeOrAdd("durability");
 			break;
-		case 11: // breaks strings a lot
+		case 15: // breaks strings a lot
 			longevity = longevity + 60;
 			longevityPriority = true;
 			removeOrAdd("touch");
 			break;
-		case 12: // does not break strings
+		case 16: // does not break strings
 			longevity = longevity + 10;
 			// maybe can have more spin and power?
-			spin = spin + 20;
-			power = power + 20;
+			//spin = spin + 20;
+			//power = power + 20;
 			longevityPriority = false;
 			removeOrAdd("touch");
 			break;
-		case 13: // unsure about strings
+		case 17: // unsure about strings
 			longevity = longevity + 30;
 			longevityPriority = false;
 			removeOrAdd("touch");
 			break;
-		case 14: // volleys a lot
+		case 18: // volleys a lot
 			// needs touch
-			touch = touch + 60;
-			feel = feel + 70;
+			touch = touch + 50;
+			feel = feel + 20;
+			control = control + 10;
+			spin = spin + 10;
 			removeOrAdd("improve");
 			break;
-		case 15: // does not volley a lot
+		case 19: // does not volley a lot
+			touch = touch + 5;
+			removeOrAdd("improve");
+			break;
+		case 20: // unsure about volleying
 			touch = touch + 10;
-			removeOrAdd("improve");
-			break;
-		case 16: // unsure about volleying
-			touch = touch + 40;
-			feel = feel + 30;
+			feel = feel + 5;
 			removeOrAdd("improve");
 			break;
 		default:
@@ -184,11 +232,11 @@ function submitAnswers() {
      if(choice[i].checked) {
        checked = true;
        if (i == 0) { // wants more power
-       		power = power + 100;
+       		power = power + 30;
        } else if (i == 1) {
-       		spin = spin + 100;
+       		spin = spin + 30;
        } else if (i == 2) {
-       		control = control + 100;
+       		control = control + 30;
        }
      }
   } 
@@ -212,7 +260,7 @@ function calculatePreferences() {
 	var touchPercentage = (touch / totalScore) * 100;
 	var longevityPercentage = (longevity / totalScore) * 100;
 
-	document.getElementById('resultsText').innerHTML = "Spin: " + spinPercentage + "\nPower: " + powerPercentage + "\nControl: " + controlPercentage + "\nFeel: " + feelPercentage + "\nTouch: " + touchPercentage +  "\nLong: " + longevityPercentage;
+	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
 	// power vs control --> do they need a control racquet?
 }
