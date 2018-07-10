@@ -6,6 +6,8 @@ var control = 0;
 var feel = 0;
 var touch = 0;
 var longevity = 0;
+var feelPriority = false;
+var longevityPriority = false;
 
 // strings
 
@@ -38,10 +40,7 @@ window.onclick = function(event) {
 function getRacquet(num) {
 	racquet = num;
 
-	document.getElementById("playingStyle").classList.remove('hidden');
-	//document.getElementById("downfall").classList.remove('hidden');
-	document.getElementById("playingStyle").classList.toggle('show');
-	//document.getElementById("downfall").classList.toggle('show');
+	removeOrAdd("playingStyle");
 
 	switch (racquet) {
 		case 0:
@@ -119,18 +118,22 @@ function styleOfPlay(style) {
 			// needs comfort
 			feel = feel + 100;
 			touch = touch + 50;
+			feelPriority = true;
 			removeOrAdd("durability");
 		break;
 		case 9: // arm comfortable
 			feel = feel + 10;
+			feelPriority = false;
 			removeOrAdd("durability");
 		break;
 		case 10: // unsure about arm
 			feel = feel + 50;
+			feelPriority = false;
 			removeOrAdd("durability");
 			break;
 		case 11: // breaks strings a lot
-			longevity = longevity + 100;
+			longevity = longevity + 60;
+			longevityPriority = true;
 			removeOrAdd("touch");
 			break;
 		case 12: // does not break strings
@@ -138,15 +141,17 @@ function styleOfPlay(style) {
 			// maybe can have more spin and power?
 			spin = spin + 20;
 			power = power + 20;
+			longevityPriority = false;
 			removeOrAdd("touch");
 			break;
 		case 13: // unsure about strings
-			longevity = longevity + 40;
+			longevity = longevity + 30;
+			longevityPriority = false;
 			removeOrAdd("touch");
 			break;
 		case 14: // volleys a lot
 			// needs touch
-			touch = touch + 100;
+			touch = touch + 60;
 			feel = feel + 70;
 			removeOrAdd("improve");
 			break;
@@ -207,5 +212,7 @@ function calculatePreferences() {
 	var touchPercentage = (touch / totalScore) * 100;
 	var longevityPercentage = (longevity / totalScore) * 100;
 
-	document.getElementById('resultsText').innerHTML = "Spin: " + spinPercentage + "\nyo";
+	document.getElementById('resultsText').innerHTML = "Spin: " + spinPercentage + "\nPower: " + powerPercentage + "\nControl: " + controlPercentage + "\nFeel: " + feelPercentage + "\nTouch: " + touchPercentage +  "\nLong: " + longevityPercentage;
+
+	// power vs control --> do they need a control racquet?
 }

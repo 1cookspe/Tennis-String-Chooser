@@ -18,7 +18,7 @@
 <p>Choose your line of racquet!</p>
   <button onclick="dropFunc()" class="dropbtn">Choose!</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Pure Aero</a>
+    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Aero</a>
     <a href="javascript:void(0);" onclick="getRacquet(2)">Babolat Pure Drive</a>
     <a href="javascript:void(0);" onclick="getRacquet(3)">Babolat Pure Strike</a>
     <a href="javascript:void(0);" onclick="getRacquet(4)">Head Extreme</a>
@@ -48,31 +48,39 @@
 
 <div id="downfall" class="hidden">
 	<p>Of the options presented, what would you say is your biggest downfall?</p>
-	<button onclick="styleOfPlay(4)">I hit the ball too long</button>
+	<button onclick="styleOfPlay(4)">I hit the ball too long or into the net</button>
 	<button onclick="styleOfPlay(5)">I don't hit the ball deep enough, and my opponent often attacks it</button>
 	<button onclick="styleOfPlay(6)">I can't hit my targets too often</button>
 	<button onclick="styleOfPlay(7)">None of the above</button>
 </div>
 
+<div id="choice" class="hidden">
+	<p>If your opponent hit a short ball to you that landed before the service line, would you:</p>
+	<button onclick="styleOfPlay(8)">Hit the ball as hard as you can to get an outright winner or to force an error from your opponent</button>
+	<button onclick="styleOfPlay(9)">Hit the ball with topspin to ensure it lands in and try to place the ball out of reach of your opponent</button>
+	<button onclick="styleOfPlay(10)">Slice the ball and approach the net</button>
+	<button onclick="styleOfPlay(11)">Not sure</button>
+</div>
+
 <div id="comfort" class="hidden">
 	<p>Do you find that sometimes your arm is uncomfortable when hitting the ball? Does the impact of the ball ever jar your arm?</p>
-	<button onclick="styleOfPlay(8)">Yes</button>
-	<button onclick="styleOfPlay(9)">No</button>
-	<button onclick="styleOfPlay(10)">Not sure</button>
+	<button onclick="styleOfPlay(12)">Yes</button>
+	<button onclick="styleOfPlay(13)">No</button>
+	<button onclick="styleOfPlay(14)">Not sure</button>
 </div>
 
 <div id="durability" class="hidden">
 	<p>Do you tend to break strings easily?</p>
-	<button onclick="styleOfPlay(11)">Yes</button>
-	<button onclick="styleOfPlay(12)">No</button>
-	<button onclick="styleOfPlay(13)">Not sure</button>
+	<button onclick="styleOfPlay(15)">Yes</button>
+	<button onclick="styleOfPlay(16)">No</button>
+	<button onclick="styleOfPlay(17)">Not sure</button>
 </div>
 
 <div id="touch" class="hidden">
 	<p>Do you like to rush the net and volley? Or, do you play a lot of doubles?</p>
-	<button onclick="styleOfPlay(14)">Yes</button>
-	<button onclick="styleOfPlay(15)">No</button>
-	<button onclick="styleOfPlay(16)">Not sure</button>
+	<button onclick="styleOfPlay(18)">Yes</button>
+	<button onclick="styleOfPlay(19)">No</button>
+	<button onclick="styleOfPlay(20)">Not sure</button>
 </div>
 
 <div id="improve" class="hidden">
