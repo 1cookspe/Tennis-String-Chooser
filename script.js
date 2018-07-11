@@ -31,7 +31,8 @@ const FXP_TOUR = [8, 8, 7, 8, 6, 8];
 const RIP_CONTROL = [6, 8, 8, 7, 7, 9]; // control with very good comfort
 
 function start() {
-	
+	// initialize the string rankings array
+
 }
 
 /* When the user clicks on the button, 
@@ -127,7 +128,7 @@ function styleOfPlay(style) {
 			power = power + 5;
 			touch = touch + 10;
 			longevity = longevity + 10;
-			removeOrAdd("comfort");
+			removeOrAdd("choice");
 			break;
 		case 5: // not deep enough
 			// needs spin
@@ -137,7 +138,7 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			longevity = longevity + 5;
 			feel = feel + 5;
-			removeOrAdd("comfort");
+			removeOrAdd("choice");
 			break;
 		case 6: // can't hit targets
 			// needs control
@@ -145,7 +146,7 @@ function styleOfPlay(style) {
 			spin = spin + 20;
 			power = power + 10;
 			touch = touch + 10;
-			removeOrAdd("comfort");
+			removeOrAdd("choice");
 			break;
 		case 7: // not sure about downfall
 			power = power + 10;
@@ -154,30 +155,34 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			spin = spin + 10;
 			feel = feel + 5;
-			removeOrAdd("comfort");
+			removeOrAdd("choice");
 			break;
 		case 8: // hit ball as hard as possible
 			power = power + 20;
 			control = control + 10;
 			spin = spin + 5;
+			removeOrAdd("comfort");
 			break;
 		case 9: // hit ball with topspin to ensure that it stays in
 			power = power + 10;
 			control = control + 20;
 			touch = touch + 5;
 			spin = spin + 15;
+			removeOrAdd("comfort");
 			break;
 		case 10: // slice approach
 			power = power + 5;
 			control = control + 15;
 			touch = touch + 30;
 			spin = spin + 10;
+			removeOrAdd("comfort");
 			break;
 		case 11: // not sure about approach
 			power = power + 10;
 			control = control + 10;
 			touch = touch + 10;
 			spin = spin + 5;
+			removeOrAdd("comfort");
 			break;
 		case 12: // arm uncomfortable
 			// needs comfort
@@ -275,5 +280,10 @@ function calculatePreferences() {
 
 	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
-	// power vs control --> do they need a control racquet?
+	// first go to highest number (most priority) 
+	if (control > power) { // control is greater priority
+		// loop through each string ratings and narrow out the strings with control 7 or greater
+	} else if (power > control) { // power is greater priority
+
+	}
 }
