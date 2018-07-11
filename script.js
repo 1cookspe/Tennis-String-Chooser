@@ -10,10 +10,28 @@ var feelPriority = false;
 var longevityPriority = false;
 
 // strings
-
+// const STRING = [power, control, touch, spin, longevity, comfort]
+const RPM_BLAST = [4, 9, 9, 10, 6, 4]; // control and spin
+const PRO_HURRICANE = [4, 10, 8, 8, 6, 4]; // control and spin
+const VS_TOUCH = [10, 6, 9, 5, 8, 10]; // gut, all power and comfort
+const XCEL = [8, 7, 8, 6, 6, 9]; // power and control (not a lot of spin)
+const ADDICTION = [7, 8, 8, 6, 7, 8]; // less power, more control, long
+const ALU_POWER = [6, 9, 10, 9, 8, 6]; // power and control
+const FOUR_G = [6, 8, 9, 9, 7, 7]; // 
+const BIG_BANGER = [3, 7, 8, 7, 9, 5];
+const NXT_POWER = [9, 7, 8, 7, 7, 10]; // lots of power and comfort
+const SENSATION = [8, 6, 7, 9, 7, 9]; // power spin and comfort
+const REVOLVE = [4, 9, 8, 9, 9, 6]; // control, spin, and longevity
+const NXT_CONTROL = [6, 9, 8, 7, 5, 8];
+const CHAMPIONS_CHOICE = [9, 8, 8, 8, 8, 9]; // power and control
+const HAWK = [3, 9, 8, 9, 9, 5]; // control
+const LYNX = [7, 7, 7, 9, 7, 8];
+const SONIC_PRO = [6, 8, 7, 8, 7, 5]; 
+const FXP_TOUR = [8, 8, 7, 8, 6, 8];
+const RIP_CONTROL = [6, 8, 8, 7, 7, 9]; // control with very good comfort
 
 function start() {
-	document.getElementById("intro").style.visibility = "hidden";  
+	
 }
 
 /* When the user clicks on the button, 
@@ -252,13 +270,8 @@ function submitAnswers() {
 function calculatePreferences() {
 	var totalScore = spin + power + control + touch + feel + longevity;
 
-	// calculate percentages of each aspect
-	var spinPercentage = (spin / totalScore) * 100;
-	var powerPercentage = (power / totalScore) * 100;
-	var controlPercentage = (control / totalScore) * 100;
-	var feelPercentage = (feel / totalScore) * 100;
-	var touchPercentage = (touch / totalScore) * 100;
-	var longevityPercentage = (longevity / totalScore) * 100;
+	// determine type of string person wants
+	
 
 	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
