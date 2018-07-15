@@ -8,6 +8,7 @@ var touch = 0;
 var longevity = 0;
 var feelPriority = false;
 var longevityPriority = false;
+var stringArray = [[]];
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -32,7 +33,24 @@ const RIP_CONTROL = [6, 8, 8, 7, 7, 9]; // control with very good comfort
 
 function start() {
 	// initialize the string rankings array
-
+	stringArray[0] = RPM_BLAST;
+	stringArray[1] = PRO_HURRICANE;
+	stringArray[2] = VS_TOUCH;
+	stringArray[3] = XCEL;
+	stringArray[4] = ADDICTION;
+	stringArray[5] = ALU_POWER;
+	stringArray[6] = FOUR_G;
+	stringArray[7] = BIG_BANGER;
+	stringArray[8] = NXT_POWER;
+	stringArray[9] = SENSATION;
+	stringArray[10] = REVOLVE;
+	stringArray[11] = NXT_CONTROL;
+	stringArray[12] = CHAMPIONS_CHOICE;
+	stringArray[13] = HAWK;
+	stringArray[14] = LYNX;
+	stringArray[15] = SONIC_PRO;
+	stringArray[16] = FXP_TOUR;
+	stringArray[17] = RIP_CONTROL;
 }
 
 /* When the user clicks on the button, 
@@ -281,9 +299,63 @@ function calculatePreferences() {
 	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
 	// first go to highest number (most priority) 
-	if (control > power) { // control is greater priority
+	/*if (control - power > 20) { // control is greater priority
 		// loop through each string ratings and narrow out the strings with control 7 or greater
-	} else if (power > control) { // power is greater priority
+		if (spin > control) { // spin is very high prioritied
+			// filter out strings with spins less than 8
+		} else  if (spin > power) { // moderate
 
+		} else { // control and power are very close
+
+		}
+	} else if (power - control > 20) { // power is greater priority
+		// loop through each string ratings and narrow out the strings with power 7 or greater
+	} else { // mixture of them all
+		// find combos that have power and control differences less than or equal to 2
+	}*/
+
+	if (spin > control && spin > power) { // spin is greater priority
+ 		// filter all strings with spin at 8 or greater
+ 		var i;
+ 		for (i = 0; i < stringArray.length; i++) {
+ 			if (stringArray[i][3] < 7) { // remove from contention
+ 				stringArray.splice(i, 1); // removes string
+ 				i--;
+ 			}
+ 		}
+ 		// control and power are close enough to be one in one
+ 		// so, find strings that have power and control within 2 of each other
+ 		var j;
+ 		for (j = 0; j < stringArray.length; j++) {
+ 			/*if (stringArray[i][0] - stringArray[i][1] <= 2 && stringArray[i][0] - stringArray[i][1] >= -2) { // within 2
+
+ 			}*/
+
+ 			if (control > power) { // should be 2 or less 
+ 				if (stringArray[i][0] - stringArray[i][1] >= -2 && stringArray[i][0] - stringArray[i][1] <= 0) { // keep
+
+ 				}
+ 			} else {
+ 				if (stringArray[i][0] - stringArray[i][1] <= 2 && stringArray[i][0] - stringArray[i][1] >= 0) { // keep
+
+ 				}
+ 			}
+ 		}
+	} else if (control >= power) { // control is greatest priority
+		// filter strings with control at 7 or greater
+		if (spin >= power) { // spin is the second priority
+
+		} else { // spin is not a priority
+
+		}
+	} else if (power > control) { // power is greatest priority
+		// filter strings with power at 7 or greater
+		if (spin >= control) { // spin is the second priority
+
+		} else { // spin is not a priority
+
+		}
 	}
+
+
 }
