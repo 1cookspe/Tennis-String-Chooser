@@ -332,15 +332,73 @@ function calculatePreferences() {
  			}*/
 
  			if (control > power) { // should be 2 or less 
- 				if (stringArray[i][0] - stringArray[i][1] >= -2 && stringArray[i][0] - stringArray[i][1] <= 0) { // keep
-
+ 				if (!(stringArray[j][0] - stringArray[j][1] >= -2 && stringArray[j][0] - stringArray[j][1] <= 0)) { // remove
+ 					stringArray.splice(j, 1);
+ 					j--; // indexes of array change, so shift it down so that it does not miss the next element on the array
  				}
  			} else {
- 				if (stringArray[i][0] - stringArray[i][1] <= 2 && stringArray[i][0] - stringArray[i][1] >= 0) { // keep
-
+ 				if (!(stringArray[j][0] - stringArray[j][1] <= 2 && stringArray[j][0] - stringArray[j][1] >= 0)) { // remove
+ 					stringArray.splice(j, 1);
+ 					j--; // indexes of array change, so shift it down so that it does not miss the next element on the array
  				}
  			}
  		}
+
+ 		// now look at touch
+ 		if (touch >= feel && touch >= longevity) { // touch is heavy priority
+ 			// so, filter out touch less than 8
+ 			var k;
+ 			for (k = 0; k < stringArray.length; k++) {
+ 				if (stringArray[k][2] < 8) { // remove
+ 					stringArray.splice(k, 1);
+ 					k--;
+ 				}
+ 			}
+
+ 			// find next highest score
+ 			if (feel >= longevity) { // feel is more important than longevity
+ 				// sort remaining by feel
+ 				sortArray(5); // feel (comfort) is 5
+ 			} else { // longevity is more important than feel
+ 				sortArray(4); // longevity is 4
+ 			}
+ 		} else if (longevity >= touch && longevity >= feel) { // longevity is heavy priority
+ 			cropOutOptions(4, 7); // longevity is 4, take out under 7 score
+
+ 			// find next most significant quality
+ 			if (touch >= feel) { // touch is more important
+ 				sortArray(2); // touch is 2
+ 			} else { // feel is more important
+ 				sortArray(5); // feel is 5
+ 			}
+ 		} else if (feel >= touch && feel >= longevity) { // feel is heavy priority
+ 			cropOutOptions(5, 7);
+
+ 			// next significance
+ 			if (touch >= longevity) { // touch is more important
+ 				sortArray(2); // touch is 2
+ 			} else { // longevity is more important
+ 				sortArray(4); // longevity is 4
+ 			}
+ 		}
+
+ 		// adjust according to feel and longevity
+ 		/*if (feel >= 70) {
+ 			// filter by feel
+ 			for (var h = 0; h < stringArray.length; h++) {
+ 				if (stringArray[h][5] < 7) { // remove
+ 					stringArray.splice(h, 1);
+ 					h--;
+ 				}
+ 			}
+ 		}
+
+ 		if (longevity >= 60) {
+ 			// filter by longev
+ 		}*/
+
+ 		// maybe use comfort and longevity to point out best options
+
 	} else if (control >= power) { // control is greatest priority
 		// filter strings with control at 7 or greater
 		if (spin >= power) { // spin is the second priority
@@ -358,4 +416,24 @@ function calculatePreferences() {
 	}
 
 
+}
+
+function cropOutOptions(index, threshold) {
+	for (var i = 0; i < stringArray.length; i++) {
+		if (stringArray[i][index] < threshold) { // crop
+			stringArray.splice(i, 1);
+			i--;
+		}
+	}
+}
+
+function sortArray(index) {
+	for (var b = 0; b < stringArray.length - 1; b++) {
+		if (stringArray[b][index] < stringArray[b+1][index]) {
+			// swap them
+			var tempHolder = stringArray[b][index];
+			stringArray[b][index] = stringArray[b+1][index];
+			stringArray[b+1][index] = tempHolder;
+		}
+	}
 }
