@@ -10,6 +10,7 @@ var feelPriority = false;
 var longevityPriority = false;
 var stringArray = [[]];
 var bestStrings = [0, 0, 0, 0, 0];
+var bestIndexes = [0, 0, 0, 0, 0];
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -452,6 +453,7 @@ function mostSimilarString() {
 	var calcPower = power / 10;
 	var calcControl = control / 10;
 	var calcSpin = spin / 10;
+	var calcTouch = touch / 10;
 
 	// loop through strings and calculate difference 
 	var bestStringIndex = 0;
@@ -460,6 +462,7 @@ function mostSimilarString() {
 		var powerDiff = calcPower - stringArray[i][POWER_INDEX];
 		var controlDiff = calcControl - stringArray[i][CONTROL_INDEX];
 		var spinDiff = calcSpin - stringArray[i][SPIN_INDEX];
+		var touchDiff = calcTouch - stringArray[i][TOUCH_INDEX];
 		var currentMeanSquared = Math.pow(powerDiff, 2) + Math.pow(controlDiff, 2) + Math.pow(spinDiff, 2);
 
 		/*if (i != 0) { // not first iteration
@@ -471,32 +474,84 @@ function mostSimilarString() {
 			bestDifference = currentMeanSquared; // by default the first difference becomes the best difference
 		}*/
 
-		alert("Yo the difference: " + currentMeanSquared);
+		//alert("Yo the difference: " + currentMeanSquared);
 
 		if (i > 5) { // 
 			if (currentMeanSquared < bestStrings[4]) { // should be added somewhere
-				addOrderStrings(currentMeanSquared, false);
+				addOrderStrings(currentMeanSquared, false, i);
 			}
 		} else { // add to array by default
-			addOrderStrings(currentMeanSquared, true);
+			addOrderStrings(currentMeanSquared, true, i);
 		}
-	}
+
+		// now compare with longevity and feel, touch
+		// determine most significant
+		/*if (touch >= 50) {
+			// sway 3 options
+			for (var i = 0; i < 3; i++) {
+				if (stringArray[bestIndexes[i]][TOUCH_INDEX] - touchDiff > stringArray[bestIndexes[i+1]][TOUCH_INDEX] - touchDiff) { // switch them
+					var tempVar = bestIndexes[i];
+					bestIndexes[i] = bestIndexes[i+1];
+					bestIndexes[i+1] = tempVar;
+				}
+			}
+		}
+	}*/
 	//bestStrings[3] = 2;
 
 	// show results
 	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
 	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
+	document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
 
 }
 
-function addOrderStrings(number, defaultValue) {
+function indexToName(index) {
+	switch (index) {
+		case 0:
+			return "RPM Blast";
+		break;
+		case 1:
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		break;
+		case 5:
+		break;
+		case 6:
+		break;
+		case 7:
+		break;
+		case 8:
+		break;
+		case 9:
+		break;
+		case 10:
+		break;
+		case 11:
+		break;
+		case 12:
+		break;
+		case 13:
+		break;
+		case 14:
+		break;
+	}
+}
+
+function addOrderStrings(number, defaultValue, index) {
 	for (var i = 0; i < 5; i++) {
 		if (!defaultValue) {
 			if (bestStrings[i] > number) { // add in
 				for (var j = 4; j > i; j--) {
 					bestStrings[j] = bestStrings[j - 1];
+					bestIndexes[j] = bestIndexes[j - 1];
 				}
 				bestStrings[i] = number;
+				bestIndexes[i] = index;
 				i = 5;
 			}
 		} else { // automatically add in
@@ -505,11 +560,14 @@ function addOrderStrings(number, defaultValue) {
 					// add
 					for (var j = 4; j > i; j--) {
 						bestStrings[j] = bestStrings[j - 1];
+						bestIndexes[j] = bestIndexes[j - 1];
 					}
 					bestStrings[i] = number;
+					bestIndexes[i] = index;
 					i = 5;
 				} else if (bestStrings[i] == 0) {
 					bestStrings[i] = number;
+					bestIndexes[i] = index;
 					i = 5;
 				}
 			}
