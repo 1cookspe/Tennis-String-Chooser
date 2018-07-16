@@ -30,6 +30,13 @@ const LYNX = [7, 7, 7, 9, 7, 8];
 const SONIC_PRO = [6, 8, 7, 8, 7, 5]; 
 const FXP_TOUR = [8, 8, 7, 8, 6, 8];
 const RIP_CONTROL = [6, 8, 8, 7, 7, 9]; // control with very good comfort
+// constants for attribute index
+const POWER_INDEX = 0;
+const CONTROL_INDEX = 1;
+const TOUCH_INDEX = 2;
+const SPIN_INDEX = 3;
+const LONGEVITY_INDEX = 4;
+const COMFORT_INDEX = 5;
 
 function start() {
 	// initialize the string rankings array
@@ -51,6 +58,7 @@ function start() {
 	stringArray[15] = SONIC_PRO;
 	stringArray[16] = FXP_TOUR;
 	stringArray[17] = RIP_CONTROL;
+
 }
 
 /* When the user clicks on the button, 
@@ -287,7 +295,8 @@ function submitAnswers() {
     return;
   }
   // calculate distribution of user's preferences
-  calculatePreferences();
+  //calculatePreferences();
+  mostSimilarString();
 }
 
 function calculatePreferences() {
@@ -401,10 +410,24 @@ function calculatePreferences() {
 
 	} else if (control >= power) { // control is greatest priority
 		// filter strings with control at 7 or greater
+		cropOutOptions(1, 7);
 		if (spin >= power) { // spin is the second priority
+			// crop out spin
+			cropOutOptions(3, 8);
+			// power at bottom
 
+			// compare touch, feel, longevity
+			if (touch >= feel && touch >= longevity) { // touch is high priority
+				cropOutOptions(TOUCH_INDEX, 8);
+
+				// find next significance
+
+			}
 		} else { // spin is not a priority
-
+			// spin at bottom
+			var differencePC = Math.round((control - power) / 10);
+			// filter difference between control and power by having range of differencePC
+			cropRange(CONTROL_INDEX, POWER_INDEX, differencePC);
 		}
 	} else if (power > control) { // power is greatest priority
 		// filter strings with power at 7 or greater
@@ -414,6 +437,49 @@ function calculatePreferences() {
 
 		}
 	}
+
+
+
+
+}
+
+function mostSimilarString() {
+	alert('hey!');
+
+	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
+
+	var calcPower = power / 10;
+	var calcControl = control / 10;
+	var calcSpin = spin / 10;
+
+	// loop through strings and calculate difference 
+	var bestStringIndex = 0;
+	var bestStrings = new Array(5);
+	var bestDifference = 0;
+	for (var i = 0; i < stringArray.length; i++) {
+		var powerDiff = calcPower - stringArray[i][POWER_INDEX];
+		var controlDiff = calcControl - stringArray[i][CONTROL_INDEX];
+		var spinDiff = calcSpin - stringArray[i][SPIN_INDEX];
+		var currentMeanSquared = Math.pow(powerDiff, 2) + Math.pow(controlDiff, 2) + Math.pow(spinDiff, 2);
+
+		if (i != 0) { // not first iteration
+			if (currentMeanSquared < bestDifference) { // closer string with less difference
+				bestDifference = currentMeanSquared;
+				bestStringIndex = i;
+			}
+		} else { // first iteration
+			bestDifference = currentMeanSquared; // by default the first difference becomes the best difference
+		}
+
+		if (i > 5) { // 
+
+		} else {
+
+		}
+	}
+
+	// show results
+	document.getElementById('racquetResults').innerHTML = "Winning Racquet = " + bestStringIndex;
 
 
 }
@@ -434,6 +500,15 @@ function sortArray(index) {
 			var tempHolder = stringArray[b][index];
 			stringArray[b][index] = stringArray[b+1][index];
 			stringArray[b+1][index] = tempHolder;
+		}
+	}
+}
+
+function cropRange(index1, index2, range) {
+	for (var i = 0; i < stringArray.length; i++) {
+		if (stringArray[i][index1] - stringArray[i][index2] > range && stringArray[i][index1] - stringArray[i][index2] < 0) { // crop out
+			stringArray.splice(i, 1);
+			i--;
 		}
 	}
 }
