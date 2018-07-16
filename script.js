@@ -9,6 +9,7 @@ var longevity = 0;
 var feelPriority = false;
 var longevityPriority = false;
 var stringArray = [[]];
+var bestStrings = [0, 0, 0, 0, 0];
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -454,7 +455,6 @@ function mostSimilarString() {
 
 	// loop through strings and calculate difference 
 	var bestStringIndex = 0;
-	var bestStrings = new Array(5);
 	var bestDifference = 0;
 	for (var i = 0; i < stringArray.length; i++) {
 		var powerDiff = calcPower - stringArray[i][POWER_INDEX];
@@ -462,26 +462,59 @@ function mostSimilarString() {
 		var spinDiff = calcSpin - stringArray[i][SPIN_INDEX];
 		var currentMeanSquared = Math.pow(powerDiff, 2) + Math.pow(controlDiff, 2) + Math.pow(spinDiff, 2);
 
-		if (i != 0) { // not first iteration
+		/*if (i != 0) { // not first iteration
 			if (currentMeanSquared < bestDifference) { // closer string with less difference
 				bestDifference = currentMeanSquared;
 				bestStringIndex = i;
 			}
 		} else { // first iteration
 			bestDifference = currentMeanSquared; // by default the first difference becomes the best difference
-		}
+		}*/
+
+		alert("Yo the difference: " + currentMeanSquared);
 
 		if (i > 5) { // 
-
-		} else {
-
+			if (currentMeanSquared < bestStrings[4]) { // should be added somewhere
+				addOrderStrings(currentMeanSquared, false);
+			}
+		} else { // add to array by default
+			addOrderStrings(currentMeanSquared, true);
 		}
 	}
+	//bestStrings[3] = 2;
 
 	// show results
-	document.getElementById('racquetResults').innerHTML = "Winning Racquet = " + bestStringIndex;
+	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
+	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
 
+}
 
+function addOrderStrings(number, defaultValue) {
+	for (var i = 0; i < 5; i++) {
+		if (!defaultValue) {
+			if (bestStrings[i] > number) { // add in
+				for (var j = 4; j > i; j--) {
+					bestStrings[j] = bestStrings[j - 1];
+				}
+				bestStrings[i] = number;
+				i = 5;
+			}
+		} else { // automatically add in
+			for (var i = 0; i < 5; i++) {
+				if (bestStrings[i] >= number && bestStrings[i] != 0) {
+					// add
+					for (var j = 4; j > i; j--) {
+						bestStrings[j] = bestStrings[j - 1];
+					}
+					bestStrings[i] = number;
+					i = 5;
+				} else if (bestStrings[i] == 0) {
+					bestStrings[i] = number;
+					i = 5;
+				}
+			}
+		}
+	}
 }
 
 function cropOutOptions(index, threshold) {
