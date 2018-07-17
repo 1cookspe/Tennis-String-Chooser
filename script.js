@@ -32,6 +32,11 @@ const LYNX = [7, 7, 7, 9, 7, 8];
 const SONIC_PRO = [6, 8, 7, 8, 7, 5]; 
 const FXP_TOUR = [8, 8, 7, 8, 6, 8];
 const RIP_CONTROL = [6, 8, 8, 7, 7, 9]; // control with very good comfort
+const REFLEX = [8, 6, 7, 7, 7, 9]; // high power and comfort
+const ORIGIN = [8, 7, 7, 5, 7, 8]; // power and touch, comfort
+const X_ONE = [9, 6, 7, 5, 7, 8]; // power
+const POLY_TOUR_PRO = [4, 8, 7, 7, 8, 7]; // control
+const POLY_TOUR_SPIN = [3, 8, 7, 9, 8, 7]; // spin 
 // constants for attribute index
 const POWER_INDEX = 0;
 const CONTROL_INDEX = 1;
@@ -62,6 +67,7 @@ function start() {
 	stringArray[15] = SONIC_PRO;
 	stringArray[16] = FXP_TOUR;
 	stringArray[17] = RIP_CONTROL;
+	stringArray[18] = REFLEX;
 
 }
 
@@ -503,29 +509,39 @@ function mostSimilarString() {
 	}
 	//bestStrings[3] = 2;
 
+	// maybe ensure that correct high values are reflected
+
 	// show results
 	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
 	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
 	document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
+	var racutee = indexToName(0);
 
+	// show string results
+	document.getElementById('topImage').src = "images/rpm_blast.jpg";
+	
 }
 
 function indexToName(index) {
+	var racquetObject;
 	switch (index) {
 		case 0:
-			//return "Babolat RPM Blast";
+			racquetObject = {name: "Babolat RPM Blast", link: ""};
 		break;
 		case 1:
-		//return "Babolat Pro Hurricane";
+			racquetObject = {name: "Babolat Pro Hurricane", link: ""};
 		break;
 		case 2:
-			//return "";
+			racquetObject = {name: "Babolat VS Touch", link: ""};
 		break;
 		case 3:
+			racquetObject = {name: "Babolat Xcel", link: ""};
 		break;
 		case 4:
+			racquetObject = {name: "Babolat Addiction", link: ""};
 		break;
 		case 5:
+			racquetObject = {name: "Luxilon ALU Power", link: ""};
 		break;
 		case 6:
 		break;
@@ -546,6 +562,7 @@ function indexToName(index) {
 		case 14:
 		break;
 	}
+	return racquetObject;
 }
 
 function addOrderStrings(number, defaultValue, index) {
