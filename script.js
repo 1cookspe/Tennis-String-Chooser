@@ -41,6 +41,8 @@ const LONGEVITY_INDEX = 4;
 const COMFORT_INDEX = 5;
 
 function start() {
+	alert('lets start');
+
 	// initialize the string rankings array
 	stringArray[0] = RPM_BLAST;
 	stringArray[1] = PRO_HURRICANE;
@@ -91,6 +93,7 @@ function getRacquet(num) {
 
 	switch (racquet) {
 		case 0: // no racquet
+		alert('lets start');
 		break;
 		case 1: // Babolat Aero
 			
@@ -280,25 +283,26 @@ function submitAnswers() {
 	alert('submit!');
 
 	for(var i = 0; i < choice.length; i++ ) {
-     if(choice[i].checked) {
-       checked = true;
-       if (i == 0) { // wants more power
+     	if(choice[i].checked) {
+       	checked = true;
+       	if (i == 0) { // wants more power
        		power = power + 30;
-       } else if (i == 1) {
+       	} else if (i == 1) {
        		spin = spin + 30;
-       } else if (i == 2) {
+       	} else if (i == 2) {
        		control = control + 30;
-       }
-     }
-  } 
-  // if user click submit button without selecting any option, alert box should be say "please select choice answer".
-  if(!checked) {
-    alert("please select choice answer");
-    return;
-  }
-  // calculate distribution of user's preferences
-  //calculatePreferences();
-  mostSimilarString();
+       	}
+    }
+} 
+  	// if user click submit button without selecting any option, alert box should be say "please select choice answer".
+  	if(!checked) {
+    	alert("please select choice answer");
+    	return;
+  	}
+  	
+  	// calculate distribution of user's preferences
+  	//calculatePreferences();
+	mostSimilarString();
 }
 
 function calculatePreferences() {
@@ -495,8 +499,8 @@ function mostSimilarString() {
 					bestIndexes[i+1] = tempVar;
 				}
 			}
-		}
-	}*/
+		}*/
+	}
 	//bestStrings[3] = 2;
 
 	// show results
@@ -509,11 +513,13 @@ function mostSimilarString() {
 function indexToName(index) {
 	switch (index) {
 		case 0:
-			return "RPM Blast";
+			//return "Babolat RPM Blast";
 		break;
 		case 1:
+		//return "Babolat Pro Hurricane";
 		break;
 		case 2:
+			//return "";
 		break;
 		case 3:
 		break;
