@@ -68,7 +68,10 @@ function start() {
 	stringArray[16] = FXP_TOUR;
 	stringArray[17] = RIP_CONTROL;
 	stringArray[18] = REFLEX;
-
+	stringArray[19] = ORIGIN;
+	stringArray[20] = X_ONE;
+	stringArray[21] = POLY_TOUR_PRO;
+	stringArray[22] = POLY_TOUR_SPIN;
 }
 
 /* When the user clicks on the button, 
@@ -518,7 +521,10 @@ function mostSimilarString() {
 	var racutee = indexToName(0);
 
 	// show string results
-	document.getElementById('topImage').src = "images/rpm_blast.jpg";
+	document.getElementById('topImage').src = "https://i.imgur.com/F2i9IDQ.png";
+	document.getElementById('topCaption').innerHTML = "Babolat rocks!";
+
+	// show winners with images and captions
 	
 }
 
@@ -526,40 +532,75 @@ function indexToName(index) {
 	var racquetObject;
 	switch (index) {
 		case 0:
-			racquetObject = {name: "Babolat RPM Blast", link: ""};
+			racquetObject = {name: "Babolat RPM Blast", link: "", image: "https://i.imgur.com/6179VZq.png", caption: "The Babolat RPM Blast allows players to hit shots oozing with topspin and high amounts of control. Used by top pros including Rafael Nadal."};
 		break;
 		case 1:
-			racquetObject = {name: "Babolat Pro Hurricane", link: ""};
+			racquetObject = {name: "Babolat Pro Hurricane", link: "", image: "https://i.imgur.com/hig3xAC.png", caption: "Tons of control for big hitters, while also offering exceptional spin. The choice of Andy Roddick."};
 		break;
 		case 2:
-			racquetObject = {name: "Babolat VS Touch", link: ""};
+			racquetObject = {name: "Babolat VS Touch", link: "", image: "https://i.imgur.com/M7tyEdi.png", caption: "A natural gut string, the VS Touch offers insane amounts of power, while offering a soft touch."};
 		break;
 		case 3:
-			racquetObject = {name: "Babolat Xcel", link: ""};
+			racquetObject = {name: "Babolat Xcel", link: "", image: "https://i.imgur.com/CJQiIDm.png", caption: "A good blend of control and spin, with an emphasis on amazing feel and comfort in each swing."};
 		break;
 		case 4:
-			racquetObject = {name: "Babolat Addiction", link: ""};
+			racquetObject = {name: "Babolat Addiction", link: "", image: "https://i.imgur.com/F2i9IDQ.png", caption: "A combination of comfort, power, and durability."};
 		break;
 		case 5:
-			racquetObject = {name: "Luxilon ALU Power", link: ""};
+			racquetObject = {name: "Luxilon ALU Power", link: "", image: "https://i.imgur.com/5PgWDd6.png", caption: "Exceptional feel and control, with amazing spin. Has been one of the most popular strings on tour for years."};
 		break;
 		case 6:
+			racquetObject = {name: "Luxilon 4G", link: "", image: "https://i.imgur.com/w1RKGTY.png", caption: "Puts great bite on the ball to give it spin. Holds up tension well and offers great comfort."};
 		break;
 		case 7:
+			racquetObject = {name: "Luxilon Big Banger", link: "", image: "https://i.imgur.com/N7WWcnY.png"};
 		break;
 		case 8:
+			racquetObject = {name: "Wilson NXT Power", link: "", image: "https://i.imgur.com/5xUXlyO.png"};
 		break;
 		case 9:
+			racquetObject = {name: "Wilson Sensation", link: "", image: "https://i.imgur.com/oD71lS4.png"};
 		break;
 		case 10:
+			racquetObject = {name: "Wilson Revolve", link: "", image: "https://i.imgur.com/9elUywg.png"};
 		break;
 		case 11:
+			racquetObject = {name: "Wilson NXT Control", link: "", image: "https://i.imgur.com/OncQUWA.png"};
 		break;
 		case 12:
+			racquetObject = {name: "Wilson Champion's Choice", link: "", image: "https://i.imgur.com/e0If0zk.png"};
 		break;
 		case 13:
+			racquetObject = {name: "Head Hawk", link: "", image: "https://i.imgur.com/K5xUrrc.png"};
 		break;
 		case 14:
+			racquetObject = {name: "Head Lynx", link: "", image: "https://i.imgur.com/QM8XySI.png"};
+		break;
+		case 15:
+			racquetObject = {name: "Head Sonic Pro", link: "", image: "https://i.imgur.com/16cok2f.png"};
+		break;
+		case 16:
+			racquetObject = {name: "Head FXP Tour", link: "", image: "https://i.imgur.com/DhGQ0yZ.png"};
+		break;
+		case 17:
+			racquetObject = {name: "Head RIP Control", link: "", image: "https://i.imgur.com/FUHF8St.png"};
+		break;
+		case 18:
+			racquetObject = {name: "Head Reflex", link: "", image: "https://i.imgur.com/9REo8qb.png"};
+		break;
+		case 19:
+			racquetObject = {name: "Babolat Origin", link: "", image: "https://i.imgur.com/rQ9iac1.png"};
+		break;
+		case 20:
+			racquetObject = {name: "Technifibre X-One Biphase", link: "", image: "https://i.imgur.com/yXfKgL2.png"};
+		break;
+		case 21:
+			racquetObject = {name: "Yonex Poly Tour Pro", link: "", image: "https://i.imgur.com/LuKxa17.png"};
+		break;
+		case 22:
+			racquetObject = {name: "Yonex Poly Tour Spin", link: "", image: "https://i.imgur.com/K0tNaGV.png"};
+		break;
+		default:
 		break;
 	}
 	return racquetObject;
