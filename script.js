@@ -512,7 +512,66 @@ function mostSimilarString() {
 	}
 	//bestStrings[3] = 2;
 
-	// maybe ensure that correct high values are reflected
+	// maybe ensure that correct high values are reflected (after)
+	// sort around the 5
+	for (var i = 0; i < 4; i++) { // sort 5
+		if (power > control) {
+			// make sure that power is greater than control rating
+			if (stringArray[bestIndexes[i]][POWER_INDEX] < stringArray[bestIndexes[i]][CONTROL_INDEX]) { // switch with next option because power should be greater
+				/*sortedCorrectly = false;
+				var tempString = bestStrings[i];
+				var tempIndex = bestIndexes[i];
+				bestStrings[i] = bestStrings[i+1];
+				bestIndexes[i] = bestIndexes[i+1];
+				bestStrings[i+1] = tempString;
+				bestIndexes[i+1] = tempIndex;*/
+
+				// loop until string is found that has higher power than control
+				var j = i + 1;
+				while (j < 5) { // loop until end
+					if (stringArray[bestIndexes[j]][POWER_INDEX] > stringArray[bestIndexes[j]][CONTROL_INDEX]) {
+						// now switch!
+						var holdString = bestStrings[i];
+						var holdIndex = bestIndexes[i];
+						bestStrings[i] = bestStrings[j];
+						bestIndexes[i] = bestIndexes[j];
+						bestStrings[j] = holdString;
+						bestIndexes[j] = holdIndex;
+						j = 5;
+					}
+					j++;
+				}
+			}
+
+		} else if (control >= power) {
+			// make sure control is greater than power
+			if (stringArray[bestIndexes[i]][POWER_INDEX] > stringArray[bestIndexes[i]][CONTROL_INDEX]) { // switch with next option because power should be greater
+				/*sortedCorrectly = false;
+				var tempString = bestStrings[i];
+				var tempIndex = bestIndexes[i];
+				bestStrings[i] = bestStrings[i+1];
+				bestIndexes[i] = bestIndexes[i+1];
+				bestStrings[i+1] = tempString;
+				bestIndexes[i+1] = tempIndex;*/
+
+				// loop until string
+				var j = i + 1;
+				while (j < 5) { // loop until end
+					if (stringArray[bestIndexes[j]][POWER_INDEX] < stringArray[bestIndexes[j]][CONTROL_INDEX]) {
+						// now switch!
+						var holdString = bestStrings[i];
+						var holdIndex = bestIndexes[i];
+						bestStrings[i] = bestStrings[j];
+						bestIndexes[i] = bestIndexes[j];
+						bestStrings[j] = holdString;
+						bestIndexes[j] = holdIndex;
+						j = 5;
+					}
+					j++;
+				}
+			} 
+		}
+	}
 
 	// show results
 	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
@@ -521,11 +580,18 @@ function mostSimilarString() {
 	var racutee = indexToName(0);
 
 	// show string results
-	document.getElementById('topImage').src = "https://i.imgur.com/F2i9IDQ.png";
-	document.getElementById('topCaption').innerHTML = "Babolat rocks!";
+	//document.getElementById('topImage').src = "https://i.imgur.com/F2i9IDQ.png";
+	//document.getElementById('topCaption').innerHTML = "Babolat rocks!";
 
 	// show winners with images and captions
-	
+	var topString = indexToName(bestIndexes[0]);
+	document.getElementById('topImage').src = topString.image;
+	document.getElementById('topCaption').innerHTML = topString.caption;
+	document.getElementById('topName').innerHTML = topString.name;
+	var secondString = indexToName(bestIndexes[1]);
+	document.getElementById('secondImage').src = secondString.image;
+	document.getElementById('secondCaption').innerHTML = secondString.caption;
+	document.getElementById('secondName').innerHTML = secondString.name;
 }
 
 function indexToName(index) {
@@ -577,7 +643,7 @@ function indexToName(index) {
 			racquetObject = {name: "Head Lynx", link: "", image: "https://i.imgur.com/QM8XySI.png", caption: "Lynx offers delicate touch and comfort with excellent control through spin."};
 		break;
 		case 15:
-			racquetObject = {name: "Head Sonic Pro", link: "", image: "https://i.imgur.com/16cok2f.png", caption: "The Sonic Pro is perfect for players looking for control in their strings, while being durable and comfort."};
+			racquetObject = {name: "Head Sonic Pro", link: "", image: "https://i.imgur.com/16cok2f.png", caption: "The Sonic Pro is perfect for players looking for control in their strings, while being durable and comfortable."};
 		break;
 		case 16:
 			racquetObject = {name: "Head FXP Tour", link: "", image: "https://i.imgur.com/DhGQ0yZ.png", caption: "A perfect balance between power and control, this string gives you a little bit of everything."};
@@ -586,7 +652,7 @@ function indexToName(index) {
 			racquetObject = {name: "Head RIP Control", link: "", image: "https://i.imgur.com/FUHF8St.png", caption: "This string perfectly combines control with comfort, allowing players to direct the ball where they want it while maintaining a comfortable arm over time."};
 		break;
 		case 18:
-			racquetObject = {name: "Head Reflex", link: "", image: "https://i.imgur.com/9REo8qb.png", caption: "Another Head string that combines excellent control with high levels of comfort."};
+			racquetObject = {name: "Head Reflex", link: "", image: "https://i.imgur.com/9REo8qb.png", caption: "A very comfortable string capable of generating high amounts of spin."};
 		break;
 		case 19:
 			racquetObject = {name: "Babolat Origin", link: "", image: "https://i.imgur.com/rQ9iac1.png", caption: "A soft string packed with tons of power. Very easy on the arm while hitting."};
