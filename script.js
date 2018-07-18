@@ -553,52 +553,52 @@ function indexToName(index) {
 			racquetObject = {name: "Luxilon 4G", link: "", image: "https://i.imgur.com/w1RKGTY.png", caption: "Puts great bite on the ball to give it spin. Holds up tension well and offers great comfort."};
 		break;
 		case 7:
-			racquetObject = {name: "Luxilon Big Banger", link: "", image: "https://i.imgur.com/N7WWcnY.png"};
+			racquetObject = {name: "Luxilon Big Banger", link: "", image: "https://i.imgur.com/N7WWcnY.png", caption: "This string packs a ton of control for players who love to crush the ball. Amazing durability as well ensure that string breaks will be far and few between."};
 		break;
 		case 8:
-			racquetObject = {name: "Wilson NXT Power", link: "", image: "https://i.imgur.com/5xUXlyO.png"};
+			racquetObject = {name: "Wilson NXT Power", link: "", image: "https://i.imgur.com/5xUXlyO.png", caption: "NXT Power allows you to add pop to your ball for extra power, while maintaining excellent comfort and feel."};
 		break;
 		case 9:
-			racquetObject = {name: "Wilson Sensation", link: "", image: "https://i.imgur.com/oD71lS4.png"};
+			racquetObject = {name: "Wilson Sensation", link: "", image: "https://i.imgur.com/oD71lS4.png", caption: "For absolute comfort and feel, the Sensation is a great all-around string."};
 		break;
 		case 10:
-			racquetObject = {name: "Wilson Revolve", link: "", image: "https://i.imgur.com/9elUywg.png"};
+			racquetObject = {name: "Wilson Revolve", link: "", image: "https://i.imgur.com/9elUywg.png", caption: "The Revolve combines spin and control to be a forgiving and comfortable string."};
 		break;
 		case 11:
-			racquetObject = {name: "Wilson NXT Control", link: "", image: "https://i.imgur.com/OncQUWA.png"};
+			racquetObject = {name: "Wilson NXT Control", link: "", image: "https://i.imgur.com/OncQUWA.png", caption: "A great control based string combined with touch and feel."};
 		break;
 		case 12:
-			racquetObject = {name: "Wilson Champion's Choice", link: "", image: "https://i.imgur.com/e0If0zk.png"};
+			racquetObject = {name: "Wilson Champion's Choice", link: "", image: "https://i.imgur.com/e0If0zk.png", caption: "More of a power string than control string, Champion's Choice is a hybrid of Wilson Natural Gut with Luxilon ALU Power Rough. With great spin and touch, this is Roger Federer's string of choice."};
 		break;
 		case 13:
-			racquetObject = {name: "Head Hawk", link: "", image: "https://i.imgur.com/K5xUrrc.png"};
+			racquetObject = {name: "Head Hawk", link: "", image: "https://i.imgur.com/K5xUrrc.png", caption: "Perfect for control and spin, the Hawk allows you to swing freely."};
 		break;
 		case 14:
-			racquetObject = {name: "Head Lynx", link: "", image: "https://i.imgur.com/QM8XySI.png"};
+			racquetObject = {name: "Head Lynx", link: "", image: "https://i.imgur.com/QM8XySI.png", caption: "Lynx offers delicate touch and comfort with excellent control through spin."};
 		break;
 		case 15:
-			racquetObject = {name: "Head Sonic Pro", link: "", image: "https://i.imgur.com/16cok2f.png"};
+			racquetObject = {name: "Head Sonic Pro", link: "", image: "https://i.imgur.com/16cok2f.png", caption: "The Sonic Pro is perfect for players looking for control in their strings, while being durable and comfort."};
 		break;
 		case 16:
-			racquetObject = {name: "Head FXP Tour", link: "", image: "https://i.imgur.com/DhGQ0yZ.png"};
+			racquetObject = {name: "Head FXP Tour", link: "", image: "https://i.imgur.com/DhGQ0yZ.png", caption: "A perfect balance between power and control, this string gives you a little bit of everything."};
 		break;
 		case 17:
-			racquetObject = {name: "Head RIP Control", link: "", image: "https://i.imgur.com/FUHF8St.png"};
+			racquetObject = {name: "Head RIP Control", link: "", image: "https://i.imgur.com/FUHF8St.png", caption: "This string perfectly combines control with comfort, allowing players to direct the ball where they want it while maintaining a comfortable arm over time."};
 		break;
 		case 18:
-			racquetObject = {name: "Head Reflex", link: "", image: "https://i.imgur.com/9REo8qb.png"};
+			racquetObject = {name: "Head Reflex", link: "", image: "https://i.imgur.com/9REo8qb.png", caption: "Another Head string that combines excellent control with high levels of comfort."};
 		break;
 		case 19:
-			racquetObject = {name: "Babolat Origin", link: "", image: "https://i.imgur.com/rQ9iac1.png"};
+			racquetObject = {name: "Babolat Origin", link: "", image: "https://i.imgur.com/rQ9iac1.png", caption: "A soft string packed with tons of power. Very easy on the arm while hitting."};
 		break;
 		case 20:
-			racquetObject = {name: "Technifibre X-One Biphase", link: "", image: "https://i.imgur.com/yXfKgL2.png"};
+			racquetObject = {name: "Technifibre X-One Biphase", link: "", image: "https://i.imgur.com/yXfKgL2.png", caption: "Packed with power and comfort to allow you to dictate points."};
 		break;
 		case 21:
-			racquetObject = {name: "Yonex Poly Tour Pro", link: "", image: "https://i.imgur.com/LuKxa17.png"};
+			racquetObject = {name: "Yonex Poly Tour Pro", link: "", image: "https://i.imgur.com/LuKxa17.png", caption: "Spin and control are the two most excellent attributes of this string, perfect for big hitters such as Nick Kyrgios."};
 		break;
 		case 22:
-			racquetObject = {name: "Yonex Poly Tour Spin", link: "", image: "https://i.imgur.com/K0tNaGV.png"};
+			racquetObject = {name: "Yonex Poly Tour Spin", link: "", image: "https://i.imgur.com/K0tNaGV.png", caption: "Extra bite can be added to the ball for excellent spin."};
 		break;
 		default:
 		break;
