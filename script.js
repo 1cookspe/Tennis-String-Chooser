@@ -592,6 +592,18 @@ function mostSimilarString() {
 	document.getElementById('secondImage').src = secondString.image;
 	document.getElementById('secondCaption').innerHTML = secondString.caption;
 	document.getElementById('secondName').innerHTML = secondString.name;
+	var thirdString = indexToName(bestIndexes[2]);
+	document.getElementById('thirdImage').src = thirdString.image;
+	document.getElementById('thirdCaption').innerHTML = thirdString.caption;
+	document.getElementById('thirdName').innerHTML = thirdString.name;
+	var fourthString = indexToName(bestIndexes[3]);
+	document.getElementById('fourthImage').src = fourthString.image;
+	document.getElementById('fourthCaption').innerHTML = fourthString.caption;
+	document.getElementById('fourthName').innerHTML = fourthString.name;
+	var fifthString = indexToName(bestIndexes[4]);
+	document.getElementById('fifthImage').src = fifthString.image;
+	document.getElementById('fifthCaption').innerHTML = fifthString.caption;
+	document.getElementById('fifthName').innerHTML = fifthString.name;
 }
 
 function indexToName(index) {
