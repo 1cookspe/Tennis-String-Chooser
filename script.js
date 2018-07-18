@@ -463,10 +463,26 @@ function mostSimilarString() {
 
 	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
-	var calcPower = power / 10;
-	var calcControl = control / 10;
-	var calcSpin = spin / 10;
-	var calcTouch = touch / 10;
+	var calcPower = 0;
+	var calcControl = 0;
+	var calcSpin = 0;
+	//var calcTouch = 0;
+
+	// find most dominant characteristic
+	// generate fraction of other characteristics to the main characteristic!
+	if (control >= spin && control >= power) { // control is dominant
+		calcPower = (power / control) * 10; 
+		calcSpin = (spin / control) * 10;
+		calcControl = 10;
+	} else if (power >= spin && power >= control) { // power is dominant
+		calcSpin = (spin / power) * 10;
+		calcControl = (control / power) * 10;
+		calcPower = 10;
+	} else if (spin >= power && spin >= control) { // spin is dominant
+		calcControl = (control / spin) * 10;
+		calcPower = (power / spin) * 10;
+		calcSpin = 10;
+	}
 
 	// loop through strings and calculate difference 
 	var bestStringIndex = 0;
@@ -475,7 +491,7 @@ function mostSimilarString() {
 		var powerDiff = calcPower - stringArray[i][POWER_INDEX];
 		var controlDiff = calcControl - stringArray[i][CONTROL_INDEX];
 		var spinDiff = calcSpin - stringArray[i][SPIN_INDEX];
-		var touchDiff = calcTouch - stringArray[i][TOUCH_INDEX];
+		//var touchDiff = calcTouch - stringArray[i][TOUCH_INDEX];
 		var currentMeanSquared = Math.pow(powerDiff, 2) + Math.pow(controlDiff, 2) + Math.pow(spinDiff, 2);
 
 		/*if (i != 0) { // not first iteration
