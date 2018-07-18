@@ -132,6 +132,7 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			removeOrAdd("downfall");
+			changeButton(0, 0, 3);
 			break;
 		case 1: // consistent player with long rallies
 			power = power + 5;
@@ -141,6 +142,7 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			longevity = longevity + 15;
 			removeOrAdd("downfall");
+			changeButton(1,0,3);
 			break;
 		case 2: // all around player
 			power = power + 10;
@@ -150,6 +152,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 10;
 			feel = feel + 10;
 			removeOrAdd("downfall");
+			changeButton(2,0,3);
 			break;
 		case 3: // not sure about TYPE OF PLAYER
 			power = power + 10;
@@ -159,6 +162,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			removeOrAdd("downfall");
+			changeButton(3,0,3);
 			break;
 		case 4: // hits ball too long
 			// needs control
@@ -169,6 +173,7 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			longevity = longevity + 10;
 			removeOrAdd("choice");
+			changeButton(4,4,7);
 			break;
 		case 5: // not deep enough
 			// needs spin
@@ -179,6 +184,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			removeOrAdd("choice");
+			changeButton(5,4,7);
 			break;
 		case 6: // can't hit targets
 			// needs control
@@ -187,6 +193,7 @@ function styleOfPlay(style) {
 			power = power + 10;
 			touch = touch + 10;
 			removeOrAdd("choice");
+			changeButton(6,4,7);
 			break;
 		case 7: // not sure about downfall
 			power = power + 10;
@@ -196,12 +203,14 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			removeOrAdd("choice");
+			changeButton(7,4,7);
 			break;
 		case 8: // hit ball as hard as possible
 			power = power + 20;
 			control = control + 10;
 			spin = spin + 5;
 			removeOrAdd("comfort");
+			changeButton(8,8,11);
 			break;
 		case 9: // hit ball with topspin to ensure that it stays in
 			power = power + 10;
@@ -209,6 +218,7 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			spin = spin + 15;
 			removeOrAdd("comfort");
+			changeButton(9,8,11);
 			break;
 		case 10: // slice approach
 			power = power + 5;
@@ -216,6 +226,7 @@ function styleOfPlay(style) {
 			touch = touch + 30;
 			spin = spin + 10;
 			removeOrAdd("comfort");
+			changeButton(10,8,11);
 			break;
 		case 11: // not sure about approach
 			power = power + 10;
@@ -223,27 +234,33 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			spin = spin + 5;
 			removeOrAdd("comfort");
+			changeButton(11,8,11);
 			break;
 		case 12: // arm uncomfortable
 			// needs comfort
 			feel = feel + 70;
 			feelPriority = true;
 			removeOrAdd("durability");
+			changeButton(12,12,14);
 		break;
 		case 13: // arm comfortable
 			feel = feel + 10;
 			feelPriority = false;
 			removeOrAdd("durability");
+			changeButton(13,12,14);
 		break;
 		case 14: // unsure about arm
 			feel = feel + 20;
 			feelPriority = false;
 			removeOrAdd("durability");
+			changeButton(14,12,14);
 			break;
 		case 15: // breaks strings a lot
+			//alert('yes strings!');
 			longevity = longevity + 60;
 			longevityPriority = true;
 			removeOrAdd("touch");
+			changeButton(15,15,17);
 			break;
 		case 16: // does not break strings
 			longevity = longevity + 10;
@@ -252,11 +269,13 @@ function styleOfPlay(style) {
 			//power = power + 20;
 			longevityPriority = false;
 			removeOrAdd("touch");
+			changeButton(16,15,17);
 			break;
 		case 17: // unsure about strings
 			longevity = longevity + 30;
 			longevityPriority = false;
 			removeOrAdd("touch");
+			changeButton(17,15,17);
 			break;
 		case 18: // volleys a lot
 			// needs touch
@@ -265,18 +284,34 @@ function styleOfPlay(style) {
 			control = control + 10;
 			spin = spin + 10;
 			removeOrAdd("improve");
+			changeButton(18,18,20);
 			break;
 		case 19: // does not volley a lot
 			touch = touch + 5;
 			removeOrAdd("improve");
+			changeButton(19,18,20);
 			break;
 		case 20: // unsure about volleying
 			touch = touch + 10;
 			feel = feel + 5;
 			removeOrAdd("improve");
+			changeButton(20,18,20);
 			break;
 		default:
 		break;
+	}
+
+
+}
+
+function changeButton(number, start, end) {
+	for (var i = start; i <= end; i++) {
+		var idName = i + "Button";
+		if (i == number) {
+			document.getElementById(idName).style.backgroundColor = "#FF0000";
+		} else {
+			document.getElementById(idName).style.backgroundColor = "#4CAF50";
+		}
 	}
 }
 
