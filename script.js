@@ -589,11 +589,88 @@ function mostSimilarString() {
 		}
 	}
 
+	// can we sort by comfort, touch, and longevity?
+	var calcTouch = 0;
+	var calcLong = 0;
+	var calcFeel = 0;
+	if (touch >= longevity && touch >= feel) { // touch is greatest priority
+		calcTouch = 10;
+		calcLong = (longevity / touch) * 10;
+		calcFeel = (feel / touch) * 10;
+	} else if (feel >= touch && feel >= longevity && feel >= 70) { // feel is priority
+		calcFeel = 10;
+		calcTouch = (touch / feel) * 10;
+		calcLong = (longevity / feel) * 10;
+	} else if (longevity >= feel && longevity >= touch && longevity >= 60) { // longevity is priority
+		calcLong = 10;
+		calcFeel = (feel / longevity) * 10;
+		calcTouch = (touch / longevity) * 10;
+	}
+
+	// loop through final 5 candidates and sort by comfort, touch, and longevity
+	var finalSortings = [0, 0, 0, 0, 0];
+	for (var i = 0; i < 5; i++) {
+		// create characteristics for each string
+		var touchDiff = calcTouch - stringArray[bestIndexes[i]][TOUCH_INDEX];
+		var feelDiff = calcFeel - stringArray[bestIndexes[i]][COMFORT_INDEX];
+		var longDiff = calcLong - stringArray[bestIndexes[i]][LONGEVITY_INDEX];
+		var statistics = Math.pow(touchDiff, 2) + Math.pow(feelDiff, 2) + Math.pow(longDiff, 2);
+
+		// save results of each and then sort results accordingly
+		finalSortings[i] = statistics + bestStrings[i];
+	}
+
+	// now see if the new scores can make a difference
+	/*for (var i = 0; i < 4; i++) {
+		if (finalSortings[i] > finalSortings[i+1]) {
+			// swap them, keep going until it reaches the next highest number
+			var j = i + 1;
+			while (j < 5) {
+				if (finalSortings[j] > finalSortings[i]) { // switch when it hits a score greater
+					// now swap them!
+					var tempFinal = finalSortings[i];
+					finalSortings[i] = finalSortings[j];
+					finalSortings[j] = tempFinal;
+					j = 5;
+				} else if (j == 4) {
+					// just swap with last one
+				}
+				j++;
+			}
+		}
+	}*/
+
+	// sort new results
+	// sort by selection sort
+	for (var i = 0; i < 5; i++) {
+		var leastIndex = i;
+		for (var j = i + 1; j < 5; j++) {
+			if (finalSortings[j] < finalSortings[leastIndex]) {
+				leastIndex = j;
+			}
+		}
+		// swap, place least number at beginning
+		var tempSmall = finalSortings[leastIndex];
+		finalSortings[leastIndex] = finalSortings[i];
+		finalSortings[i] = tempSmall;
+
+		// swap indexes
+		var holdSmall = bestIndexes[leastIndex];
+		bestIndexes[leastIndex] = bestIndexes[i];
+		bestIndexes[i] = holdSmall;
+
+		// swap original
+		var holdOrig = bestStrings[leastIndex];
+		bestStrings[leastIndex] = bestStrings[i];
+		bestStrings[i] = holdOrig;
+	}
+	alert(finalSortings.join(","));
+
 	// show results
 	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
 	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
 	document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
-	var racutee = indexToName(0);
+	//var racutee = indexToName(0);
 
 	// show string results
 	//document.getElementById('topImage').src = "https://i.imgur.com/F2i9IDQ.png";
