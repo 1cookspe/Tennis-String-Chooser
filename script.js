@@ -122,6 +122,13 @@ function getRacquet(num) {
 }
 
 function styleOfPlay(style) {
+	// booleans to hold if each question has been answered
+	var styleAnswered = false;
+	var downfallAnswered = false;
+	var volleysAnswered = false;
+	var jarAnswered = false;
+	var approachAnswered = false;
+
 	switch (style) {
 		// current playing
 		case 0: // agressive, offensive player
