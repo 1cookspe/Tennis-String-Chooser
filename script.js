@@ -11,6 +11,8 @@ var longevityPriority = false;
 var stringArray = [[]];
 var bestStrings = [0, 0, 0, 0, 0];
 var bestIndexes = [0, 0, 0, 0, 0];
+// hold past commands in array (like stack in back button on web browser)
+var pastCommands = [0,0,0,0,0,0]; // one entry for each question
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -122,220 +124,258 @@ function getRacquet(num) {
 }
 
 function styleOfPlay(style) {
-	// booleans to hold if each question has been answered
-	var styleAnswered = false;
-	var downfallAnswered = false;
-	var volleysAnswered = false;
-	var jarAnswered = false;
-	var approachAnswered = false;
-	var breakAnswered = false;
-
-	// hold past commands in array (like stack in back button on web browser)
-	var pastCommands = [0,0,0,0,0,0]; // one entry for each question
 
 	switch (style) {
 		// current playing
 		case 0: // agressive, offensive player
-			if (!styleAnswered) {
-				power = power + 30;
-				control = control + 5;
-				longevity = longevity + 10;
-				touch = touch + 5;
-				spin = spin + 10;
-				feel = feel + 5;
-				removeOrAdd("downfall");
-				changeButton(0, 0, 3);
-				styleAnswered = true;
+			if (pastCommands[0] != 0) { // past command has been played
+				reverseAction(0, pastCommands[0]);
 			}
+			power = power + 30;
+			control = control + 5;
+			longevity = longevity + 10;
+			touch = touch + 5;
+			spin = spin + 10;
+			feel = feel + 5;
+			pastCommands[0] = 1;
+			removeOrAdd("downfall");
+			changeButton(0, 0, 3);
 			break;
 		case 1: // consistent player with long rallies
-			if (!styleAnswered) {
-				styleAnswered = true;
-				power = power + 5;
-				spin = spin + 30;
-				control = control + 20;
-				feel = feel + 5;
-				touch = touch + 5;
-				longevity = longevity + 15;
-				removeOrAdd("downfall");
-				changeButton(1,0,3);
+			if (pastCommands[0] != 0) { // been pressed
+				reverseAction(0, pastCommands[0]);
 			}
+			power = power + 5;
+			spin = spin + 30;
+			control = control + 20;
+			feel = feel + 5;
+			touch = touch + 5;
+			longevity = longevity + 15;
+			pastCommands[0] = 2;
+			removeOrAdd("downfall");
+			changeButton(1,0,3);
 			break;
 		case 2: // all around player
-			if (!styleAnswered) {
-				styleAnswered = true;
-				power = power + 10;
-				spin = spin + 20;
-				control = control + 10;
-				touch = touch + 10;
-				longevity = longevity + 10;
-				feel = feel + 10;
-				removeOrAdd("downfall");
-				changeButton(2,0,3);
+			if (pastCommands[0] != 0) {
+				reverseAction(0, pastCommands[0]);
 			}
+			styleAnswered = true;
+			power = power + 10;
+			spin = spin + 20;
+			control = control + 10;
+			touch = touch + 10;
+			longevity = longevity + 10;
+			feel = feel + 10;
+			pastCommands[0] = 3;
+			removeOrAdd("downfall");
+			changeButton(2,0,3);
 			break;
 		case 3: // not sure about TYPE OF PLAYER
-			if (!styleAnswered) {
-				styleAnswered = true;
-				power = power + 10;
-				spin = spin + 10;
-				control = control + 10;
-				touch = touch + 10;
-				longevity = longevity + 5;
-				feel = feel + 5;
-				removeOrAdd("downfall");
-				changeButton(3,0,3);
+			if (pastCommands[0] != 0) {
+				reverseAction(0, pastCommands[0]);
 			}
+			power = power + 10;
+			spin = spin + 10;
+			control = control + 10;
+			touch = touch + 10;
+			longevity = longevity + 5;
+			feel = feel + 5;
+			pastCommands[0] = 4;
+			removeOrAdd("downfall");
+			changeButton(3,0,3);
 			break;
 		case 4: // hits ball too long
 			// needs control
-			if (!downfallAnswered) {
-				downfallAnswered = true;
-				control = control + 30;
-				// spin as well
-				spin = spin + 15;
-				power = power + 5;
-				touch = touch + 10;
-				longevity = longevity + 10;
-				removeOrAdd("choice");
-				changeButton(4,4,7);
+			if (pastCommands[1] != 0) {
+				reverseAction(1, pastCommands[1]);
 			}
+			control = control + 30;
+			// spin as well
+			spin = spin + 15;
+			power = power + 5;
+			touch = touch + 10;
+			longevity = longevity + 10;
+			pastCommands[1] = 1;
+			removeOrAdd("choice");
+			changeButton(4,4,7);
 			break;
 		case 5: // not deep enough
 			// needs spin
-			downfallAnswered = true;
+			if (pastCommands[1] != 0) {
+				reverseAction(1, pastCommands[1]);
+			}
 			spin = spin + 25;
 			power = power + 20;
 			control = control + 5;
 			touch = touch + 5;
 			longevity = longevity + 5;
 			feel = feel + 5;
+			pastCommands[1] = 2;
 			removeOrAdd("choice");
 			changeButton(5,4,7);
 			break;
 		case 6: // can't hit targets
 			// needs control
-			downfallAnswered = true;
+			if (pastCommands[1] != 0) {
+				reverseAction(1, pastCommands[1]);
+			}
 			control = control + 25;
 			spin = spin + 20;
 			power = power + 10;
 			touch = touch + 10;
+			pastCommands[1] = 3;
 			removeOrAdd("choice");
 			changeButton(6,4,7);
 			break;
 		case 7: // not sure about downfall
-			downfallAnswered = true;
+			if (pastCommands[1] != 0) {
+				reverseAction(1, pastCommands[1]);
+			}
 			power = power + 10;
 			control = control + 10;
 			touch = touch + 5;
 			longevity = longevity + 5;
 			spin = spin + 10;
 			feel = feel + 5;
+			pastCommands[1] = 4;
 			removeOrAdd("choice");
 			changeButton(7,4,7);
 			break;
 		case 8: // hit ball as hard as possible
-			approachAnswered = true;
+			if (pastCommands[2] != 0) {
+				reverseAction(2, pastCommands[2]);
+			}
 			power = power + 20;
 			control = control + 10;
 			spin = spin + 5;
+			pastCommands[2] = 1;
 			removeOrAdd("comfort");
 			changeButton(8,8,11);
 			break;
 		case 9: // hit ball with topspin to ensure that it stays in
-			approachAnswered = true;
+			if (pastCommands[2] != 0) {
+				reverseAction(2, pastCommands[2]);
+			}
 			power = power + 10;
 			control = control + 20;
 			touch = touch + 5;
 			spin = spin + 15;
+			pastCommands[2] = 2;
 			removeOrAdd("comfort");
 			changeButton(9,8,11);
 			break;
 		case 10: // slice approach
-			approachAnswered = true;
+			if (pastCommands[2] != 0) {
+				reverseAction(2, pastCommands[2]);
+			}
 			power = power + 5;
 			control = control + 15;
 			touch = touch + 30;
 			spin = spin + 10;
+			pastCommands[2] = 3;
 			removeOrAdd("comfort");
 			changeButton(10,8,11);
 			break;
 		case 11: // not sure about approach
-			approachAnswered = true;
+			if (pastCommands[2] != 0) {
+				reverseAction(2, pastCommands[2]);
+			}
 			power = power + 10;
 			control = control + 10;
 			touch = touch + 10;
 			spin = spin + 5;
+			pastCommands[2] = 4;
 			removeOrAdd("comfort");
 			changeButton(11,8,11);
 			break;
 		case 12: // arm uncomfortable
 			// needs comfort
-			jarAnswered = true;
+			if (pastCommands[3] != 0) {
+				reverseAction(3, pastCommands[3]);
+			}
 			feel = feel + 70;
-			feelPriority = true;
+			pastCommands[3] = 1;
 			removeOrAdd("durability");
 			changeButton(12,12,14);
 		break;
 		case 13: // arm comfortable
-			jarAnswered = true;
+			if (pastCommands[3] != 0) {
+				reverseAction(3, pastCommands[3]);
+			}
 			feel = feel + 10;
-			feelPriority = false;
+			pastCommands[3] = 2;
 			removeOrAdd("durability");
 			changeButton(13,12,14);
 		break;
 		case 14: // unsure about arm
-			jarAnswered = true;
+			if (pastCommands[3] != 0) {
+				reverseAction(3, pastCommands[3]);
+			}
 			feel = feel + 20;
-			feelPriority = false;
+			pastCommands[3] = 3;
 			removeOrAdd("durability");
 			changeButton(14,12,14);
 			break;
 		case 15: // breaks strings a lot
 			//alert('yes strings!');
-			breakAnswered = true;
+			if (pastCommands[4] != 0) {
+				reverseAction(4, pastCommands[4]);
+			}
 			longevity = longevity + 60;
-			longevityPriority = true;
+			pastCommands[4] = 1;
 			removeOrAdd("touch");
 			changeButton(15,15,17);
 			break;
 		case 16: // does not break strings
-			breakAnswered = true;
+			if (pastCommands[4] != 0) {
+				reverseAction(4, pastCommands[4]);
+			}
 			longevity = longevity + 10;
 			// maybe can have more spin and power?
 			//spin = spin + 20;
 			//power = power + 20;
-			longevityPriority = false;
+			pastCommands[4] = 2;
 			removeOrAdd("touch");
 			changeButton(16,15,17);
 			break;
 		case 17: // unsure about strings
-			breakAnswered = true;
+			if (pastCommands[4] != 0) {
+				reverseAction(4, pastCommands[4]);
+			}
 			longevity = longevity + 30;
-			longevityPriority = false;
+			pastCommands[4] = 3;
 			removeOrAdd("touch");
 			changeButton(17,15,17);
 			break;
 		case 18: // volleys a lot
 			// needs touch
-			volleysAnswered = true;
+			if (pastCommands[5] != 0) {
+				reverseAction(5, pastCommands[5]);
+			}
 			touch = touch + 50;
 			feel = feel + 20;
 			control = control + 10;
 			spin = spin + 10;
+			pastCommands[5] = 1;
 			removeOrAdd("improve");
 			changeButton(18,18,20);
 			break;
 		case 19: // does not volley a lot
-			volleysAnswered = true;
+			if (pastCommands[5] != 0) {
+				reverseAction(5, pastCommands[5]);
+			}
 			touch = touch + 5;
+			pastCommands[5] = 2;
 			removeOrAdd("improve");
 			changeButton(19,18,20);
 			break;
 		case 20: // unsure about volleying
-			volleysAnswered = true;
+			if (pastCommands[5] != 0) {
+				reverseAction(5, pastCommands[5]);
+			}
 			touch = touch + 10;
 			feel = feel + 5;
+			pastCommands[5] = 3;
 			removeOrAdd("improve");
 			changeButton(20,18,20);
 			break;
@@ -346,7 +386,7 @@ function styleOfPlay(style) {
 
 }
 
-function reverseAction(option, question) {
+function reverseAction(question, option) {
 	// called if user selects new option (subtract contribution from other option(s) selected)
 	switch (question) {
 		case 0: // style of play
@@ -419,11 +459,49 @@ function reverseAction(option, question) {
 				control = control - 20;
 				touch = touch - 5;
 				spin = spin - 15;
+			} else if (option == 3) { // slice ball
+				power = power - 5;
+				control = control - 15;
+				touch = touch - 30;
+				spin = spin - 10;
+			} else if (option == 4) { // not sure
+				power = power - 10;
+				control = control - 10;
+				touch = touch - 10;
+				spin = spin - 5;
 			}
 			break;
 		case 3: // comfortable
+			if (option == 1) { // yes arm is uncomfortable
+				feel = feel - 70;
+			} else if (option == 2) { // no arm is not uncomfortable
+				feel = feel - 10;
+			} else if (option == 3) { // not sure
+				feel = feel - 20;
+			}
+		break;
 		case 4: // break strings
+			if (option == 1) { // yes break strings
+				longevity = longevity - 60;
+			} else if (option == 2) { // no does not break strings
+				longevity = longevity - 10;
+			} else if (option == 3) { // not sure about strings
+				longevity = longevity - 30;
+			}
+		break;
 		case 5: // volleys
+			if (option == 1) { // yes volleys
+				touch = touch - 50;
+				feel = feel - 20;
+				control = control - 10;
+				spin = spin - 10;
+			} else if (option == 2) { // no volleys
+				touch = touch - 5;
+			} else if (option == 3) { // not sure
+				touch = touch - 10;
+				feel = feel - 5;
+			}
+		break;
 		default:
 		break;
 	}
