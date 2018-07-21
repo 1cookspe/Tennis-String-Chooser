@@ -74,6 +74,9 @@ function start() {
 	stringArray[20] = X_ONE;
 	stringArray[21] = POLY_TOUR_PRO;
 	stringArray[22] = POLY_TOUR_SPIN;
+
+	// show next question
+	removeOrAdd("playingStyle");
 }
 
 /* When the user clicks on the button, 
@@ -97,7 +100,7 @@ window.onclick = function(event) {
   }
 }
 
-function getRacquet(num) {
+/*function getRacquet(num) {
 	racquet = num;
 
 	removeOrAdd("playingStyle");
@@ -121,7 +124,7 @@ function getRacquet(num) {
 		break;
 	}
 
-}
+}*/
 
 function styleOfPlay(style) {
 

@@ -7,35 +7,13 @@
 </head>
 <body>
 
-<h1>String Chooser!</h1>
+<nav>
+	<h1>String Chooser!</h1>
+</nav>
 
 <div id="intro">
 	<p>Looking for the perfect new strings for your racquet? Just answer a couple of questions about your playing style and you'll get your ideal strings in no time!</p>
 	<button type="button" onclick="start()">Start!</button>
-</div>
-
-<div class="dropdown">
-<p>Choose your line of racquet!</p>
-  <button onclick="dropFunc()" class="dropbtn">Choose!</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="javascript:void(0);" onclick="getRacquet(1)">Babolat Aero</a>
-    <a href="javascript:void(0);" onclick="getRacquet(2)">Babolat Pure Drive</a>
-    <a href="javascript:void(0);" onclick="getRacquet(3)">Babolat Pure Strike</a>
-    <a href="javascript:void(0);" onclick="getRacquet(4)">Head Extreme</a>
-    <a href="javascript:void(0);" onclick="getRacquet(5)">Head Instinct</a>
-    <a href="javascript:void(0);" onclick="getRacquet(6)">Head Prestige</a>
-    <a href="javascript:void(0);" onclick="getRacquet(7)">Head Radical</a>
-    <a href="javascript:void(0);" onclick="getRacquet(8)">Head Speed</a>
-    <a href="javascript:void(0);" onclick="getRacquet(9)">Prince Beast</a>
-    <a href="javascript:void(0);" onclick="getRacquet(10)">Prince Tour</a>
-    <a href="javascript:void(0);" onclick="getRacquet(11)">Wilson Blade</a>
-    <a href="javascript:void(0);" onclick="getRacquet(12)">Wilson Burn</a>
-    <a href="javascript:void(0);" onclick="getRacquet(13)">Wilson Pro Staff</a>
-    <a href="javascript:void(0);" onclick="getRacquet(14)">Wilson Ultra</a>
-    <a href="javascript:void(0);" onclick="getRacquet(15)">Yonex VCORE</a>
-    <a href="javascript:void(0);" onclick="getRacquet(16)">Yonex EZONE</a>
-  </div>
-  <button onclick="getRacquet(0)">Skip!</button>
 </div>
 
 <div id="playingStyle" class="hidden">
@@ -98,9 +76,10 @@
 <p id="racquetResults">Racquets</p>
 <p id="rankings">Rankings</p>
 
+<div class="gallery">
 <div class="stringInfo">
 	<h5 id="topName"></h5>
-	<figure id="topString">
+	<figure class="gallery-item" id="topString">
 		<img id="topImage">
 		<figcaption id="topCaption"></figcaption>
 	</figure>
@@ -108,7 +87,7 @@
 
 <div class="stringInfo">
 	<h5 id="secondName"></h5>
-	<figure id="secondString">
+	<figure class="gallery-item" id="secondString">
 		<img id="secondImage">
 		<figcaption id="secondCaption"></figcaption>
 	</figure>
@@ -116,7 +95,7 @@
 
 <div class="stringInfo">
 	<h5 id="thirdName"></h5>
-	<figure id="thirdString">
+	<figure class="gallery-item" id="thirdString">
 		<img id="thirdImage">
 		<figcaption id="thirdCaption"></figcaption>
 	</figure>
@@ -124,7 +103,7 @@
 
 <div class="stringInfo">
 	<h5 id="fourthName"></h5>
-	<figure id="fourthString">
+	<figure class="gallery-item" id="fourthString">
 		<img id="fourthImage">
 		<figcaption id="fourthCaption"></figcaption>
 	</figure>
@@ -132,10 +111,11 @@
 
 <div class="stringInfo">
 	<h5 id="fifthName"></h5>
-	<figure id="fifthString">
+	<figure class ="gallery-item" id="fifthString">
 		<img id="fifthImage">
 		<figcaption id="fifthCaption"></figcaption>
 	</figure>
+</div>
 </div>
 
 </body>
