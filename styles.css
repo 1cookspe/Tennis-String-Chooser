@@ -34,7 +34,7 @@ button {
 .show {
 	margin: 1.5rem;
 	display: block;
-	background-color: #66000000;
+	background-color: blue;
 	padding-top: 1rem;
 	padding-bottom: 2rem;
 }

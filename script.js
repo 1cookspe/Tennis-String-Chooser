@@ -144,7 +144,7 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			pastCommands[0] = 1;
-			removeOrAdd("downfall");
+			//removeOrAdd("downfall");
 			changeButton(0, 0, 3);
 			break;
 		case 1: // consistent player with long rallies
@@ -158,7 +158,7 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			longevity = longevity + 15;
 			pastCommands[0] = 2;
-			removeOrAdd("downfall");
+			//removeOrAdd("downfall");
 			changeButton(1,0,3);
 			break;
 		case 2: // all around player
@@ -173,7 +173,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 10;
 			feel = feel + 10;
 			pastCommands[0] = 3;
-			removeOrAdd("downfall");
+			//removeOrAdd("downfall");
 			changeButton(2,0,3);
 			break;
 		case 3: // not sure about TYPE OF PLAYER
@@ -187,7 +187,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			pastCommands[0] = 4;
-			removeOrAdd("downfall");
+			//removeOrAdd("downfall");
 			changeButton(3,0,3);
 			break;
 		case 4: // hits ball too long
@@ -202,7 +202,7 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			longevity = longevity + 10;
 			pastCommands[1] = 1;
-			removeOrAdd("choice");
+			//removeOrAdd("choice");
 			changeButton(4,4,7);
 			break;
 		case 5: // not deep enough
@@ -217,7 +217,7 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			pastCommands[1] = 2;
-			removeOrAdd("choice");
+			//removeOrAdd("choice");
 			changeButton(5,4,7);
 			break;
 		case 6: // can't hit targets
@@ -230,7 +230,7 @@ function styleOfPlay(style) {
 			power = power + 10;
 			touch = touch + 10;
 			pastCommands[1] = 3;
-			removeOrAdd("choice");
+			//removeOrAdd("choice");
 			changeButton(6,4,7);
 			break;
 		case 7: // not sure about downfall
@@ -244,7 +244,7 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			pastCommands[1] = 4;
-			removeOrAdd("choice");
+			//removeOrAdd("choice");
 			changeButton(7,4,7);
 			break;
 		case 8: // hit ball as hard as possible
@@ -255,7 +255,7 @@ function styleOfPlay(style) {
 			control = control + 10;
 			spin = spin + 5;
 			pastCommands[2] = 1;
-			removeOrAdd("comfort");
+			//removeOrAdd("comfort");
 			changeButton(8,8,11);
 			break;
 		case 9: // hit ball with topspin to ensure that it stays in
@@ -267,7 +267,7 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			spin = spin + 15;
 			pastCommands[2] = 2;
-			removeOrAdd("comfort");
+			//removeOrAdd("comfort");
 			changeButton(9,8,11);
 			break;
 		case 10: // slice approach
@@ -279,7 +279,7 @@ function styleOfPlay(style) {
 			touch = touch + 30;
 			spin = spin + 10;
 			pastCommands[2] = 3;
-			removeOrAdd("comfort");
+			//removeOrAdd("comfort");
 			changeButton(10,8,11);
 			break;
 		case 11: // not sure about approach
@@ -291,7 +291,7 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			spin = spin + 5;
 			pastCommands[2] = 4;
-			removeOrAdd("comfort");
+			//removeOrAdd("comfort");
 			changeButton(11,8,11);
 			break;
 		case 12: // arm uncomfortable
@@ -301,7 +301,7 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 70;
 			pastCommands[3] = 1;
-			removeOrAdd("durability");
+			//removeOrAdd("durability");
 			changeButton(12,12,14);
 		break;
 		case 13: // arm comfortable
@@ -310,7 +310,7 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 10;
 			pastCommands[3] = 2;
-			removeOrAdd("durability");
+			//removeOrAdd("durability");
 			changeButton(13,12,14);
 		break;
 		case 14: // unsure about arm
@@ -319,7 +319,7 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 20;
 			pastCommands[3] = 3;
-			removeOrAdd("durability");
+			//removeOrAdd("durability");
 			changeButton(14,12,14);
 			break;
 		case 15: // breaks strings a lot
@@ -329,7 +329,7 @@ function styleOfPlay(style) {
 			}
 			longevity = longevity + 60;
 			pastCommands[4] = 1;
-			removeOrAdd("touch");
+			//removeOrAdd("touch");
 			changeButton(15,15,17);
 			break;
 		case 16: // does not break strings
@@ -341,7 +341,7 @@ function styleOfPlay(style) {
 			//spin = spin + 20;
 			//power = power + 20;
 			pastCommands[4] = 2;
-			removeOrAdd("touch");
+			//removeOrAdd("touch");
 			changeButton(16,15,17);
 			break;
 		case 17: // unsure about strings
@@ -350,7 +350,7 @@ function styleOfPlay(style) {
 			}
 			longevity = longevity + 30;
 			pastCommands[4] = 3;
-			removeOrAdd("touch");
+			//removeOrAdd("touch");
 			changeButton(17,15,17);
 			break;
 		case 18: // volleys a lot
@@ -363,7 +363,7 @@ function styleOfPlay(style) {
 			control = control + 10;
 			spin = spin + 10;
 			pastCommands[5] = 1;
-			removeOrAdd("improve");
+			//removeOrAdd("improve");
 			changeButton(18,18,20);
 			break;
 		case 19: // does not volley a lot
@@ -372,7 +372,7 @@ function styleOfPlay(style) {
 			}
 			touch = touch + 5;
 			pastCommands[5] = 2;
-			removeOrAdd("improve");
+			//removeOrAdd("improve");
 			changeButton(19,18,20);
 			break;
 		case 20: // unsure about volleying
@@ -382,13 +382,14 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			feel = feel + 5;
 			pastCommands[5] = 3;
-			removeOrAdd("improve");
+			//removeOrAdd("improve");
 			changeButton(20,18,20);
 			break;
 		default:
 		break;
 	}
-
+	// go to next question / slide
+	plusSlides(1);
 
 }
 
@@ -514,9 +515,11 @@ function reverseAction(question, option) {
 }
 
 function changeButton(number, start, end) {
+	alert('change button');
 	for (var i = start; i <= end; i++) {
 		var idName = i + "Button";
 		if (i == number) {
+			alert('lets turn red');
 			document.getElementById(idName).style.backgroundColor = "#FF0000";
 		} else {
 			document.getElementById(idName).style.backgroundColor = "#4CAF50";
@@ -1086,6 +1089,7 @@ function cropRange(index1, index2, range) {
 // next and previous arrows
 function plusSlides(n) {
 	showSlides(slideIndex += n);
+	//alert("Slide index is " + slideIndex);
 }
 
 // thumbnail image controls
