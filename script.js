@@ -13,6 +13,8 @@ var bestStrings = [0, 0, 0, 0, 0];
 var bestIndexes = [0, 0, 0, 0, 0];
 // hold past commands in array (like stack in back button on web browser)
 var pastCommands = [0,0,0,0,0,0]; // one entry for each question
+// for slides
+var slideIndex = 1;
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -76,7 +78,8 @@ function start() {
 	stringArray[22] = POLY_TOUR_SPIN;
 
 	// show next question
-	removeOrAdd("playingStyle");
+	//removeOrAdd("playingStyle");
+	showSlides(slideIndex);
 }
 
 /* When the user clicks on the button, 
@@ -1078,4 +1081,30 @@ function cropRange(index1, index2, range) {
 			i--;
 		}
 	}
+}
+
+// next and previous arrows
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+// thumbnail image controls
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) {slideIndex = 1}
+	if (n < 1) {slideIndex = slides.length}
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex-1].style.display = "block";
+	dots[slideIndex-1].className += " active";
 }

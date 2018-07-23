@@ -118,5 +118,46 @@
 </div>
 </div>
 
+<!-- Slideshow container -->
+<div class="slideshow-container">
+	<!-- Full-width questions with number and caption -->
+	<div class="mySlides fade">
+		<div class="numbertext">1 / 6</div>
+		<div id="playingStyle" class="show">
+			<p>What type of player are you?</p>
+			<button id="0Button" onclick="styleOfPlay(0)">Agressive, offensive player who likes to shorten points by hitting winners</button>
+			<button id="1Button" onclick="styleOfPlay(1)">Consistent baseliner who likes to have long rallies to force the opponent into an error</button>
+			<button id="2Button" onclick="styleOfPlay(2)">All-around player who can easily switch between offence and defence</button>
+			<button id="3Button" onclick="styleOfPlay(3)">Not sure</button>
+		</div>
+	</div>
+	<div class="mySlides fade">
+		<div class="numbertext">2 / 6</div>
+		<div id="downfall" class="show">
+			<p>Of the options presented, what would you say is your biggest downfall?</p>
+			<button id="4Button" onclick="styleOfPlay(4)">I hit the ball too long or into the net</button>
+			<button id="5Button" onclick="styleOfPlay(5)">I don't hit the ball deep enough, and my opponent often attacks it</button>
+			<button id="6Button" onclick="styleOfPlay(6)">I can't hit my targets too often</button>
+			<button id="7Button" onclick="styleOfPlay(7)">None of the above</button>
+		</div>
+	</div>
+
+	<!-- Next and previous buttons -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<!-- space under -->
+<br>
+
+<!-- dots and circles for questions -->
+<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+	<span class="dot" onclick="currentSlide(4)"></span>
+	<span class="dot" onclick="currentSlide(5)"></span>
+	<span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
 </body>
 </html>
