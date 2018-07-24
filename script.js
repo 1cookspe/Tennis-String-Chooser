@@ -81,15 +81,8 @@ function start() {
 	stringArray[21] = POLY_TOUR_PRO;
 	stringArray[22] = POLY_TOUR_SPIN;
 
-	// Set dots and arrows to visible
-	var dots = document.getElementsByClassName("dot");
-	for (var i = 0; i < dots.length; i++) {
-		dots[i].style.visibility = "visible";
-	}
-	document.getElementsByClassName("prev")[0].style.visibility = "visible";
-	document.getElementsByClassName("next")[0].style.visibility = "visible";
-
 	// show next question
+	slideIndex++;
 	showSlides(slideIndex);
 
 	// change 'start' to 'reset'
@@ -102,6 +95,14 @@ function start() {
 		buttonText.textContent = "Start";
 		resetScores();
 	}
+
+	// Set dots and arrows to visible
+	var dots = document.getElementsByClassName("dot");
+	for (var i = 0; i < dots.length; i++) {
+		dots[i].style.visibility = "visible";
+	}
+	document.getElementsByClassName("prev")[0].style.visibility = "visible";
+	document.getElementsByClassName("next")[0].style.visibility = "visible";
 }
 
 /* When the user clicks on the button, 
@@ -610,6 +611,8 @@ function submitAnswers() {
   		// calculate distribution of user's preferences
   		//calculatePreferences();
 		mostSimilarString();
+		//move to next slide (results)
+		plusSlides(1);
   	}
   	
 }
@@ -1167,7 +1170,7 @@ function showSlides(n) {
 	dots[slideIndex-1].className += " active";
 
 	// show submit button if on the last question
-	if (slideIndex == 7) {
+	/*if (slideIndex == 8) {
 		document.getElementById("submitButton").style.visibility = "visible";
-	}
+	}*/
 }

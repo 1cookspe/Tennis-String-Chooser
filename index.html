@@ -192,27 +192,29 @@
 			<input type="checkbox" name="choice" value="I want to keep my current style"> I want to keep my current style
 		</form>
 		</div>
+		<!-- submit button -->
+		<button id="submitButton" onclick="submitAnswers()">Submit All Answers!</button>
 	</div>
 
-	<div class="gallery">
-		<div class="stringInfo fade">
-			<h5 id="topName"></h5>
+	<div class="mySlides fade">
+		<div class="stringInfo">
+			<h3 id="topName"></h3>
 			<figure class="gallery-item" id="topString">
 			<img id="topImage">
 			<figcaption id="topCaption"></figcaption>
 			</figure>
 		</div>
 
-		<div class="stringInfo fade">
-			<h5 id="secondName"></h5>
+		<div class="stringInfo">
+			<h3 id="secondName"></h3>
 			<figure class="gallery-item" id="secondString">
 			<img id="secondImage">
 			<figcaption id="secondCaption"></figcaption>
 			</figure>
 		</div>
 
-		<div class="stringInfo fade">
-			<h5 id="thirdName"></h5>
+		<div class="stringInfo">
+			<h3 id="thirdName"></h3>
 			<figure class="gallery-item" id="thirdString">
 			<img id="thirdImage">
 			<figcaption id="thirdCaption"></figcaption>
@@ -228,7 +230,7 @@
 <br>
 
 <!-- dots and circles for questions -->
-<div style="text-align:center">
+<div id="dotDiv" style="text-align:center">
 	<span class="dot" onclick="currentSlide(1)"></span>
 	<span class="dot" onclick="currentSlide(2)"></span>
 	<span class="dot" onclick="currentSlide(3)"></span>
@@ -236,10 +238,10 @@
 	<span class="dot" onclick="currentSlide(5)"></span>
 	<span class="dot" onclick="currentSlide(6)"></span>
 	<span class="dot" onclick="currentSlide(7)"></span>
+	<span class="dot" onclick="currentSlide(8)"></span>
+	<span class="dot" onclick="currentSlide(9)"></span>
 </div>
 
-<!-- submit button -->
-<button id="submitButton" onclick="submitAnswers()">Submit All Answers!</button>
 
 </body>
 </html>

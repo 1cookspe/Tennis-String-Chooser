@@ -42,11 +42,11 @@ button {
 img {
 	max-width: 100%;
 	max-height: 100%;
-	object-fit: contain;
+	/*object-fit: contain;*/
 }
 
 .stringInfo {
-
+	display: inline;
 }
 
 #intro {
@@ -61,17 +61,19 @@ nav {
 }
 
 .gallery {
-	margin-top: 100px;
-	justify-content: center;
-	display: inline-block;
+	/*margin-top: 100px;*/
+	/*justify-content: center;*/
+	/*display: inline-block;*/
+	margin: 50px;
 }
 
 .gallery-item {
-	margin: 10px;
-	display: inline-block;
+	margin: 0px;
+	display: inline;
 	width: 30%;
 	height: 30%;
 	float: left;
+	top: 50%;
 }
 
 .question {
@@ -84,6 +86,8 @@ nav {
 
 .slideshow-container {
 	max-width: 1000px;
+	width: 90%;
+	height: 90%;
 	position: relative;
 	margin: auto;
 }
@@ -97,7 +101,8 @@ nav {
 .next, .prev {
 	cursor: pointer;
 	position: absolute;
-	top: 50%
+	/*top: 50%*/
+	bottom: 0;
 	width: auto;
 	margin-top: -22px;
 	padding: 16px;
@@ -113,6 +118,10 @@ nav {
 .next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
+}
+
+.prev {
+	left: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -166,6 +175,6 @@ nav {
 	to {opacity: 1}
 }
 
-#submitButton {
-	visibility: hidden;
+#dotDiv {
+	clear: both;
 }
