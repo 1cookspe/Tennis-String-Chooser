@@ -50,7 +50,6 @@ const LONGEVITY_INDEX = 4;
 const COMFORT_INDEX = 5;
 
 function start() {
-	alert('lets start');
 
 	// initialize the string rankings array
 	stringArray[0] = RPM_BLAST;
@@ -88,6 +87,15 @@ function start() {
 	// show next question
 	showSlides(slideIndex);
 
+	// change 'start' to 'reset'
+	var buttonText = document.getElementById("startButton");
+	alert(buttonText.textContent);
+	if (buttonText.textContent == "Start!") {
+		console.log("YEah lets change");
+		buttonText.textContent = "Reset";
+	} else if (buttonText.textContent == "Reset") {
+		buttonText.textContent = "Start";
+	}
 }
 
 /* When the user clicks on the button, 
@@ -538,6 +546,24 @@ function removeOrAdd(idString) {
 	document.getElementById(idString).classList.toggle('show');
 }
 
+function resetScores() {
+	// resets state (as if page is reloaded)
+	// all scores to 0
+	power = 0;
+	control = 0;
+	spin = 0;
+	longevity = 0;
+	feel = 0;
+	touch = 0;
+
+	// set past commands array to all 0
+	for (var i = 0; i < pastCommands.length; i++) {
+		pastCommands[i] = 0;
+	}
+
+	// make buttons all green again
+}
+
 function submitAnswers() {
 	var choice = document.forms[0];
 	var checked = false;
@@ -723,7 +749,7 @@ function calculatePreferences() {
 function mostSimilarString() {
 	alert('hey!');
 
-	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
+	//document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
 	var calcPower = 0;
 	var calcControl = 0;
@@ -929,9 +955,9 @@ function mostSimilarString() {
 	alert(finalSortings.join(","));
 
 	// show results
-	document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
+	//document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
 	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
-	document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
+	//document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
 	//var racutee = indexToName(0);
 
 	// show string results
@@ -951,14 +977,14 @@ function mostSimilarString() {
 	document.getElementById('thirdImage').src = thirdString.image;
 	document.getElementById('thirdCaption').innerHTML = thirdString.caption;
 	document.getElementById('thirdName').innerHTML = thirdString.name;
-	var fourthString = indexToName(bestIndexes[3]);
+	/*var fourthString = indexToName(bestIndexes[3]);
 	document.getElementById('fourthImage').src = fourthString.image;
 	document.getElementById('fourthCaption').innerHTML = fourthString.caption;
 	document.getElementById('fourthName').innerHTML = fourthString.name;
 	var fifthString = indexToName(bestIndexes[4]);
 	document.getElementById('fifthImage').src = fifthString.image;
 	document.getElementById('fifthCaption').innerHTML = fifthString.caption;
-	document.getElementById('fifthName').innerHTML = fifthString.name;
+	document.getElementById('fifthName').innerHTML = fifthString.name;*/
 }
 
 function indexToName(index) {
@@ -1113,6 +1139,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+	// present slide
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
 	var dots = document.getElementsByClassName("dot");
@@ -1126,4 +1153,9 @@ function showSlides(n) {
 	}
 	slides[slideIndex-1].style.display = "block";
 	dots[slideIndex-1].className += " active";
+
+	// show submit button if on the last question
+	if (slideIndex == 7) {
+		document.getElementById("submitButton").style.visibility = "visible";
+	}
 }

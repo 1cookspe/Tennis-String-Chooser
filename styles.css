@@ -62,13 +62,16 @@ nav {
 
 .gallery {
 	margin-top: 100px;
-	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
+	display: inline-block;
 }
 
 .gallery-item {
 	margin: 10px;
+	display: inline-block;
+	width: 30%;
+	height: 30%;
+	float: left;
 }
 
 .question {
@@ -161,4 +164,8 @@ nav {
 @keyframes fade {
 	from {opacity: .4}
 	to {opacity: 1}
+}
+
+#submitButton {
+	visibility: hidden;
 }
