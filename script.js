@@ -49,6 +49,11 @@ const SPIN_INDEX = 3;
 const LONGEVITY_INDEX = 4;
 const COMFORT_INDEX = 5;
 
+// load first question once everything has loaded
+document.addEventListener("DOMContentLoaded", function(e){
+	showSlides(slideIndex);
+});
+
 function start() {
 
 	// initialize the string rankings array
@@ -95,6 +100,7 @@ function start() {
 		buttonText.textContent = "Reset";
 	} else if (buttonText.textContent == "Reset") {
 		buttonText.textContent = "Start";
+		resetScores();
 	}
 }
 
@@ -561,7 +567,13 @@ function resetScores() {
 		pastCommands[i] = 0;
 	}
 
+	// go to first question
+	currentSlide(1);
+
 	// make buttons all green again
+	for (var i = 0; i <= 20; i++) {
+		document.getElementById(i + "Button").style.backgroundColor = "#4CAF50";
+	}
 }
 
 function submitAnswers() {
