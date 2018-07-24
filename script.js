@@ -77,31 +77,39 @@ function start() {
 	stringArray[21] = POLY_TOUR_PRO;
 	stringArray[22] = POLY_TOUR_SPIN;
 
+	// Set dots and arrows to visible
+	var dots = document.getElementsByClassName("dot");
+	for (var i = 0; i < dots.length; i++) {
+		dots[i].style.visibility = "visible";
+	}
+	document.getElementsByClassName("prev")[0].style.visibility = "visible";
+	document.getElementsByClassName("next")[0].style.visibility = "visible";
+
 	// show next question
-	//removeOrAdd("playingStyle");
 	showSlides(slideIndex);
+
 }
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function dropFunc() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+//function dropFunc() {
+  //  document.getElementById("myDropdown").classList.toggle("show");
+//}
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }
 
 /*function getRacquet(num) {
 	racquet = num;
@@ -515,11 +523,9 @@ function reverseAction(question, option) {
 }
 
 function changeButton(number, start, end) {
-	alert('change button');
 	for (var i = start; i <= end; i++) {
 		var idName = i + "Button";
 		if (i == number) {
-			alert('lets turn red');
 			document.getElementById(idName).style.backgroundColor = "#FF0000";
 		} else {
 			document.getElementById(idName).style.backgroundColor = "#4CAF50";
@@ -535,30 +541,39 @@ function removeOrAdd(idString) {
 function submitAnswers() {
 	var choice = document.forms[0];
 	var checked = false;
+	var otherAnswered = true;
 
 	alert('submit!');
 
 	for(var i = 0; i < choice.length; i++ ) {
      	if(choice[i].checked) {
-       	checked = true;
-       	if (i == 0) { // wants more power
-       		power = power + 30;
-       	} else if (i == 1) {
-       		spin = spin + 30;
-       	} else if (i == 2) {
-       		control = control + 30;
-       	}
-    }
-} 
+       		checked = true;
+       		if (i == 0) { // wants more power
+       			power = power + 30;
+       		} else if (i == 1) {
+       			spin = spin + 30;
+       		} else if (i == 2) {
+       			control = control + 30;
+       		}
+    	}
+	} 
   	// if user click submit button without selecting any option, alert box should be say "please select choice answer".
-  	if(!checked) {
+  	// also verify that all other questions have been answered
+  	for (var i = 0; i < pastCommands.length; i++) {
+  		if (pastCommands[i] == 0) { // not answered
+  			otherAnswered = false;
+  			i = pastCommands.length + 1;
+  		}
+  	}
+
+  	if(!checked || !otherAnswered) {
     	alert("please select choice answer");
-    	return;
+  	} else {
+  		// calculate distribution of user's preferences
+  		//calculatePreferences();
+		mostSimilarString();
   	}
   	
-  	// calculate distribution of user's preferences
-  	//calculatePreferences();
-	mostSimilarString();
 }
 
 function calculatePreferences() {

@@ -11,11 +11,13 @@
 	<h1>String Chooser!</h1>
 </nav>
 
+
 <div id="intro">
 	<p>Looking for the perfect new strings for your racquet? Just answer a couple of questions about your playing style and you'll get your ideal strings in no time!</p>
 	<button type="button" onclick="start()">Start!</button>
 </div>
 
+<!--
 <div id="playingStyle" class="hidden">
 	<p>What type of player are you?</p>
 	<button id="0Button" onclick="styleOfPlay(0)">Agressive, offensive player who likes to shorten points by hitting winners</button>
@@ -69,12 +71,10 @@
 		<input type="checkbox" name="choice" value="More Control"> More Control
 		<input type="checkbox" name="choice" value="I want to keep my current style"> I want to keep my current style
 	</form>
-	<button onclick="submitAnswers()">Submit All Answers!</button>
-</div>
 
-<p id="resultsText">Results</p>
-<p id="racquetResults">Racquets</p>
-<p id="rankings">Rankings</p>
+-->
+	
+
 
 <div class="gallery">
 <div class="stringInfo">
@@ -180,6 +180,7 @@
 	</div>
 	<div class="mySlides fade">
 		<div class="numbertext">7 / 7</div>
+		<div class="show">
 		<p>Overall, what would you like to improve or add more to your game?</p>
 		<form>
 			<input type="checkbox" name="choice" value="More Power"> More Power
@@ -187,6 +188,7 @@
 			<input type="checkbox" name="choice" value="More Control"> More Control
 			<input type="checkbox" name="choice" value="I want to keep my current style"> I want to keep my current style
 		</form>
+		</div>
 	</div>
 
 	<!-- Next and previous buttons -->
@@ -206,6 +208,9 @@
 	<span class="dot" onclick="currentSlide(6)"></span>
 	<span class="dot" onclick="currentSlide(7)"></span>
 </div>
+
+<!-- submit button -->
+<button onclick="submitAnswers()">Submit All Answers!</button>
 
 </body>
 </html>
