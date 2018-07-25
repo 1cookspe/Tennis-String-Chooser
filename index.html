@@ -4,114 +4,14 @@
 	<title>String Chooser</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="script.js"></script>
+	<link rel="icon" href="https://i.imgur.com/KmEAzWE.png">
 </head>
 <body>
 
-<nav>
-	<h1>String Chooser!</h1>
+<nav id="headerNav">
+	<h1 id="titleHeader">String Chooser</h1>
+	<img id="logo" src="https://i.imgur.com/KmEAzWE.png" alt="logo">
 </nav>
-
-<!--
-<div id="playingStyle" class="hidden">
-	<p>What type of player are you?</p>
-	<button id="0Button" onclick="styleOfPlay(0)">Agressive, offensive player who likes to shorten points by hitting winners</button>
-	<button id="1Button" onclick="styleOfPlay(1)">Consistent baseliner who likes to have long rallies to force the opponent into an error</button>
-	<button id="2Button" onclick="styleOfPlay(2)">All-around player who can easily switch between offence and defence</button>
-	<button id="3Button" onclick="styleOfPlay(3)">Not sure</button>
-</div>
-
-<div id="downfall" class="hidden">
-	<p>Of the options presented, what would you say is your biggest downfall?</p>
-	<button id="4Button" onclick="styleOfPlay(4)">I hit the ball too long or into the net</button>
-	<button id="5Button" onclick="styleOfPlay(5)">I don't hit the ball deep enough, and my opponent often attacks it</button>
-	<button id="6Button" onclick="styleOfPlay(6)">I can't hit my targets too often</button>
-	<button id="7Button" onclick="styleOfPlay(7)">None of the above</button>
-</div>
-
-<div id="choice" class="hidden">
-	<p>If your opponent hit a short ball to you that landed before the service line, would you:</p>
-	<button id="8Button" onclick="styleOfPlay(8)">Hit the ball as hard as you can to get an outright winner or to force an error from your opponent</button>
-	<button id="9Button" onclick="styleOfPlay(9)">Hit the ball with topspin to ensure it lands in and try to place the ball out of reach of your opponent</button>
-	<button id="10Button" onclick="styleOfPlay(10)">Slice the ball and approach the net</button>
-	<button id="11Button" onclick="styleOfPlay(11)">Not sure</button>
-</div>
-
-<div id="comfort" class="hidden">
-	<p>Do you find that sometimes your arm is uncomfortable when hitting the ball? Does the impact of the ball ever jar your arm?</p>
-	<button id="12Button" onclick="styleOfPlay(12)">Yes</button>
-	<button id="13Button" onclick="styleOfPlay(13)">No</button>
-	<button id="14Button" onclick="styleOfPlay(14)">Not sure</button>
-</div>
-
-<div id="durability" class="hidden">
-	<p>Do you tend to break strings easily?</p>
-	<button id="15Button" onclick="styleOfPlay(15)">Yes</button>
-	<button id="16Button" onclick="styleOfPlay(16)">No</button>
-	<button id="17Button" onclick="styleOfPlay(17)">Not sure</button>
-</div>
-
-<div id="touch" class="hidden">
-	<p>Do you like to rush the net and volley? Or, do you play a lot of doubles?</p>
-	<button id="18Button" onclick="styleOfPlay(18)">Yes</button>
-	<button id="19Button" onclick="styleOfPlay(19)">No</button>
-	<button id="20Button" onclick="styleOfPlay(20)">Not sure</button>
-</div>
-
-<div id="improve" class="hidden">
-	<p>Overall, what would you like to improve or add more to your game?</p>
-	<form>
-		<input type="checkbox" name="choice" value="More Power"> More Power
-		<input type="checkbox" name="choice" value="More Spin"> More Spin
-		<input type="checkbox" name="choice" value="More Control"> More Control
-		<input type="checkbox" name="choice" value="I want to keep my current style"> I want to keep my current style
-	</form>
-
--->
-	
-
-<!--
-<div class="gallery">
-<div class="stringInfo">
-	<h5 id="topName"></h5>
-	<figure class="gallery-item" id="topString">
-		<img id="topImage">
-		<figcaption id="topCaption"></figcaption>
-	</figure>
-</div>
-
-<div class="stringInfo">
-	<h5 id="secondName"></h5>
-	<figure class="gallery-item" id="secondString">
-		<img id="secondImage">
-		<figcaption id="secondCaption"></figcaption>
-	</figure>
-</div>
-
-<div class="stringInfo">
-	<h5 id="thirdName"></h5>
-	<figure class="gallery-item" id="thirdString">
-		<img id="thirdImage">
-		<figcaption id="thirdCaption"></figcaption>
-	</figure>
-</div>
-
-<div class="stringInfo">
-	<h5 id="fourthName"></h5>
-	<figure class="gallery-item" id="fourthString">
-		<img id="fourthImage">
-		<figcaption id="fourthCaption"></figcaption>
-	</figure>
-</div>
-
-<div class="stringInfo">
-	<h5 id="fifthName"></h5>
-	<figure class ="gallery-item" id="fifthString">
-		<img id="fifthImage">
-		<figcaption id="fifthCaption"></figcaption>
-	</figure>
-</div>
-</div>
--->
 
 <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -260,12 +160,17 @@
 </div>
 
 <!-- Contact Form (format and result pictures)-->
-<form action="https://formspree.io/sgablec@uwo.ca"
+<div id="contact">
+	<form action="https://formspree.io/sgablec@uwo.ca"
       method="POST">
-    <input type="text" name="name" placeholder="Your Name">
-    <input type="email" name="_replyto">
-    <input type="submit" value="Send">
-</form>
+    	<p class="contactParagraph">Name: </p><input type="text" name="name" placeholder="Your Name"><br>
+    	<p class="contactParagraph">Email: </p><input type="email" name="_replyto"><br>
+    	<textarea name="message" placeholder="Your message"></textarea><br>
+    	<input type="submit" value="Send">
+    	<input type="hidden" name="_next" value="https://1cookspe.github.io">
+    	<input type="text" name="_gotcha" style="display:none" />
+	</form>
+</div>
 
 </body>
 </html>

@@ -5,6 +5,7 @@ body {
 
 h1 {
     text-align: left;
+    display: inline;
 }
 
 p {
@@ -205,4 +206,30 @@ nav {
 	width: 50%;
 	visibility: hidden;
 	padding-top: 1rem;
+}
+
+#contact {
+	visibility: hidden;
+	float: right;
+	width: 40%;
+}
+
+input {
+	display: inline;
+}
+
+.contactParagraph {
+	text-align: right;
+	font-size: 12px;
+	display: inline;
+}
+
+#logo {
+	height: 50px;
+	width: 30px;
+	display:inline;
+}
+
+#headerNav {
+	max-height: 100px;
 }

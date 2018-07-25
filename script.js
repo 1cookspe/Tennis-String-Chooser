@@ -575,6 +575,9 @@ function resetScores() {
 	for (var i = 0; i <= 20; i++) {
 		document.getElementById(i + "Button").style.backgroundColor = "#4CAF50";
 	}
+
+	// hide feedback form (if necessary)
+	document.getElementById("contact").style.visibility = "hidden";
 }
 
 function submitAnswers() {
@@ -1187,4 +1190,9 @@ function showSlides(n) {
 		// any other slide should hide the feedback buttons
 		document.getElementById("questionsContainer").style.visibility = "hidden";
 	}
+}
+
+function contact() {
+	// show contact form
+	document.getElementById("contact").style.visibility = "visible";
 }
