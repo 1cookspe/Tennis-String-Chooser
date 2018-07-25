@@ -161,12 +161,11 @@
 
 <!-- Contact Form (format and result pictures)-->
 <div id="contact">
-	<form action="https://formspree.io/sgablec@uwo.ca"
-      method="POST">
-    	<p class="contactParagraph">Name: </p><input type="text" name="name" placeholder="Your Name"><br>
-    	<p class="contactParagraph">Email: </p><input type="email" name="_replyto"><br>
-    	<textarea name="message" placeholder="Your message"></textarea><br>
-    	<input type="submit" value="Send">
+	<form action="https://formspree.io/sgablec@uwo.ca" method="POST">
+    	<p class="contactParagraph">Name: </p><input type="text" name="name" placeholder="Your Name"><br><br>
+    	<p class="contactParagraph">Email: </p><input type="email" name="_replyto" placeholder="Your email"><br><br>
+    	<textarea name="message" placeholder="Your message"></textarea><br><br>
+    	<input type="submit" value="Send" onclick="formSubmitted()">
     	<input type="hidden" name="_next" value="https://1cookspe.github.io">
     	<input type="text" name="_gotcha" style="display:none" />
 	</form>

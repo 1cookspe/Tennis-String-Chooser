@@ -15,6 +15,7 @@ var bestIndexes = [0, 0, 0, 0, 0];
 var pastCommands = [0,0,0,0,0,0]; // one entry for each question
 // for slides
 var slideIndex = 1;
+var formSubmitted = false;
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -52,6 +53,11 @@ const COMFORT_INDEX = 5;
 // load first question once everything has loaded
 document.addEventListener("DOMContentLoaded", function(e){
 	showSlides(slideIndex);
+
+	if (formSubmitted) {
+		alert("Thank you for your feedback!");
+		formSubmitted = false;
+	}
 });
 
 function start() {
@@ -585,8 +591,6 @@ function submitAnswers() {
 	var checked = false;
 	var otherAnswered = true;
 
-	alert('submit!');
-
 	for(var i = 0; i < choice.length; i++ ) {
      	if(choice[i].checked) {
        		checked = true;
@@ -609,7 +613,7 @@ function submitAnswers() {
   	}
 
   	if(!checked || !otherAnswered) {
-    	alert("please select choice answer");
+    	alert("Ooops! Please ensure that you have answered all the questions before proceeding!");
   	} else {
   		// calculate distribution of user's preferences
   		//calculatePreferences();
@@ -765,8 +769,6 @@ function calculatePreferences() {
 }
 
 function mostSimilarString() {
-	alert('hey!');
-
 	//document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
 	var calcPower = 0;
@@ -970,7 +972,6 @@ function mostSimilarString() {
 		bestStrings[leastIndex] = bestStrings[i];
 		bestStrings[i] = holdOrig;
 	}
-	alert(finalSortings.join(","));
 
 	// show results
 	//document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
@@ -1186,13 +1187,23 @@ function showSlides(n) {
 		// hide arrows
 		document.getElementsByClassName("prev")[0].style.visibility = "hidden";
 		document.getElementsByClassName("next")[0].style.visibility = "hidden";
+	} else if (slideIndex == 8) { 
+		// hide forward button to results
+		document.getElementsByClassName("next")[0].style.visibility = "hidden";
 	} else { 
 		// any other slide should hide the feedback buttons
 		document.getElementById("questionsContainer").style.visibility = "hidden";
+		// also the dot for the results slide should be hidden
+		document.getElementsByClassName("dot")[8].style.visibility = "hidden";
 	}
 }
 
 function contact() {
 	// show contact form
 	document.getElementById("contact").style.visibility = "visible";
+}
+
+function formSubmitted() {
+	alert('formed submit');
+	formSubmitted = true;
 }
