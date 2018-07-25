@@ -16,6 +16,7 @@ var pastCommands = [0,0,0,0,0,0]; // one entry for each question
 // for slides
 var slideIndex = 1;
 var formSubmitted = false;
+var resultsCalculated = false;
 
 // strings
 // const STRING = [power, control, touch, spin, longevity, comfort]
@@ -91,72 +92,15 @@ function start() {
 	slideIndex++;
 	showSlides(slideIndex);
 
-	// // change 'start' to 'reset'
-	// var buttonText = document.getElementById("startButton");
-	// alert(buttonText.textContent);
-	// if (buttonText.textContent == "Start!") {
-	// 	console.log("YEah lets change");
-	// 	buttonText.textContent = "Reset";
-	// } else if (buttonText.textContent == "Reset") {
-	// 	buttonText.textContent = "Start";
-	// 	resetScores();
-	// }
-
 	// Set dots and arrows to visible
 	var dots = document.getElementsByClassName("dot");
-	for (var i = 0; i < dots.length; i++) {
+	for (var i = 0; i < dots.length - 1; i++) {
 		dots[i].style.visibility = "visible";
 	}
 	document.getElementsByClassName("prev")[0].style.visibility = "visible";
 	document.getElementsByClassName("next")[0].style.visibility = "visible";
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-//function dropFunc() {
-  //  document.getElementById("myDropdown").classList.toggle("show");
-//}
-
-// Close the dropdown menu if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
-
-/*function getRacquet(num) {
-	racquet = num;
-
-	removeOrAdd("playingStyle");
-
-	switch (racquet) {
-		case 0: // no racquet
-		alert('lets start');
-		break;
-		case 1: // Babolat Aero
-			
-		break;
-		case 2:
-		break;
-		case 3:
-		break;
-		case 4:
-		break;
-		case 5:
-		break;
-		default:
-		break;
-	}
-
-}*/
 
 function styleOfPlay(style) {
 
@@ -616,156 +560,12 @@ function submitAnswers() {
     	alert("Ooops! Please ensure that you have answered all the questions before proceeding!");
   	} else {
   		// calculate distribution of user's preferences
-  		//calculatePreferences();
+  		resultsCalculated = true;
 		mostSimilarString();
 		//move to next slide (results)
 		plusSlides(1);
   	}
   	
-}
-
-function calculatePreferences() {
-	var totalScore = spin + power + control + touch + feel + longevity;
-
-	// determine type of string person wants
-	
-
-	document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
-
-	// first go to highest number (most priority) 
-	/*if (control - power > 20) { // control is greater priority
-		// loop through each string ratings and narrow out the strings with control 7 or greater
-		if (spin > control) { // spin is very high prioritied
-			// filter out strings with spins less than 8
-		} else  if (spin > power) { // moderate
-
-		} else { // control and power are very close
-
-		}
-	} else if (power - control > 20) { // power is greater priority
-		// loop through each string ratings and narrow out the strings with power 7 or greater
-	} else { // mixture of them all
-		// find combos that have power and control differences less than or equal to 2
-	}*/
-
-	if (spin > control && spin > power) { // spin is greater priority
- 		// filter all strings with spin at 8 or greater
- 		var i;
- 		for (i = 0; i < stringArray.length; i++) {
- 			if (stringArray[i][3] < 7) { // remove from contention
- 				stringArray.splice(i, 1); // removes string
- 				i--;
- 			}
- 		}
- 		// control and power are close enough to be one in one
- 		// so, find strings that have power and control within 2 of each other
- 		var j;
- 		for (j = 0; j < stringArray.length; j++) {
- 			/*if (stringArray[i][0] - stringArray[i][1] <= 2 && stringArray[i][0] - stringArray[i][1] >= -2) { // within 2
-
- 			}*/
-
- 			if (control > power) { // should be 2 or less 
- 				if (!(stringArray[j][0] - stringArray[j][1] >= -2 && stringArray[j][0] - stringArray[j][1] <= 0)) { // remove
- 					stringArray.splice(j, 1);
- 					j--; // indexes of array change, so shift it down so that it does not miss the next element on the array
- 				}
- 			} else {
- 				if (!(stringArray[j][0] - stringArray[j][1] <= 2 && stringArray[j][0] - stringArray[j][1] >= 0)) { // remove
- 					stringArray.splice(j, 1);
- 					j--; // indexes of array change, so shift it down so that it does not miss the next element on the array
- 				}
- 			}
- 		}
-
- 		// now look at touch
- 		if (touch >= feel && touch >= longevity) { // touch is heavy priority
- 			// so, filter out touch less than 8
- 			var k;
- 			for (k = 0; k < stringArray.length; k++) {
- 				if (stringArray[k][2] < 8) { // remove
- 					stringArray.splice(k, 1);
- 					k--;
- 				}
- 			}
-
- 			// find next highest score
- 			if (feel >= longevity) { // feel is more important than longevity
- 				// sort remaining by feel
- 				sortArray(5); // feel (comfort) is 5
- 			} else { // longevity is more important than feel
- 				sortArray(4); // longevity is 4
- 			}
- 		} else if (longevity >= touch && longevity >= feel) { // longevity is heavy priority
- 			cropOutOptions(4, 7); // longevity is 4, take out under 7 score
-
- 			// find next most significant quality
- 			if (touch >= feel) { // touch is more important
- 				sortArray(2); // touch is 2
- 			} else { // feel is more important
- 				sortArray(5); // feel is 5
- 			}
- 		} else if (feel >= touch && feel >= longevity) { // feel is heavy priority
- 			cropOutOptions(5, 7);
-
- 			// next significance
- 			if (touch >= longevity) { // touch is more important
- 				sortArray(2); // touch is 2
- 			} else { // longevity is more important
- 				sortArray(4); // longevity is 4
- 			}
- 		}
-
- 		// adjust according to feel and longevity
- 		/*if (feel >= 70) {
- 			// filter by feel
- 			for (var h = 0; h < stringArray.length; h++) {
- 				if (stringArray[h][5] < 7) { // remove
- 					stringArray.splice(h, 1);
- 					h--;
- 				}
- 			}
- 		}
-
- 		if (longevity >= 60) {
- 			// filter by longev
- 		}*/
-
- 		// maybe use comfort and longevity to point out best options
-
-	} else if (control >= power) { // control is greatest priority
-		// filter strings with control at 7 or greater
-		cropOutOptions(1, 7);
-		if (spin >= power) { // spin is the second priority
-			// crop out spin
-			cropOutOptions(3, 8);
-			// power at bottom
-
-			// compare touch, feel, longevity
-			if (touch >= feel && touch >= longevity) { // touch is high priority
-				cropOutOptions(TOUCH_INDEX, 8);
-
-				// find next significance
-
-			}
-		} else { // spin is not a priority
-			// spin at bottom
-			var differencePC = Math.round((control - power) / 10);
-			// filter difference between control and power by having range of differencePC
-			cropRange(CONTROL_INDEX, POWER_INDEX, differencePC);
-		}
-	} else if (power > control) { // power is greatest priority
-		// filter strings with power at 7 or greater
-		if (spin >= control) { // spin is the second priority
-
-		} else { // spin is not a priority
-
-		}
-	}
-
-
-
-
 }
 
 function mostSimilarString() {
@@ -973,15 +773,7 @@ function mostSimilarString() {
 		bestStrings[i] = holdOrig;
 	}
 
-	// show results
-	//document.getElementById('racquetResults').innerHTML = "Winning Racquets = " + bestStrings[0] + " " + bestStrings[1] + " " + bestStrings[2] + " " + bestStrings[3] + " " + bestStrings[4];
-	//document.getElementById('racquetResults').innerHTML = bestStrings[4];
-	//document.getElementById('rankings').innerHTML = "Rankings = " + bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2] + " " + bestIndexes[3] + " " + bestIndexes[4];
-	//var racutee = indexToName(0);
-
-	// show string results
-	//document.getElementById('topImage').src = "https://i.imgur.com/F2i9IDQ.png";
-	//document.getElementById('topCaption').innerHTML = "Babolat rocks!";
+	alert(bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2]);
 
 	// show winners with images and captions
 	var topString = indexToName(bestIndexes[0]);
@@ -1013,7 +805,7 @@ function indexToName(index) {
 	var racquetObject;
 	switch (index) {
 		case 0:
-			racquetObject = {name: "Babolat RPM Blast", link: "https://www.tennis-warehouse.com/reviews/BRPMB16/BRPMB16review.html", image: "https://i.imgur.com/6179VZq.png", caption: "The Babolat RPM Blast allows players to hit shots oozing with topspin and high amounts of control. Used by top pros including Rafael Nadal."};
+			racquetObject = {name: "Babolat RPM Blast", link: "https://www.tennis-warehouse.com/reviews/BRPMB16/BRPMB16review.html", image: "https://i.imgur.com/BMueYds.png", caption: "The Babolat RPM Blast allows players to hit shots oozing with topspin and high amounts of control. Used by top pros including Rafael Nadal."};
 		break;
 		case 1:
 			racquetObject = {name: "Babolat Pro Hurricane", link: "https://www.tennis-warehouse.com/reviews/BH17T/BH17Treview.html", image: "https://i.imgur.com/hig3xAC.png", caption: "Tons of control for big hitters, while also offering exceptional spin. The choice of Andy Roddick."};
@@ -1120,15 +912,6 @@ function addOrderStrings(number, defaultValue, index) {
 	}
 }
 
-function cropOutOptions(index, threshold) {
-	for (var i = 0; i < stringArray.length; i++) {
-		if (stringArray[i][index] < threshold) { // crop
-			stringArray.splice(i, 1);
-			i--;
-		}
-	}
-}
-
 function sortArray(index) {
 	for (var b = 0; b < stringArray.length - 1; b++) {
 		if (stringArray[b][index] < stringArray[b+1][index]) {
@@ -1136,15 +919,6 @@ function sortArray(index) {
 			var tempHolder = stringArray[b][index];
 			stringArray[b][index] = stringArray[b+1][index];
 			stringArray[b+1][index] = tempHolder;
-		}
-	}
-}
-
-function cropRange(index1, index2, range) {
-	for (var i = 0; i < stringArray.length; i++) {
-		if (stringArray[i][index1] - stringArray[i][index2] > range && stringArray[i][index1] - stringArray[i][index2] < 0) { // crop out
-			stringArray.splice(i, 1);
-			i--;
 		}
 	}
 }
@@ -1161,41 +935,44 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-	// present slide
-	var i;
-	var slides = document.getElementsByClassName("mySlides");
-	var dots = document.getElementsByClassName("dot");
-	if (n > slides.length) {slideIndex = 1}
-	if (n < 1) {slideIndex = slides.length}
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	}
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	}
-	slides[slideIndex-1].style.display = "block";
-	dots[slideIndex-1].className += " active";
-
-	// show submit button if on the last question
-	 if (slideIndex == 9) {
-		// show container for buttons
-		document.getElementById("questionsContainer").style.visibility = "visible";
-		// hide dots
-		for (var i = 0; i < dots.length; i++) {
-			document.getElementsByClassName("dot")[i].style.visibility = "hidden";
+	// present slide (only present slide 9 if results have been calculated)
+	if (slideIndex != 9 || resultsCalculated) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}
+		if (n < 1) {slideIndex = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
 		}
-		// hide arrows
-		document.getElementsByClassName("prev")[0].style.visibility = "hidden";
-		document.getElementsByClassName("next")[0].style.visibility = "hidden";
-	} else if (slideIndex == 8) { 
-		// hide forward button to results
-		document.getElementsByClassName("next")[0].style.visibility = "hidden";
-	} else { 
-		// any other slide should hide the feedback buttons
-		document.getElementById("questionsContainer").style.visibility = "hidden";
-		// also the dot for the results slide should be hidden
-		document.getElementsByClassName("dot")[8].style.visibility = "hidden";
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";
+		dots[slideIndex-1].className += " active";
+
+		// show submit button if on the last question
+	 	if (slideIndex == 9) {
+			// show container for buttons
+			document.getElementById("questionsContainer").style.visibility = "visible";
+			// hide dots
+			for (var i = 0; i < dots.length; i++) {
+				document.getElementsByClassName("dot")[i].style.visibility = "hidden";
+			}
+			// hide arrows
+			document.getElementsByClassName("prev")[0].style.visibility = "hidden";
+			document.getElementsByClassName("next")[0].style.visibility = "hidden";
+		} else if (slideIndex == 8) { 
+			// hide forward button to results
+			document.getElementsByClassName("next")[0].style.visibility = "hidden";
+		} else { 
+			// any other slide should hide the feedback buttons
+			document.getElementById("questionsContainer").style.visibility = "hidden";
+			// also the dot for the results slide should be hidden
+			//document.getElementsByClassName("dot")[8].style.visibility = "hidden";
+		}
 	}
+
 }
 
 function contact() {
