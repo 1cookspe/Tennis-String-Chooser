@@ -226,9 +226,6 @@
 			<figcaption id="thirdCaption"></figcaption>
 			</figure>
 		</div>
-
-		<!-- Restart! -->
-		<button id="restartButton" onclick="resetScores()">Reset</button>
 	</div>
 
 	<!-- Next and previous buttons -->
@@ -251,6 +248,16 @@
 	<span class="dot" onclick="currentSlide(9)"></span>
 </div>
 
+<div id="questionsContainer">
+	<div id="retakeDiv">
+		<p>Want to find other strings? Retake the quiz!</p>
+		<button onclick="resetScores()">Restart</button>
+	</div>
+	<div id="contactDiv">
+		<p>Have any more strings to suggest? Any questions, comments, or concerns?</p>
+		<button onclick="contact()">Contact Us</button>
+	</div>
+</div>
 
 </body>
 </html>

@@ -79,7 +79,7 @@ nav {
 .gallery-item {
 	margin: 0px;
 	display: inline;
-	width: 30%;
+	width: 33%;
 	height: 30%;
 	float: left;
 	top: 50%;
@@ -94,8 +94,8 @@ nav {
 * {box-sizing: border-box}
 
 .slideshow-container {
-	max-width: 1000px;
-	width: 100%;
+	/*max-width: 1000px;*/
+	width: 90%;
 	height: 90%;
 	position: relative;
 	margin: auto;
@@ -186,4 +186,23 @@ nav {
 
 #dotDiv {
 	clear: both;
+}
+
+#retakeDiv {
+	display: inline-block;
+	width: 40%;
+}
+
+#contactDiv {
+	display: inline-block;
+	width: 40%;
+	right: 10px;
+	float: right;
+}
+
+#questionsContainer {
+	margin: auto;
+	width: 50%;
+	visibility: hidden;
+	padding-top: 1rem;
 }

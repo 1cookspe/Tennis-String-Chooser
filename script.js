@@ -1173,7 +1173,18 @@ function showSlides(n) {
 	dots[slideIndex-1].className += " active";
 
 	// show submit button if on the last question
-	/*if (slideIndex == 8) {
-		document.getElementById("submitButton").style.visibility = "visible";
-	}*/
+	 if (slideIndex == 9) {
+		// show container for buttons
+		document.getElementById("questionsContainer").style.visibility = "visible";
+		// hide dots
+		for (var i = 0; i < dots.length; i++) {
+			document.getElementsByClassName("dot")[i].style.visibility = "hidden";
+		}
+		// hide arrows
+		document.getElementsByClassName("prev")[0].style.visibility = "hidden";
+		document.getElementsByClassName("next")[0].style.visibility = "hidden";
+	} else { 
+		// any other slide should hide the feedback buttons
+		document.getElementById("questionsContainer").style.visibility = "hidden";
+	}
 }
