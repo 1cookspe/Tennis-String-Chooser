@@ -596,24 +596,16 @@ function mostSimilarString() {
 	var bestStringIndex = 0;
 	var bestDifference = 0;
 	for (var i = 0; i < stringArray.length; i++) {
+		// hold differences between calculated properties and properties of each string
 		var powerDiff = calcPower - stringArray[i][POWER_INDEX];
 		var controlDiff = calcControl - stringArray[i][CONTROL_INDEX];
 		var spinDiff = calcSpin - stringArray[i][SPIN_INDEX];
-		//var touchDiff = calcTouch - stringArray[i][TOUCH_INDEX];
+
+		// calculate total mean squared differences between each property of the string
 		var currentMeanSquared = Math.pow(powerDiff, 2) + Math.pow(controlDiff, 2) + Math.pow(spinDiff, 2);
 
-		/*if (i != 0) { // not first iteration
-			if (currentMeanSquared < bestDifference) { // closer string with less difference
-				bestDifference = currentMeanSquared;
-				bestStringIndex = i;
-			}
-		} else { // first iteration
-			bestDifference = currentMeanSquared; // by default the first difference becomes the best difference
-		}*/
-
-		//alert("Yo the difference: " + currentMeanSquared);
-
-		if (i > 5) { // 
+		// sort the scores 
+		if (i > 5) { // more than 5 entries have been added, so entries must be sorted
 			if (currentMeanSquared < bestStrings[4]) { // should be added somewhere
 				addOrderStrings(currentMeanSquared, false, i);
 			}
@@ -621,35 +613,14 @@ function mostSimilarString() {
 			addOrderStrings(currentMeanSquared, true, i);
 		}
 
-		// now compare with longevity and feel, touch
-		// determine most significant
-		/*if (touch >= 50) {
-			// sway 3 options
-			for (var i = 0; i < 3; i++) {
-				if (stringArray[bestIndexes[i]][TOUCH_INDEX] - touchDiff > stringArray[bestIndexes[i+1]][TOUCH_INDEX] - touchDiff) { // switch them
-					var tempVar = bestIndexes[i];
-					bestIndexes[i] = bestIndexes[i+1];
-					bestIndexes[i+1] = tempVar;
-				}
-			}
-		}*/
 	}
-	//bestStrings[3] = 2;
 
-	// maybe ensure that correct high values are reflected (after)
-	// sort around the 5
+	// ensure that correct high values are reflected
+	// sort the 5 top scoring strings
 	for (var i = 0; i < 4; i++) { // sort 5
 		if (power > control) {
 			// make sure that power is greater than control rating
 			if (stringArray[bestIndexes[i]][POWER_INDEX] < stringArray[bestIndexes[i]][CONTROL_INDEX]) { // switch with next option because power should be greater
-				/*sortedCorrectly = false;
-				var tempString = bestStrings[i];
-				var tempIndex = bestIndexes[i];
-				bestStrings[i] = bestStrings[i+1];
-				bestIndexes[i] = bestIndexes[i+1];
-				bestStrings[i+1] = tempString;
-				bestIndexes[i+1] = tempIndex;*/
-
 				// loop until string is found that has higher power than control
 				var j = i + 1;
 				while (j < 5) { // loop until end
@@ -697,10 +668,11 @@ function mostSimilarString() {
 		}
 	}
 
-	// can we sort by comfort, touch, and longevity?
+	// sort by comfort, touch, and longevity
 	var calcTouch = 0;
 	var calcLong = 0;
 	var calcFeel = 0;
+	// determine the highest score of the three --> highest priority
 	if (touch >= longevity && touch >= feel) { // touch is greatest priority
 		calcTouch = 10;
 		calcLong = (longevity / touch) * 10;
@@ -727,26 +699,6 @@ function mostSimilarString() {
 		// save results of each and then sort results accordingly
 		finalSortings[i] = statistics + bestStrings[i];
 	}
-
-	// now see if the new scores can make a difference
-	/*for (var i = 0; i < 4; i++) {
-		if (finalSortings[i] > finalSortings[i+1]) {
-			// swap them, keep going until it reaches the next highest number
-			var j = i + 1;
-			while (j < 5) {
-				if (finalSortings[j] > finalSortings[i]) { // switch when it hits a score greater
-					// now swap them!
-					var tempFinal = finalSortings[i];
-					finalSortings[i] = finalSortings[j];
-					finalSortings[j] = tempFinal;
-					j = 5;
-				} else if (j == 4) {
-					// just swap with last one
-				}
-				j++;
-			}
-		}
-	}*/
 
 	// sort new results
 	// sort by selection sort
@@ -775,7 +727,7 @@ function mostSimilarString() {
 
 	alert(bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2]);
 
-	// show winners with images and captions
+	// show winning strings with images and captions
 	var topString = indexToName(bestIndexes[0]);
 	document.getElementById('topImage').src = topString.image;
 	document.getElementById('topCaption').innerHTML = topString.caption;
@@ -801,7 +753,7 @@ function mostSimilarString() {
 	document.getElementById('fifthName').innerHTML = fifthString.name;*/
 }
 
-function indexToName(index) {
+function indexToName(index) { // returns racquet object for each string
 	var racquetObject;
 	switch (index) {
 		case 0:
@@ -880,10 +832,12 @@ function indexToName(index) {
 }
 
 function addOrderStrings(number, defaultValue, index) {
+	// number is a double representing the value to be added
+	// defaultValue is a boolean representing if the number is to be added automatically or checked first if it fits into the array's range
 	for (var i = 0; i < 5; i++) {
-		if (!defaultValue) {
+		if (!defaultValue) { // add number in if it fits into range
 			if (bestStrings[i] > number) { // add in
-				for (var j = 4; j > i; j--) {
+				for (var j = 4; j > i; j--) { // shift other values over to insert number
 					bestStrings[j] = bestStrings[j - 1];
 					bestIndexes[j] = bestIndexes[j - 1];
 				}
@@ -902,7 +856,7 @@ function addOrderStrings(number, defaultValue, index) {
 					bestStrings[i] = number;
 					bestIndexes[i] = index;
 					i = 5;
-				} else if (bestStrings[i] == 0) {
+				} else if (bestStrings[i] == 0) { // index in array has not been filled yet, so value is just added to position
 					bestStrings[i] = number;
 					bestIndexes[i] = index;
 					i = 5;
@@ -910,17 +864,9 @@ function addOrderStrings(number, defaultValue, index) {
 			}
 		}
 	}
-}
 
-function sortArray(index) {
-	for (var b = 0; b < stringArray.length - 1; b++) {
-		if (stringArray[b][index] < stringArray[b+1][index]) {
-			// swap them
-			var tempHolder = stringArray[b][index];
-			stringArray[b][index] = stringArray[b+1][index];
-			stringArray[b+1][index] = tempHolder;
-		}
-	}
+
+	// TODO: Correct this function to combine into one if statement
 }
 
 // next and previous arrows
@@ -936,20 +882,20 @@ function currentSlide(n) {
 
 function showSlides(n) {
 	// present slide (only present slide 9 if results have been calculated)
-	if (slideIndex != 9 || resultsCalculated) {
+	if (slideIndex != 9 || resultsCalculated) { // works on every slide except for the results slide before the results are calculated
 		var i;
 		var slides = document.getElementsByClassName("mySlides");
 		var dots = document.getElementsByClassName("dot");
-		if (n > slides.length) {slideIndex = 1}
-		if (n < 1) {slideIndex = slides.length}
+		if (n > slides.length) {slideIndex = 1} // first slide
+		if (n < 1) {slideIndex = slides.length} // last slide
 		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
+			slides[i].style.display = "none"; // slide hidden by default
 		}
 		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" active", "");
+			dots[i].className = dots[i].className.replace(" active", ""); // show navigation dots at bottom
 		}
-		slides[slideIndex-1].style.display = "block";
-		dots[slideIndex-1].className += " active";
+		slides[slideIndex-1].style.display = "block"; // show selected slide
+		dots[slideIndex-1].className += " active"; // make selected dot active
 
 		// show submit button if on the last question
 	 	if (slideIndex == 9) {
