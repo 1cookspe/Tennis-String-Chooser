@@ -1,0 +1,22 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+name: String Chooser
+
+# Short bio or description (displayed in the header)
+description: Learn which strings are best suited to complement your tennis game!
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://i.imgur.com/hCUZYyR.png
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: http://www.stringchooser.com
+
+plugins:
+  - jekyll-seo-tag
