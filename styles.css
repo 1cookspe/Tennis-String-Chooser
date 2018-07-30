@@ -90,6 +90,7 @@ nav {
 .question {
 	margin: 1.5rem;
 	display: block;
+	background-color: "#FF6700";
 }
 
 /* Slideshow */
