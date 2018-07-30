@@ -625,7 +625,7 @@ function mostSimilarString() {
 				var j = i + 1;
 				while (j < 5) { // loop until end
 					if (stringArray[bestIndexes[j]][POWER_INDEX] > stringArray[bestIndexes[j]][CONTROL_INDEX]) {
-						// now switch!
+						// now switch strings
 						var holdString = bestStrings[i];
 						var holdIndex = bestIndexes[i];
 						bestStrings[i] = bestStrings[j];
@@ -641,19 +641,11 @@ function mostSimilarString() {
 		} else if (control >= power) {
 			// make sure control is greater than power
 			if (stringArray[bestIndexes[i]][POWER_INDEX] > stringArray[bestIndexes[i]][CONTROL_INDEX]) { // switch with next option because power should be greater
-				/*sortedCorrectly = false;
-				var tempString = bestStrings[i];
-				var tempIndex = bestIndexes[i];
-				bestStrings[i] = bestStrings[i+1];
-				bestIndexes[i] = bestIndexes[i+1];
-				bestStrings[i+1] = tempString;
-				bestIndexes[i+1] = tempIndex;*/
-
 				// loop until string
 				var j = i + 1;
 				while (j < 5) { // loop until end
 					if (stringArray[bestIndexes[j]][POWER_INDEX] < stringArray[bestIndexes[j]][CONTROL_INDEX]) {
-						// now switch!
+						// now switch strings
 						var holdString = bestStrings[i];
 						var holdIndex = bestIndexes[i];
 						bestStrings[i] = bestStrings[j];
