@@ -1,2 +1,2 @@
 # 1cookspe.github.io
-Visit: https://1cookspe.github.io
+Visit: http://www.stringchooser.com
