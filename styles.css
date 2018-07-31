@@ -186,7 +186,7 @@ nav {
 	height: 15px;
 	width: 15px;
 	margin: 0 2px;
-	background-color: #bbb;
+	background-color: #FFF;
 	border-radius: 50%;
 	display: inline-block;
 	visibility: hidden;
@@ -195,7 +195,7 @@ nav {
 }
 
 .active, .dot:hover {
-	background-color: #717171;
+	background-color: #000000;
 }
 
 .hiddenDot {
