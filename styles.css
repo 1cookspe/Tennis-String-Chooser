@@ -48,6 +48,7 @@ figcaption {
 	opacity: 0.9;
 	border: 2px #000;
 	border-style: inset;
+	/*padding-bottom: 10px;*/
 }
 
 .hidden {
@@ -78,6 +79,7 @@ img {
 
 .stringInfo {
 	display: inline;
+	padding-bottom: 50px;
 }
 
 #intro {
@@ -214,7 +216,9 @@ nav {
 }
 
 #dotDiv {
-	clear: both;
+	/*clear: both;*/
+	/*background-color: white;
+	opacity: .9;*/
 }
 
 #retakeDiv {
@@ -241,7 +245,7 @@ nav {
 	opacity: 0.9;
 }
 
-#contact {
+#contactForm {
 	visibility: hidden;
 	float: right;
 	width: 40%;

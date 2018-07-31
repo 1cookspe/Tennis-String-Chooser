@@ -57,6 +57,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 		alert("Thank you for your feedback!");
 		formSubmitted = false;
 	}
+
+	// send to Formspree
+	var contactForm = document.getElementById("contactForm");
+	contactForm.setAttribute('action', '//formspree.io/' + 'sgablec' + '@' + 'uwo' + '.' + 'ca');
 });
 
 function start() {
@@ -926,7 +930,7 @@ function showSlides(n) {
 
 function contact() {
 	// show contact form
-	document.getElementById("contact").style.visibility = "visible";
+	document.getElementById("contactForm").style.visibility = "visible";
 }
 
 function formSubmitted() {
