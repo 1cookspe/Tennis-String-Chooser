@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 	// send to Formspree
 	var contactForm = document.getElementById("contactForm");
-	contactForm.setAttribute('action', 'https://formspree.io/' + 'sgablec' + '@' + 'uwo' + '.' + 'ca');
+	contactForm.setAttribute('action', 'https://formspree.io/' + 'stringchooser' + '@' + 'gmail' + '.' + 'com');
 });
 
 function start() {
