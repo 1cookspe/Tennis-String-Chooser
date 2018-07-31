@@ -21,6 +21,9 @@ p {
 
 h3 {
 	position: relative;
+	/*background-color: white;
+	opacity: 0.9;*/
+	color: white;
 }
 
 button {
@@ -44,6 +47,7 @@ figcaption {
 	background-color: white;
 	opacity: 0.9;
 	border: 2px #000;
+	border-style: inset;
 }
 
 .hidden {
@@ -276,4 +280,16 @@ input[type=text], input[type=email] {
 	width: 50%;
 	height: 100%;
 	font-size: 16px;
+}
+
+form {
+	background-color: white;
+	opacity: 0.9;
+}
+
+input[type=submit] {
+	font-size: 16px;
+	background-color: black;
+	color: white;
+	padding: 3px 3px;
 }

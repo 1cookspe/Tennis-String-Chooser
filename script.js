@@ -6,8 +6,6 @@ var control = 0;
 var feel = 0;
 var touch = 0;
 var longevity = 0;
-var feelPriority = false;
-var longevityPriority = false;
 var stringArray = [[]];
 var bestStrings = [0, 0, 0, 0, 0];
 var bestIndexes = [0, 0, 0, 0, 0];
@@ -490,10 +488,10 @@ function reverseAction(question, option) {
 function changeButton(number, start, end) {
 	for (var i = start; i <= end; i++) {
 		var idName = i + "Button";
-		if (i == number) {
-			document.getElementById(idName).style.backgroundColor = "#FF0000";
-		} else {
-			document.getElementById(idName).style.backgroundColor = "#4CAF50";
+		if (i == number) { // change to white background with black text
+			document.getElementById(idName).style.backgroundColor = "#228B22";
+		} else { // keep at black background
+			document.getElementById(idName).style.backgroundColor = "#000000";
 		}
 	}
 }
@@ -528,6 +526,21 @@ function resetScores() {
 
 	// hide feedback form (if necessary)
 	document.getElementById("contact").style.visibility = "hidden";
+
+	// initial state
+	resultsCalculated = false;
+
+	// string holder arrays back to just 0
+	for (var i = 0; i < bestStrings.length; i++) {
+		bestStrings[i] = 0;
+		bestIndexes[i] = 0;
+	}
+
+	// reset states of questions
+	for (var i = 0; i < 21; i++) {
+		// reset to the default of black background and white text
+		document.getElementById(i + "Button").style.backgroundColor = "#000000";
+	}
 }
 
 function submitAnswers() {
@@ -735,14 +748,6 @@ function mostSimilarString() {
 	document.getElementById('thirdCaption').innerHTML = thirdString.caption;
 	document.getElementById('thirdName').innerHTML = thirdString.name;
 	document.getElementById('thirdLink').href = thirdString.link;
-	/*var fourthString = indexToName(bestIndexes[3]);
-	document.getElementById('fourthImage').src = fourthString.image;
-	document.getElementById('fourthCaption').innerHTML = fourthString.caption;
-	document.getElementById('fourthName').innerHTML = fourthString.name;
-	var fifthString = indexToName(bestIndexes[4]);
-	document.getElementById('fifthImage').src = fifthString.image;
-	document.getElementById('fifthCaption').innerHTML = fifthString.caption;
-	document.getElementById('fifthName').innerHTML = fifthString.name;*/
 }
 
 function indexToName(index) { // returns racquet object for each string
