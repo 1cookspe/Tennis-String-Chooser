@@ -18,7 +18,7 @@ h3 {
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: black; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -44,7 +44,7 @@ figcaption {
 .show {
 	margin: 1.5rem;
 	display: block;
-	background-color: "#FF6700";
+	background-color: #FF6700;
 	/*background-image: url("https://images.pexels.com/photos/66323/tennis-ball-sport-yellow-66323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");*/
 	padding-top: 1rem;
 	padding-bottom: 2rem;
