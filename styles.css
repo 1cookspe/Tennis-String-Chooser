@@ -41,6 +41,9 @@ button {
 figcaption {
 	/*position: absolute;*/
 	text-align: center;
+	background-color: white;
+	opacity: 0.9;
+	border: 2px #000;
 }
 
 .hidden {
@@ -57,7 +60,7 @@ background-image {
 	display: block;
 	background-color: white;
 	/*background-image: url("https://i.imgur.com/taSW5Mb.png");*/
-	opacity: .8;
+	opacity: .9;
 	padding-top: 1rem;
 	padding-bottom: 2rem;
 	border: 3px solid #000;
@@ -78,6 +81,8 @@ img {
 	margin: 2px;
 	text-align: center;
 	padding: 30px;
+	background-color: white;
+	opacity: 0.9;
 }
 
 nav {
@@ -163,6 +168,7 @@ nav {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 1;
 }
 
 .dot {
@@ -227,6 +233,8 @@ nav {
 	float: right;
 	border: 3px solid #000;
 	padding: 10px;
+	background-color: white;
+	opacity: 0.9;
 }
 
 #contact {
