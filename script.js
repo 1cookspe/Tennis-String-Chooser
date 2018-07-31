@@ -529,7 +529,7 @@ function resetScores() {
 	}
 
 	// hide feedback form (if necessary)
-	document.getElementById("contact").style.visibility = "hidden";
+	document.getElementById("contactForm").style.visibility = "hidden";
 
 	// initial state
 	resultsCalculated = false;
@@ -888,6 +888,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+	console.log(document.getElementsByClassName("prev")[0].style.visibility);
+
 	// present slide (only present slide 9 if results have been calculated)
 	if (slideIndex != 9 || resultsCalculated) { // works on every slide except for the results slide before the results are calculated
 		var i;
