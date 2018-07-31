@@ -541,6 +541,12 @@ function resetScores() {
 		// reset to the default of black background and white text
 		document.getElementById(i + "Button").style.backgroundColor = "#000000";
 	}
+
+	// reset radio buttons
+	var choices = document.getElementsByName("choice");
+	for (var i = 0; i < choices.length; i++) {
+		choices[i].checked = false;
+	}
 }
 
 function submitAnswers() {
