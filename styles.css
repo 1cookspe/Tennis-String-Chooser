@@ -109,6 +109,7 @@ nav {
 	height: 30%;
 	float: left;
 	top: 50%;
+	position: relative;
 }
 
 .question {
@@ -249,7 +250,7 @@ nav {
 	background-color: white;
 	opacity: 0.9;
 	display: block;
-	position: absolute;
+	position: relative;
 }
 
 #contactForm {
