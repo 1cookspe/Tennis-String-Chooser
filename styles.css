@@ -303,10 +303,6 @@ input[type=submit] {
 	padding: 3px 3px;
 }
 
-input[type=checkbox] {
-
-}
-
 .container {
 	display: block;
 	position: relative;
@@ -372,7 +368,7 @@ input[type=checkbox] {
 
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
-	[class*="stringInfo"] {
+	[class="stringInfo"] {
 		width: 100%;
 	}
 }
