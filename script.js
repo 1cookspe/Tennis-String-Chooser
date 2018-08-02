@@ -61,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 	// send to Formspree
 	var contactForm = document.getElementById("contactForm");
 	contactForm.setAttribute('action', 'https://formspree.io/' + 'stringchooser' + '@' + 'gmail' + '.' + 'com');
+
+	// start at top of screen
+	document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 });
 
 function start() {
@@ -551,6 +555,10 @@ function resetScores() {
 	for (var i = 0; i < choices.length; i++) {
 		choices[i].checked = false;
 	}
+
+	// go back to top of page
+	document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 function submitAnswers() {
@@ -934,6 +942,10 @@ function contact() {
 	// show contact form
 	document.getElementById("contactForm").style.visibility = "visible";
 	alert(screen.width);
+
+	// scroll down to contact form
+	var contactElement = document.getElementById("contactForm");
+	contactElement.scrollIntoView();
 }
 
 function formSubmitted() {
