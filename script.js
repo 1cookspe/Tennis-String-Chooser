@@ -748,8 +748,6 @@ function mostSimilarString() {
 		bestStrings[i] = holdOrig;
 	}
 
-	alert(bestIndexes[0] + " " + bestIndexes[1] + " " + bestIndexes[2]);
-
 	// show winning strings with images and captions
 	var topString = indexToName(bestIndexes[0]);
 	document.getElementById('topImage').src = topString.image;
@@ -941,7 +939,6 @@ function showSlides(n) {
 function contact() {
 	// show contact form
 	document.getElementById("contactForm").style.visibility = "visible";
-	alert(screen.width);
 
 	// scroll down to contact form
 	var contactElement = document.getElementById("contactForm");
@@ -949,6 +946,5 @@ function contact() {
 }
 
 function formSubmitted() {
-	alert('formed submit');
 	formSubmitted = true;
 }

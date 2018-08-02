@@ -133,6 +133,7 @@ nav {
 /* Hide photos by default */
 .mySlides {
 	display: none;
+	position: relative;
 }
 
 /* Next and previous buttons */
