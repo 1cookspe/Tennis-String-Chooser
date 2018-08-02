@@ -227,6 +227,7 @@ nav {
 	/*background-color: white;
 	opacity: .9;*/
 	display: block;
+	position: relative;
 }
 
 #retakeDiv {
