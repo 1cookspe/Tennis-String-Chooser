@@ -134,6 +134,7 @@ nav {
 .mySlides {
 	display: none;
 	position: relative;
+	/*margin-bottom: 50px;*/
 }
 
 /* Next and previous buttons */
@@ -226,9 +227,10 @@ nav {
 	/*clear: both;*/
 	/*background-color: white;
 	opacity: .9;*/
-	display: block;
-	position: relative;
-	margin: auto;
+	display: inline-block;
+	/*position: relative;*/
+	/*margin: 0 auto;*/
+	/*display: table;*/
 }
 
 #retakeDiv {
@@ -254,7 +256,7 @@ nav {
 	background-color: white;
 	opacity: 0.9;
 	display: block;
-	position: relative;
+	/*position: relative;*/
 }
 
 #contactForm {
@@ -377,17 +379,18 @@ input[type=submit] {
 @media only screen and (max-width: 768px) {
 	[class="stringInfo"] {
 		display: block;
-		clear:both;
+		/*clear:both;*/
 	}
 
 	[class="gallery-item"] {
 		width: 100%;
 		display: block;
-		clear:both;
+		/*clear:both;*/
 	}
 
-	[class="slideshow-container"] {
+	/*[id="questionsContainer"] {
 		display: block;
-		clear: both;
-	}
+		position: relative;
+		top: -1px;
+	}*/
 }
