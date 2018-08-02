@@ -369,6 +369,10 @@ input[type=submit] {
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
 	[class="stringInfo"] {
+		display: block;
+	}
+
+	[class="gallery-item"] {
 		width: 100%;
 	}
 }
