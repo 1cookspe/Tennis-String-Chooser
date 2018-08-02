@@ -228,6 +228,7 @@ nav {
 	opacity: .9;*/
 	display: block;
 	position: relative;
+	margin: auto;
 }
 
 #retakeDiv {
@@ -380,5 +381,6 @@ input[type=submit] {
 
 	[class="gallery-item"] {
 		width: 100%;
+		display: block;
 	}
 }
