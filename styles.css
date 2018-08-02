@@ -369,3 +369,10 @@ input[type=checkbox] {
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+	[class*="stringInfo"] {
+		width: 100%;
+	}
+}

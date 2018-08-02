@@ -933,6 +933,7 @@ function showSlides(n) {
 function contact() {
 	// show contact form
 	document.getElementById("contactForm").style.visibility = "visible";
+	alert(screen.width);
 }
 
 function formSubmitted() {
