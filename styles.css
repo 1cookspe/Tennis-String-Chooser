@@ -377,10 +377,17 @@ input[type=submit] {
 @media only screen and (max-width: 768px) {
 	[class="stringInfo"] {
 		display: block;
+		clear:both;
 	}
 
 	[class="gallery-item"] {
 		width: 100%;
 		display: block;
+		clear:both;
+	}
+
+	[class="slideshow-container"] {
+		display: block;
+		clear: both;
 	}
 }
