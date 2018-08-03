@@ -24,6 +24,15 @@ h3 {
 	/*background-color: white;
 	opacity: 0.9;*/
 	color: white;
+	background-color: black;
+	opacity: 0.9;
+	width: 33%;
+	display: inline-block;
+	/*margin-top: 4px;*/
+	/*margin: 4px;
+	margin-top: 10px;
+	padding-top: 10px;*/
+	/*height: 10vw;*/
 }
 
 button {
@@ -49,6 +58,8 @@ figcaption {
 	border: 2px #000;
 	border-style: inset;
 	/*padding-bottom: 10px;*/
+	margin-bottom: 50px;
+	/*width: 33%;*/
 }
 
 .hidden {
@@ -74,12 +85,13 @@ background-image {
 img {
 	max-width: 100%;
 	max-height: 100%;
+	display: inline-block;
+	position: relative;
 	/*object-fit: contain;*/
 }
 
 .stringInfo {
 	display: inline;
-	padding-bottom: 50px;
 }
 
 #intro {
@@ -379,6 +391,7 @@ input[type=submit] {
 @media only screen and (max-width: 768px) {
 	[class="stringInfo"] {
 		display: block;
+		padding-top: 50px;
 		/*clear:both;*/
 	}
 
@@ -393,4 +406,11 @@ input[type=submit] {
 		position: relative;
 		top: -1px;
 	}*/
+
+	[class="picTitle"] {
+		/*display: block;*/
+		/*text-align: left;*/
+		width: 100%
+	}
+
 }
