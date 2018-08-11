@@ -748,12 +748,13 @@ function mostSimilarString() {
 		bestStrings[i] = holdOrig;
 	}
 
+	// RESULTS
 	// show winning strings with images and captions
-	var topString = indexToName(bestIndexes[0]);
-	document.getElementById('topImage').src = topString.image;
-	document.getElementById('topCaption').innerHTML = topString.caption;
-	document.getElementById('topName').innerHTML = topString.name;
-	document.getElementById('firstLink').href = topString.link;
+	// var topString = indexToName(bestIndexes[0]);
+	// document.getElementById('topImage').src = topString.image;
+	// document.getElementById('topCaption').innerHTML = topString.caption;
+	// document.getElementById('topName').innerHTML = topString.name;
+	// document.getElementById('firstLink').href = topString.link;
 	// var secondString = indexToName(bestIndexes[1]);
 	// document.getElementById('secondImage').src = secondString.image;
 	// document.getElementById('secondCaption').innerHTML = secondString.caption;
@@ -764,6 +765,16 @@ function mostSimilarString() {
 	// document.getElementById('thirdCaption').innerHTML = thirdString.caption;
 	// document.getElementById('thirdName').innerHTML = thirdString.name;
 	// document.getElementById('thirdLink').href = thirdString.link;
+
+	var topString = indexToName(bestIndexes[0]);
+	document.getElementById('firstStringImage').src = topString.image;
+	document.getElementById('firstStringCaption').innerHTML = topString.caption;
+	var secondString = indexToName(bestIndexes[1]);
+	document.getElementById('secondStringImage').src = secondString.image;
+	document.getElementById('secondStringCaption').innerHTML = secondString.caption;
+	var thirdString = indexToName(bestIndexes[2]);
+	document.getElementById('thirdStringImage').src = thirdString.image;
+	document.getElementById('thirdStringCaption').innerHTML = thirdString.caption;
 }
 
 function indexToName(index) { // returns racquet object for each string

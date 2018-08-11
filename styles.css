@@ -23,11 +23,11 @@ h3 {
 	position: relative;
 	/*background-color: white;
 	opacity: 0.9;*/
-	color: white;
-	background-color: black;
+	/*color: white;*/
+	/*background-color: black;*/
 	opacity: 0.9;
 	width: 33%;
-	display: inline-block;
+	/*display: inline;*/
 	/*margin-top: 4px;*/
 	/*margin: 4px;
 	margin-top: 10px;
@@ -85,13 +85,21 @@ background-image {
 img {
 	max-width: 100%;
 	max-height: 100%;
-	display: inline-block;
+	display: inline;
 	position: relative;
+	width: auto;
+	height: auto;
 	/*object-fit: contain;*/
 }
 
 .stringInfo {
 	display: inline;
+	position: relative;
+	padding: 20px;
+	border-style: outset;
+	background-color: #f5f5dc;
+	border: 3px solid #000;
+	width: 33%;
 }
 
 #intro {
@@ -390,16 +398,21 @@ input[type=submit] {
 
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
-	[class="stringInfo"] {
-		display: block;
-		padding-top: 50px;
+	/*[class="stringInfo"] {*/
+		/*display: block;*/
+		/*padding-top: 50px;*/
 		/*clear:both;*/
-	}
+	/*}*/
 
-	[class="gallery-item"] {
+	[class="column"] {
 		width: 100%;
 		display: block;
 		/*clear:both;*/
+	}
+
+	/*row of images*/
+	[class="row"] {
+		display: block;
 	}
 
 	/*[id="questionsContainer"] {
@@ -408,10 +421,37 @@ input[type=submit] {
 		top: -1px;
 	}*/
 
-	[class="picTitle"] {
+	/*[class="picTitle"] {*/
 		/*display: block;*/
 		/*text-align: left;*/
-		width: 100%
-	}
+		/*width: 100%*/
+	/*}*/
 
+}
+
+.picTitle {
+	display: inline;
+}
+
+#topImage {
+	width: auto;
+	height: auto;
+}
+
+/* For image containers for results at end */
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+	/*style*/
+	padding: 20px;
+	background-color: #f5f5dc;
+	opacity: 0.9;
+	border: 3px groove #000;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
 }
