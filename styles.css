@@ -9,6 +9,38 @@ body {
     background-size: cover;
 }
 
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: inline;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: black;
+    color: white;
+}
+
+a {
+	color: black;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
 h1 {
     text-align: left;
     display: inline;
@@ -33,6 +65,18 @@ h3 {
 	margin-top: 10px;
 	padding-top: 10px;*/
 	/*height: 10vw;*/
+}
+
+.rightPlaced {
+	/* float to right */
+	float: right;
+	background-color: #FFF;
+	opacity: 0.7;
+	color: black;
+}
+
+#titleHeader {
+	padding: 10px;
 }
 
 button {
@@ -284,6 +328,7 @@ input {
 	height: 50px;
 	width: 30px;
 	display:inline;
+	/*padding: 14px 16px;*/
 }
 
 #headerNav {
