@@ -116,23 +116,6 @@ nav {
 	padding-bottom: 2vw;
 }
 
-.gallery {
-	/*margin-top: 100px;*/
-	/*justify-content: center;*/
-	/*display: inline-block;*/
-	margin: 50px;
-}
-
-.gallery-item {
-	margin: 0px;
-	display: inline;
-	width: 33%;
-	height: 30%;
-	float: left;
-	top: 50%;
-	position: relative;
-}
-
 .question {
 	margin: 1.5rem;
 	display: block;
@@ -145,10 +128,10 @@ nav {
 .slideshow-container {
 	/*max-width: 1000px;*/
 	width: 90%;
-	height: 90%;
+	/*height: 90%;*/
 	position: relative;
 	margin: auto;
-	height: 30rem;
+	/*height: 30rem;*/
 }
 
 /* Hide photos by default */
@@ -162,8 +145,8 @@ nav {
 .next, .prev {
 	cursor: pointer;
 	position: absolute;
-	/*top: 50%*/
-	bottom: 0;
+	top: 50%;
+	/*bottom: 0;*/
 	width: auto;
 	margin-top: -22px;
 	padding: 16px;
@@ -245,13 +228,11 @@ nav {
 }
 
 #dotDiv {
-	/*clear: both;*/
-	/*background-color: white;
-	opacity: .9;*/
 	display: inline-block;
-	/*position: relative;*/
-	/*margin: 0 auto;*/
-	/*display: table;*/
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	margin: auto;
 }
 
 #retakeDiv {
@@ -417,6 +398,10 @@ input[type=submit] {
 	content: "";
 	clear: both;
 	display: table;
+}
+
+.stringName {
+	text-align: center;
 }
 
 /* For mobile devices */

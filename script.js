@@ -766,15 +766,25 @@ function mostSimilarString() {
 	// document.getElementById('thirdName').innerHTML = thirdString.name;
 	// document.getElementById('thirdLink').href = thirdString.link;
 
+
+
 	var topString = indexToName(bestIndexes[0]);
 	document.getElementById('firstStringImage').src = topString.image;
 	document.getElementById('firstStringCaption').innerHTML = topString.caption;
+	document.getElementsByClassName('stringName')[0].innerHTML = topString.name;
+	document.getElementById('firstStringLink').href = topString.link;
+	
 	var secondString = indexToName(bestIndexes[1]);
 	document.getElementById('secondStringImage').src = secondString.image;
 	document.getElementById('secondStringCaption').innerHTML = secondString.caption;
+	document.getElementsByClassName('stringName')[1].innerHTML = secondString.name;
+	document.getElementById('secondStringLink').href = secondString.link;
+	
 	var thirdString = indexToName(bestIndexes[2]);
 	document.getElementById('thirdStringImage').src = thirdString.image;
 	document.getElementById('thirdStringCaption').innerHTML = thirdString.caption;
+	document.getElementsByClassName('stringName')[2].innerHTML = thirdString.name;
+	document.getElementById('thirdStringLink').href = thirdString.link;
 }
 
 function indexToName(index) { // returns racquet object for each string
