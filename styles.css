@@ -277,7 +277,7 @@ nav {
 	background-color: white;
 	opacity: 0.9;
 	display: block;
-	/*position: relative;*/
+	position: relative;
 }
 
 #contactForm {
@@ -396,18 +396,41 @@ input[type=submit] {
 	transform: rotate(45deg);
 }
 
+/* For image containers for results at end */
+.row {
+	display: table;
+	width: 100%;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+	display: table;
+	/*style*/
+	padding: 20px;
+	background-color: #f5f5dc;
+	opacity: 0.9;
+	border: 3px groove #000;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
 
 	.column {
-		/*width: 100%;*/
-		/*display: block;*/
-		/*clear: right;*/
 		width: 100%;
-		float: left;
 		display: table;
-		/*color: red;*/
-		/*clear:both;*/
+		float: left;
+	}
+
+	#questionsContainer {
+		position: absolute;
+		/*top: 20px;*/
 	}
 
 }
@@ -421,20 +444,3 @@ input[type=submit] {
 	height: auto;
 }*/
 
-/* For image containers for results at end */
-.column {
-	float: left;
-	width: 33.33%;
-	padding: 5px;
-	/*style*/
-	padding: 20px;
-	background-color: #f5f5dc;
-	opacity: 0.9;
-	border: 3px groove #000;
-}
-
-.row::after {
-	content: "";
-	clear: both;
-	display: table;
-}
