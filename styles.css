@@ -51,22 +51,6 @@ p {
     text-align: center;
 }
 
-h3 {
-	position: relative;
-	/*background-color: white;
-	opacity: 0.9;*/
-	/*color: white;*/
-	/*background-color: black;*/
-	opacity: 0.9;
-	width: 33%;
-	/*display: inline;*/
-	/*margin-top: 4px;*/
-	/*margin: 4px;
-	margin-top: 10px;
-	padding-top: 10px;*/
-	/*height: 10vw;*/
-}
-
 .rightPlaced {
 	/* float to right */
 	float: right;
@@ -521,6 +505,17 @@ input[type=submit]:hover {
     justify-content: center;
     color: white;
     padding-bottom: 8vw;
+}
+
+/* How It Works Page */
+#styleStrings {
+	/* Center text */
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Text style */
+    font-size: 30px;
+    /* Style this more */
 }
 
 /* For mobile devices */

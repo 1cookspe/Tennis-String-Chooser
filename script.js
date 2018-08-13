@@ -957,14 +957,14 @@ function showSlides(n) {
 
 }
 
-function contact() {
-	// show contact form
-	document.getElementById("contactForm").style.visibility = "visible";
+// function contact() {
+// 	// show contact form
+// 	document.getElementById("contactForm").style.visibility = "visible";
 
-	// scroll down to contact form
-	var contactElement = document.getElementById("contactForm");
-	contactElement.scrollIntoView();
-}
+// 	// scroll down to contact form
+// 	var contactElement = document.getElementById("contactForm");
+// 	contactElement.scrollIntoView();
+// }
 
 function formSubmitted() {
 	formSubmitted = true;
