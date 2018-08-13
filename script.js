@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 		formSubmitted = false;
 	}
 
-	// send to Formspree
-	var contactForm = document.getElementById("contactForm");
-	contactForm.setAttribute('action', 'https://formspree.io/' + 'stringchooser' + '@' + 'gmail' + '.' + 'com');
+	// // send to Formspree
+	// var contactForm = document.getElementById("contactForm");
+	// contactForm.setAttribute('action', 'https://formspree.io/' + 'stringchooser' + '@' + 'gmail' + '.' + 'com');
 
 	// start at top of screen
 	document.body.scrollTop = 0;
