@@ -513,6 +513,7 @@ input[type=submit]:hover {
 	display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     /*left: 50%;
     position: relative;*/
     /* Text style */
@@ -527,10 +528,12 @@ input[type=submit]:hover {
 .answers {
 	display: block;
 	margin: auto;
+	width: 90%;
 }
 
 .answerParagraphs {
 	display: block;
+	font-size: 18px;
 	/*display: flex;
     align-items: center;
     justify-content: center;*/
