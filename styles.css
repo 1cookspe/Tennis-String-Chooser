@@ -507,15 +507,33 @@ input[type=submit]:hover {
     padding-bottom: 8vw;
 }
 
-/* How It Works Page */
-#styleStrings {
+/* About page */
+.styleStrings {
 	/* Center text */
 	display: flex;
     align-items: center;
     justify-content: center;
+    /*left: 50%;
+    position: relative;*/
     /* Text style */
     font-size: 30px;
+    color: red;
+    /*display: block;
+    margin: auto;
+    transform: translateX(50%);*/
     /* Style this more */
+}
+
+.answers {
+	display: block;
+	margin: auto;
+}
+
+.answerParagraphs {
+	display: block;
+	/*display: flex;
+    align-items: center;
+    justify-content: center;*/
 }
 
 /* For mobile devices */
