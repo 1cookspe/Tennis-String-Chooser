@@ -591,6 +591,45 @@ input[type=submit]:hover {
     justify-content: center;*/
 }
 
+.desktopNav {
+	display: block;
+}
+
+.topnav {
+	overflow: hidden;
+	position: relative;
+	/*visibility: hidden;*/
+	/*display: none;*/
+	/*visibility: hidden;*/
+	/*display: block;*/
+	/*visibility: hidden;*/
+}
+
+.topnav #myLinks {
+	display: none;
+}
+
+.topnav a {
+	/*display: none;*/
+	color: white;
+}
+
+.topnav a.icon {
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.mobile-container {
+	/*display: block;*/
+	margin: auto;
+	/*visibility: hidden;*/
+	/*display: none;*/
+	/*display: none !important;*/
+	display: none;
+}
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
 
@@ -616,7 +655,27 @@ input[type=submit]:hover {
 		/*float: 50%;*/
 	}
 
+	/* Mobile Nav Bar */
+	.mobile-container {
+		display: block;
+	}
 
+	.desktopNav {
+		display: none;
+	}
+
+	/*.topnav a.icon {
+		display: block;
+	}*/
+
+	/*.topnav a {
+		display: block;
+	}*/
+
+}
+
+.mobileTitle {
+	text-decoration: none;
 }
 
 /*.picTitle {

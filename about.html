@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="https://i.imgur.com/hCUZYyR.png">
 	<meta name="description" content="Learn about the technology that allows String Chooser to determine the best strings for your game!">
+	<!-- Icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Responsive Page -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +14,50 @@
 
 <body id="contactBody">
 	<div class="bgimg">
-		<!-- Navigation bar for different pages -->
-		<ul>
-			<li><h1 id="titleHeader">String Chooser</h1></li>
-			<li><img id="logo" src="https://i.imgur.com/hCUZYyR.png" alt="logo"></li>
-			<div class="rightPlaced">
-				<li><h5><a href="index.html">Choose Your Strings!</a></h5></li>
-				<li><h5><a href="about.html">About</a></h5></li>
-				<li><h5><a href="contact.html">Contact Us</a></h5></li>
+		<!-- Navigation bar for different pages (desktop) -->
+		<div class="desktopNav">
+			<ul>
+				<a href="index.html"><li><h1 id="titleHeader">String Chooser</h1></li></a>
+				<li><img id="logo" src="https://i.imgur.com/hCUZYyR.png" alt="logo"></li>
+				<div class="rightPlaced">
+					<li><h5><a href="index.html">Choose Your Strings!</a></h5></li>
+					<li><h5><a href="about.html">About</a></h5></li>
+					<li><h5><a href="contact.html">Contact Us</a></h5></li>
+				</div>
+			</ul>
+		</div>
+
+		<!-- Navigation screen for mobile -->
+		<div class="mobile-container">
+			<!-- Top navigation menu -->
+			<div class="topnav">
+				<a href="index.html" class="mobileTitle">String Chooser</a>
+				<!-- Drop down links -->
+				<div id="myLinks">
+					<a href="index.html">Choose Your Strings!</a>
+					<a href="about.html">About</a>
+					<a href="contact.html">Contact Us</a>
+				</div>
+				<!-- Menu button -->
+				<a href="javascript:void(0);" class="icon" onclick="showMenu()">
+					<i class="fa fa-bars"></i>
+				</a>
 			</div>
-		</ul>
+		</div> 
+		<!-- End of mobile -->
+
+		<!-- Handling hide and show of menu for mobile -->
+		<script>
+			function showMenu() {
+				var x = document.getElementById("myLinks");
+				if (x.style.display === "block") {
+					x.style.display = "none";
+				} else {
+					x.style.display = "block";
+				}
+			}
+		</script>
+
 		<br>
 		<h1 id="contactHeader">About String Chooser</h1>
 	</div>
