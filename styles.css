@@ -9,6 +9,7 @@ body {
     background-size: cover;
     /* Padding at bottom to allow for footer */
 	padding-bottom: 10vh;
+	padding-top: 0;
 }
 
 ul {
@@ -611,14 +612,19 @@ input[type=submit]:hover {
 
 .topnav a {
 	/*display: none;*/
-	color: white;
+	color: black;
 }
 
 .topnav a.icon {
 	/*display: none;*/
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 5px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	color: black;
+	/*z-index: 10;*/
+	/*background-color: black;*/
 }
 
 .mobile-container {
@@ -628,6 +634,17 @@ input[type=submit]:hover {
 	/*display: none;*/
 	/*display: none !important;*/
 	display: none;
+	background-color: white;
+	opacity: 0.8;
+	padding-top: 0;
+	/*color: black;*/
+}
+
+/* For styling title */
+.mobileTitle {
+	text-decoration: none;
+	color: black;
+	font-size: 25px;
 }
 
 /* For mobile devices */
@@ -664,19 +681,25 @@ input[type=submit]:hover {
 		display: none;
 	}
 
-	/*.topnav a.icon {
+	#myLinks a {
 		display: block;
-	}*/
+		text-decoration: none;
+		padding: 10px;
+	}
 
-	/*.topnav a {
-		display: block;
-	}*/
+	#myLinks a:hover {
+		background-color: black;
+		opacity: 0.7;
+		color: white;
+	}
+
+	#headerNav {
+		display: none;
+	}
 
 }
 
-.mobileTitle {
-	text-decoration: none;
-}
+
 
 /*.picTitle {
 	display: inline;
