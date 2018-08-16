@@ -60,13 +60,13 @@ h1 {
 	background-color: #FFF;
 	opacity: 0.7;
 	color: black;
-	font-size: 1.5vw;
+	font-size: 18px;
 }
 
 .footer {
 	position: relative;
 	bottom: 0;
-	background-color: #D3D3D3;
+	background-color: #2f4f4f;
 	text-align: center;
 	/*overflow: auto;*/
 	padding-bottom: 0;
@@ -80,27 +80,22 @@ h1 {
  	margin-top: -3em;*/
 
  	/* Size */
- 	height: 17vh;
+ 	/*height: 17vh;*/
+ 	height: auto;
 }
 
 .footerButton {
 	display: inline-block;
-	position: relative;
-	border-radius: 50%;
-	background-color: #D3D3D3;
-	color: black;
+	/*position: relative;*/
+	/*border-radius: 50%;*/
+	background-color: #2f4f4f;
+	color: white;
 }
 
 .footerParagraph {
-	background-color: #D3D3D3;
-}
-
-.footerButton:nth-of-type(1) {
-	left: -20%;
-}
-
-.footerButton:nth-of-type(2) {
-	left: 20%;
+	/*background-color: #D3D3D3;*/
+	padding-bottom: 20px;
+	color: white;
 }
 
 #titleHeader {
@@ -377,14 +372,14 @@ input {
 
 textarea {
 	width: 50%;
-	height: 100%;
-	font-size: 2vw;
+	height: 100px;
+	font-size: 20px;
 }
 
 input[type=text], input[type=email] {
 	width: 50%;
 	height: 100%;
-	font-size: 2vw;
+	font-size: 20px;
 }
 
 form {
@@ -400,13 +395,13 @@ form {
 }*/
 
 input[type=submit] {
-	padding:1vw 2vw; 
+	padding:10px 20px; 
 	background:#ccc; 
 	border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-size: 2vw; 
+    font-size: 20px; 
 }
 
 input[type=submit]:hover {
@@ -530,7 +525,7 @@ input[type=submit]:hover {
 	margin: 0;
 	/*height: 100%;*/
 	/* Padding at bottom to allow for footer */
-	padding-bottom: 10vh; 
+	/*padding-bottom: 10vh; */
 }
 
 .bgimg { 
@@ -560,6 +555,17 @@ input[type=submit]:hover {
     padding-bottom: 8vw;
 }
 
+#contactDirections {
+	text-align: center;
+	/*width: 90%;*/
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    /*width: 90%;*/
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 /* About page */
 .styleStrings {
 	/* Center text */
@@ -582,6 +588,7 @@ input[type=submit]:hover {
 	display: block;
 	margin: auto;
 	width: 90%;
+	padding-bottom: 30px;
 }
 
 .answerParagraphs {
@@ -663,15 +670,6 @@ input[type=submit]:hover {
 		float: left;
 	}
 
-	/* For footer */
-	.footerButton {
-		position: fixed;
-		left: 50%;
-		color: red;
-		text-align: center;
-		/*float: 50%;*/
-	}
-
 	/* Mobile Nav Bar */
 	.mobile-container {
 		display: block;
@@ -695,6 +693,11 @@ input[type=submit]:hover {
 
 	#headerNav {
 		display: none;
+	}
+
+	/* Make footer all single lined (block) */
+	.footerButton {
+		display: block;
 	}
 
 }
