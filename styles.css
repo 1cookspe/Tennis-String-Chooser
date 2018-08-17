@@ -65,6 +65,28 @@ h1 {
 
 .footer {
 	position: relative;
+	/*position: absolute;*/
+	bottom: 0;
+	background-color: #2f4f4f;
+	text-align: center;
+	/*overflow: auto;*/
+	padding-bottom: 0;
+	margin: 0;
+	/*transform: translateX(100%);*/
+
+	/*clear: both;
+ 	position: relative;
+ 	z-index: -10;
+ 	height: 3em;
+ 	margin-top: -3em;*/
+
+ 	/* Size */
+ 	/*height: 17vh;*/
+ 	height: auto;
+}
+
+.footerFrontPage {
+	position: absolute;
 	bottom: 0;
 	background-color: #2f4f4f;
 	text-align: center;
@@ -654,8 +676,28 @@ input[type=submit]:hover {
 	font-size: 25px;
 }
 
+/*#mainPageFooter {
+	display: none;
+}*/
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
+
+	/* Make footer all single lined (block) */
+	.footerButton {
+		display: block;
+	}
+
+	/*#questionsContainer {
+
+	}*/
+
+	.footer {
+		/*float: */
+		/*clear: both;*/
+		/*float: le t;*/
+		top: 150px;
+	}
 
 	#questionsContainer {
 		position: absolute;
@@ -693,11 +735,6 @@ input[type=submit]:hover {
 
 	#headerNav {
 		display: none;
-	}
-
-	/* Make footer all single lined (block) */
-	.footerButton {
-		display: block;
 	}
 
 }

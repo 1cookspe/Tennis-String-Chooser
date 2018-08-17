@@ -955,6 +955,13 @@ function showSlides(n) {
 		}
 	}
 
+	// Show footer only on last slide
+	if (slideIndex == 9) {
+		document.getElementsByClassName("footer")[0].style.display = "block";
+	} else {
+		document.getElementsByClassName("footer")[0].style.display = "none";
+	}
+
 }
 
 // function contact() {
