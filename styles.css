@@ -738,6 +738,15 @@ input[type=submit]:hover {
 		display: none;
 	}
 
+	/* size of presentation of buttons */
+	button {
+		font-size: 12px;
+	}
+
+	.show {
+		font-size: 12px;
+	}
+
 }
 
 
