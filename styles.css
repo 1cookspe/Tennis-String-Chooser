@@ -700,14 +700,17 @@ input[type=submit]:hover {
 		/*top: 150px;*/
 
 		/* Add top to footer to ensure it does not overlap the content */
-		top: 20vh;
+		/*top: 5vh;*/
+		overflow: hidden;
 	}
 
 	#questionsContainer {
-		position: absolute;
+		/* Trying to remove absolute -- will it make a difference? */
+		/*position: absolute; */
 		float: left;
 		display: block;
 		/*top: 20px;*/
+		overflow: hidden;
 	}
 
 	.column {
