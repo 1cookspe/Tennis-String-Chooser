@@ -697,7 +697,10 @@ input[type=submit]:hover {
 		/*float: */
 		/*clear: both;*/
 		/*float: le t;*/
-		top: 150px;
+		/*top: 150px;*/
+
+		/* Add top to footer to ensure it does not overlap the content */
+		top: 20vh;
 	}
 
 	#questionsContainer {
