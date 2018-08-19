@@ -37,6 +37,7 @@ li a:hover:not(.active) {
 
 a {
 	color: black;
+	text-decoration: none;
 }
 
 .active {
@@ -653,6 +654,7 @@ input[type=submit]:hover {
 	width: 20px;
 	height: 20px;
 	color: black;
+	display: block;
 	/*z-index: 10;*/
 	/*background-color: black;*/
 }
@@ -688,10 +690,6 @@ input[type=submit]:hover {
 	.footerButton {
 		display: block;
 	}
-
-	/*#questionsContainer {
-
-	}*/
 
 	.footer {
 		/*float: */
@@ -751,6 +749,10 @@ input[type=submit]:hover {
 
 	.show {
 		font-size: 12px;
+	}
+
+	.topnav a.icon {
+		display: block;
 	}
 
 }
