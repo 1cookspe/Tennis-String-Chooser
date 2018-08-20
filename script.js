@@ -103,8 +103,8 @@ function start() {
 	for (var i = 0; i < dots.length - 1; i++) {
 		dots[i].style.visibility = "visible";
 	}
-	document.getElementsByClassName("prev")[0].style.visibility = "visible";
-	document.getElementsByClassName("next")[0].style.visibility = "visible";
+	// document.getElementsByClassName("prev")[0].style.visibility = "visible";
+	// document.getElementsByClassName("next")[0].style.visibility = "visible";
 }
 
 
@@ -905,11 +905,13 @@ function addOrderStrings(number, defaultValue, index) {
 
 // next and previous arrows
 function plusSlides(n) {
-	// first check if user is going back to first slide 
-	
-	
 	showSlides(slideIndex += n);
 	//alert("Slide index is " + slideIndex);
+
+	// first check if user is going back to first slide 
+	// if (slideIndex == 2 && n == -1) {
+	// 	document.getElementsByClassName("next")[0].style.visibility = "visible";
+	// }
 }
 
 // thumbnail image controls
@@ -918,7 +920,6 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-	console.log(document.getElementsByClassName("prev")[0].style.visibility);
 
 	// present slide (only present slide 9 if results have been calculated)
 	if (slideIndex != 9 || resultsCalculated) { // works on every slide except for the results slide before the results are calculated
@@ -951,15 +952,22 @@ function showSlides(n) {
 			// hide forward button to results
 			document.getElementsByClassName("next")[0].style.visibility = "hidden";
 		} else { 
+			console.log("Yes here");
+			console.log(slideIndex);
 			// any other slide should hide the feedback buttons
 			document.getElementById("questionsContainer").style.visibility = "hidden";
 			// ensure that prev and next buttons are shown otherwise
-			if (slideIndex != 1) {
+			if (slideIndex != 1 && slideIndex != 2) {
 				document.getElementsByClassName("next")[0].style.visibility = "visible";
-				document.getElementsByClassName("prev")[0].style.visibility = "visible";
-			} else {
-				// only show forward arrow
+				document.getElementsByClassName("prev")[0].setAttribute('style', 'visibility:hidden !important;');
+			} else if (slideIndex == 2) {
+				console.log('ok so previous should be hidden');
 				document.getElementsByClassName("next")[0].style.visibility = "visible";
+				// document.getElementsByClassName("prev")[0].style.visibility = "hidden";
+				document.getElementsByClassName("prev")[0].setAttribute('style', 'visibility:hidden !important;');
+			} else if (slideIndex == 1) {
+				console.log('ok so both should be hidden');
+				document.getElementsByClassName("next")[0].style.visibility = "hidden";
 				document.getElementsByClassName("prev")[0].style.visibility = "hidden";
 			}
 			// also the dot for the results slide should be hidden
