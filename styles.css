@@ -395,13 +395,13 @@ input {
 }
 
 textarea {
-	width: 50%;
+	width: 80%;
 	height: 100px;
 	font-size: 20px;
 }
 
 input[type=text], input[type=email] {
-	width: 50%;
+	width: 80%;
 	height: 100%;
 	font-size: 20px;
 }
@@ -581,13 +581,12 @@ input[type=submit]:hover {
 
 #contactDirections {
 	text-align: center;
-	/*width: 90%;*/
 	display: flex;
     align-items: center;
     justify-content: center;
-    /*width: 90%;*/
     padding-left: 50px;
     padding-right: 50px;
+    font-size: 20px;
 }
 
 /* About page */
@@ -617,7 +616,8 @@ input[type=submit]:hover {
 
 .answerParagraphs {
 	display: block;
-	font-size: 18px;
+	font-size: 20px;
+	text-align: center;
 	/*display: flex;
     align-items: center;
     justify-content: center;*/
@@ -755,6 +755,29 @@ input[type=submit]:hover {
 		display: block;
 	}
 
+	textarea {
+		font-size: 14px;
+	}
+
+	input[type=text], input[type=email] {
+		font-size: 16px;
+	}
+
+	#contactDirections {
+		font-size: 14px;
+	}
+
+	input[type=submit] {
+		font-size: 16px;
+	}
+
+	.answerParagraphs {
+		font-size: 16px;
+	}
+
+	.styleStrings {
+		font-size: 24px;
+	}
 }
 
 

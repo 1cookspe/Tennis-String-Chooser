@@ -905,6 +905,9 @@ function addOrderStrings(number, defaultValue, index) {
 
 // next and previous arrows
 function plusSlides(n) {
+	// first check if user is going back to first slide 
+	
+	
 	showSlides(slideIndex += n);
 	//alert("Slide index is " + slideIndex);
 }
@@ -950,6 +953,15 @@ function showSlides(n) {
 		} else { 
 			// any other slide should hide the feedback buttons
 			document.getElementById("questionsContainer").style.visibility = "hidden";
+			// ensure that prev and next buttons are shown otherwise
+			if (slideIndex != 1) {
+				document.getElementsByClassName("next")[0].style.visibility = "visible";
+				document.getElementsByClassName("prev")[0].style.visibility = "visible";
+			} else {
+				// only show forward arrow
+				document.getElementsByClassName("next")[0].style.visibility = "visible";
+				document.getElementsByClassName("prev")[0].style.visibility = "hidden";
+			}
 			// also the dot for the results slide should be hidden
 			//document.getElementsByClassName("dot")[8].style.visibility = "hidden";
 		}
