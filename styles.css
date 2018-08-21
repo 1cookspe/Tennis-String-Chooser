@@ -342,6 +342,7 @@ nav {
 #retakeDiv {
 	display: inline-block;
 	width: 40%;
+	text-align: center;
 }
 
 #contactDiv {
@@ -349,6 +350,7 @@ nav {
 	width: 40%;
 	right: 10px;
 	float: right;
+	text-align: center;
 }
 
 #questionsContainer {
@@ -585,6 +587,7 @@ input[type=submit]:hover {
     padding-bottom: 8vw;
 
     font-family: 'PT Sans';
+    font-size: 35px;
 }
 
 #contactDirections {
@@ -824,6 +827,10 @@ input[type=submit]:hover {
 
 	.surveyQuestionText {
 		font-size: 18px;
+	}
+
+	.contactHeader {
+		font-size: 28px;
 	}
 }
 
