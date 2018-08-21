@@ -53,10 +53,10 @@ const COMFORT_INDEX = 5;
 document.addEventListener("DOMContentLoaded", function(e){
 	showSlides(slideIndex);
 
-	if (formSubmitted) {
-		alert("Thank you for your feedback!");
-		formSubmitted = false;
-	}
+	// if (formSubmitted) {
+	// 	alert("Thank you for your feedback!");
+	// 	formSubmitted = false;
+	// }
 
 	// // send to Formspree
 	// var contactForm = document.getElementById("contactForm");
@@ -103,8 +103,6 @@ function start() {
 	for (var i = 0; i < dots.length - 1; i++) {
 		dots[i].style.visibility = "visible";
 	}
-	// document.getElementsByClassName("prev")[0].style.visibility = "visible";
-	// document.getElementsByClassName("next")[0].style.visibility = "visible";
 }
 
 
@@ -123,7 +121,6 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			pastCommands[0] = 1;
-			//removeOrAdd("downfall");
 			changeButton(0, 0, 3);
 			break;
 		case 1: // consistent player with long rallies
@@ -137,7 +134,6 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			longevity = longevity + 15;
 			pastCommands[0] = 2;
-			//removeOrAdd("downfall");
 			changeButton(1,0,3);
 			break;
 		case 2: // all around player
@@ -152,7 +148,6 @@ function styleOfPlay(style) {
 			longevity = longevity + 10;
 			feel = feel + 10;
 			pastCommands[0] = 3;
-			//removeOrAdd("downfall");
 			changeButton(2,0,3);
 			break;
 		case 3: // not sure about TYPE OF PLAYER
@@ -166,7 +161,6 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			pastCommands[0] = 4;
-			//removeOrAdd("downfall");
 			changeButton(3,0,3);
 			break;
 		case 4: // hits ball too long
@@ -181,7 +175,6 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			longevity = longevity + 10;
 			pastCommands[1] = 1;
-			//removeOrAdd("choice");
 			changeButton(4,4,7);
 			break;
 		case 5: // not deep enough
@@ -196,7 +189,6 @@ function styleOfPlay(style) {
 			longevity = longevity + 5;
 			feel = feel + 5;
 			pastCommands[1] = 2;
-			//removeOrAdd("choice");
 			changeButton(5,4,7);
 			break;
 		case 6: // can't hit targets
@@ -209,7 +201,6 @@ function styleOfPlay(style) {
 			power = power + 10;
 			touch = touch + 10;
 			pastCommands[1] = 3;
-			//removeOrAdd("choice");
 			changeButton(6,4,7);
 			break;
 		case 7: // not sure about downfall
@@ -223,7 +214,6 @@ function styleOfPlay(style) {
 			spin = spin + 10;
 			feel = feel + 5;
 			pastCommands[1] = 4;
-			//removeOrAdd("choice");
 			changeButton(7,4,7);
 			break;
 		case 8: // hit ball as hard as possible
@@ -234,7 +224,6 @@ function styleOfPlay(style) {
 			control = control + 10;
 			spin = spin + 5;
 			pastCommands[2] = 1;
-			//removeOrAdd("comfort");
 			changeButton(8,8,11);
 			break;
 		case 9: // hit ball with topspin to ensure that it stays in
@@ -246,7 +235,6 @@ function styleOfPlay(style) {
 			touch = touch + 5;
 			spin = spin + 15;
 			pastCommands[2] = 2;
-			//removeOrAdd("comfort");
 			changeButton(9,8,11);
 			break;
 		case 10: // slice approach
@@ -258,7 +246,6 @@ function styleOfPlay(style) {
 			touch = touch + 30;
 			spin = spin + 10;
 			pastCommands[2] = 3;
-			//removeOrAdd("comfort");
 			changeButton(10,8,11);
 			break;
 		case 11: // not sure about approach
@@ -270,7 +257,6 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			spin = spin + 5;
 			pastCommands[2] = 4;
-			//removeOrAdd("comfort");
 			changeButton(11,8,11);
 			break;
 		case 12: // arm uncomfortable
@@ -280,7 +266,6 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 70;
 			pastCommands[3] = 1;
-			//removeOrAdd("durability");
 			changeButton(12,12,14);
 		break;
 		case 13: // arm comfortable
@@ -289,7 +274,6 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 10;
 			pastCommands[3] = 2;
-			//removeOrAdd("durability");
 			changeButton(13,12,14);
 		break;
 		case 14: // unsure about arm
@@ -298,7 +282,6 @@ function styleOfPlay(style) {
 			}
 			feel = feel + 20;
 			pastCommands[3] = 3;
-			//removeOrAdd("durability");
 			changeButton(14,12,14);
 			break;
 		case 15: // breaks strings a lot
@@ -308,7 +291,6 @@ function styleOfPlay(style) {
 			}
 			longevity = longevity + 60;
 			pastCommands[4] = 1;
-			//removeOrAdd("touch");
 			changeButton(15,15,17);
 			break;
 		case 16: // does not break strings
@@ -320,7 +302,6 @@ function styleOfPlay(style) {
 			//spin = spin + 20;
 			//power = power + 20;
 			pastCommands[4] = 2;
-			//removeOrAdd("touch");
 			changeButton(16,15,17);
 			break;
 		case 17: // unsure about strings
@@ -329,7 +310,6 @@ function styleOfPlay(style) {
 			}
 			longevity = longevity + 30;
 			pastCommands[4] = 3;
-			//removeOrAdd("touch");
 			changeButton(17,15,17);
 			break;
 		case 18: // volleys a lot
@@ -342,7 +322,6 @@ function styleOfPlay(style) {
 			control = control + 10;
 			spin = spin + 10;
 			pastCommands[5] = 1;
-			//removeOrAdd("improve");
 			changeButton(18,18,20);
 			break;
 		case 19: // does not volley a lot
@@ -351,7 +330,6 @@ function styleOfPlay(style) {
 			}
 			touch = touch + 5;
 			pastCommands[5] = 2;
-			//removeOrAdd("improve");
 			changeButton(19,18,20);
 			break;
 		case 20: // unsure about volleying
@@ -361,7 +339,6 @@ function styleOfPlay(style) {
 			touch = touch + 10;
 			feel = feel + 5;
 			pastCommands[5] = 3;
-			//removeOrAdd("improve");
 			changeButton(20,18,20);
 			break;
 		default:
@@ -504,11 +481,6 @@ function changeButton(number, start, end) {
 	}
 }
 
-function removeOrAdd(idString) {
-	document.getElementById(idString).classList.remove('hidden');
-	document.getElementById(idString).classList.toggle('show');
-}
-
 function resetScores() {
 	// resets state (as if page is reloaded)
 	// all scores to 0
@@ -541,12 +513,6 @@ function resetScores() {
 		bestStrings[i] = 0;
 		bestIndexes[i] = 0;
 	}
-
-	// // reset states of questions
-	// for (var i = 0; i < 21; i++) {
-	// 	// reset to the default of black background and white text
-	// 	document.getElementById(i + "Button").style.backgroundColor = "#000000";
-	// }
 
 	// reset radio buttons
 	var choices = document.getElementsByName("choice");
@@ -598,7 +564,6 @@ function submitAnswers() {
 }
 
 function mostSimilarString() {
-	//document.getElementById('resultsText').innerHTML = "Spin: " + spin + "\nPower: " + power + "\nControl: " + control + "\nFeel: " + feel + "\nTouch: " + touch +  "\nLong: " + longevity;
 
 	var calcPower = 0;
 	var calcControl = 0;
@@ -747,25 +712,6 @@ function mostSimilarString() {
 	}
 
 	// RESULTS
-	// show winning strings with images and captions
-	// var topString = indexToName(bestIndexes[0]);
-	// document.getElementById('topImage').src = topString.image;
-	// document.getElementById('topCaption').innerHTML = topString.caption;
-	// document.getElementById('topName').innerHTML = topString.name;
-	// document.getElementById('firstLink').href = topString.link;
-	// var secondString = indexToName(bestIndexes[1]);
-	// document.getElementById('secondImage').src = secondString.image;
-	// document.getElementById('secondCaption').innerHTML = secondString.caption;
-	// document.getElementById('secondName').innerHTML = secondString.name;
-	// document.getElementById('secondLink').href = secondString.link;
-	// var thirdString = indexToName(bestIndexes[2]);
-	// document.getElementById('thirdImage').src = thirdString.image;
-	// document.getElementById('thirdCaption').innerHTML = thirdString.caption;
-	// document.getElementById('thirdName').innerHTML = thirdString.name;
-	// document.getElementById('thirdLink').href = thirdString.link;
-
-
-
 	var topString = indexToName(bestIndexes[0]);
 	document.getElementById('firstStringImage').src = topString.image;
 	document.getElementById('firstStringCaption').innerHTML = topString.caption;
@@ -897,19 +843,11 @@ function addOrderStrings(number, defaultValue, index) {
 		}
 	}
 
-
-	// TODO: Correct this function to combine into one if statement
 }
 
 // next and previous arrows
 function plusSlides(n) {
 	showSlides(slideIndex += n);
-	//alert("Slide index is " + slideIndex);
-
-	// first check if user is going back to first slide 
-	// if (slideIndex == 2 && n == -1) {
-	// 	document.getElementsByClassName("next")[0].style.visibility = "visible";
-	// }
 }
 
 // thumbnail image controls
@@ -976,19 +914,6 @@ function showSlides(n) {
 		document.getElementsByClassName("footer")[0].style.display = "none";
 	}
 
-}
-
-// function contact() {
-// 	// show contact form
-// 	document.getElementById("contactForm").style.visibility = "visible";
-
-// 	// scroll down to contact form
-// 	var contactElement = document.getElementById("contactForm");
-// 	contactElement.scrollIntoView();
-// }
-
-function formSubmitted() {
-	formSubmitted = true;
 }
 
 // Mobile menu
