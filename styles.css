@@ -127,6 +127,10 @@ h1 {
 	font-family: 'Avenir', sans-serif;
 }
 
+.surveyQuestionText {
+	font-size: 22px;
+}
+
 button {
     background-color: black; /* Green */
     border: none;
@@ -775,7 +779,7 @@ input[type=submit]:hover {
 
 	/* size of presentation of buttons */
 	button {
-		font-size: 12px;
+		font-size: 14px;
 	}
 
 	.show {
@@ -816,6 +820,10 @@ input[type=submit]:hover {
 
 	.divOfProperties {
 		font-size: 16px;
+	}
+
+	.surveyQuestionText {
+		font-size: 18px;
 	}
 }
 
