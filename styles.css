@@ -683,6 +683,32 @@ input[type=submit]:hover {
 	display: none;
 }*/
 
+.divOfProperties {
+	display: table;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+.stringCharacteristics {
+	display: list-item;
+	float: none;
+	list-style-type: disc;
+	margin: auto;
+	/*text-align: center;*/
+}
+
+.characteristicsList {
+	/*list-style-type: disc;
+	display: list-item;*/
+
+	list-style: disc outside none;
+	display: list-item;
+	/*margin-left: 35%;*/
+	padding: 20px;
+	margin: auto;
+	/*text-align: center;*/
+}
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
 
@@ -781,6 +807,10 @@ input[type=submit]:hover {
 
 	.numbertext {
 		font-size: 12px;
+	}
+
+	.divOfProperties {
+		font-size: 16px;
 	}
 }
 
