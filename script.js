@@ -527,13 +527,20 @@ function resetScores() {
 	// go to first question
 	currentSlide(1);
 
-	// make buttons all green again
+	// make buttons all black again
 	for (var i = 0; i <= 20; i++) {
-		document.getElementById(i + "Button").style.backgroundColor = "#4CAF50";
+		var newButton = document.getElementById(i + "Button");
+		newButton.style.backgroundColor = "#000";
+		// // For button hover
+		// newButton.onmouseover = function()
+		// {
+		// 	this.style.backgroundColor = "#228B22";
+		// }
+		// newButton.onmouseout = function()
+		// {
+		// 	this.style.backgroundColor = "#000";
+		// }
 	}
-
-	// hide feedback form (if necessary)
-	document.getElementById("contactForm").style.visibility = "hidden";
 
 	// initial state
 	resultsCalculated = false;
@@ -544,11 +551,11 @@ function resetScores() {
 		bestIndexes[i] = 0;
 	}
 
-	// reset states of questions
-	for (var i = 0; i < 21; i++) {
-		// reset to the default of black background and white text
-		document.getElementById(i + "Button").style.backgroundColor = "#000000";
-	}
+	// // reset states of questions
+	// for (var i = 0; i < 21; i++) {
+	// 	// reset to the default of black background and white text
+	// 	document.getElementById(i + "Button").style.backgroundColor = "#000000";
+	// }
 
 	// reset radio buttons
 	var choices = document.getElementsByName("choice");
@@ -952,21 +959,17 @@ function showSlides(n) {
 			// hide forward button to results
 			document.getElementsByClassName("next")[0].style.visibility = "hidden";
 		} else { 
-			console.log("Yes here");
-			console.log(slideIndex);
 			// any other slide should hide the feedback buttons
 			document.getElementById("questionsContainer").style.visibility = "hidden";
 			// ensure that prev and next buttons are shown otherwise
 			if (slideIndex != 1 && slideIndex != 2) {
 				document.getElementsByClassName("next")[0].style.visibility = "visible";
-				document.getElementsByClassName("prev")[0].setAttribute('style', 'visibility:hidden !important;');
+				document.getElementsByClassName("prev")[0].setAttribute('style', 'visibility:visible !important;');
 			} else if (slideIndex == 2) {
-				console.log('ok so previous should be hidden');
 				document.getElementsByClassName("next")[0].style.visibility = "visible";
 				// document.getElementsByClassName("prev")[0].style.visibility = "hidden";
 				document.getElementsByClassName("prev")[0].setAttribute('style', 'visibility:hidden !important;');
 			} else if (slideIndex == 1) {
-				console.log('ok so both should be hidden');
 				document.getElementsByClassName("next")[0].style.visibility = "hidden";
 				document.getElementsByClassName("prev")[0].style.visibility = "hidden";
 			}

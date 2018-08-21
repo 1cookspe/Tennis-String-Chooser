@@ -142,7 +142,7 @@ button {
 }
 
 button:hover {
-	background-color: #228B22;
+	background-color: #228B22 !important;
 	/*color: black;*/
 	opacity: 0.9;
 }
@@ -777,6 +777,10 @@ input[type=submit]:hover {
 
 	.styleStrings {
 		font-size: 24px;
+	}
+
+	.numbertext {
+		font-size: 12px;
 	}
 }
 
