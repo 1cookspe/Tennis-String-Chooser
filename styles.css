@@ -1,6 +1,6 @@
 body {
     /*background-color: white;*/
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito';
     height: 100%;
     background-image: url("https://i.imgur.com/taSW5Mb.png");
     /* Cover photo */
@@ -124,6 +124,7 @@ h1 {
 #titleHeader {
 	padding: 10px;
 	font-size: 3vw;
+	font-family: 'Avenir', sans-serif;
 }
 
 button {
@@ -139,6 +140,7 @@ button {
     margin: 1rem;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Nunito';
 }
 
 button:hover {
@@ -562,7 +564,7 @@ input[type=submit]:hover {
 	/*height: 30%;*/
 }
 
-#contactHeader {
+.contactHeader {
     /*position: relative;
     top: 50%;
     left: 50%;
@@ -577,6 +579,8 @@ input[type=submit]:hover {
     justify-content: center;
     color: white;
     padding-bottom: 8vw;
+
+    font-family: 'PT Sans';
 }
 
 #contactDirections {
@@ -677,6 +681,7 @@ input[type=submit]:hover {
 	text-decoration: none;
 	color: black;
 	font-size: 25px;
+	font-family: 'Avenir', sans-serif;
 }
 
 /*#mainPageFooter {
