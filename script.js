@@ -531,15 +531,6 @@ function resetScores() {
 	for (var i = 0; i <= 20; i++) {
 		var newButton = document.getElementById(i + "Button");
 		newButton.style.backgroundColor = "#000";
-		// // For button hover
-		// newButton.onmouseover = function()
-		// {
-		// 	this.style.backgroundColor = "#228B22";
-		// }
-		// newButton.onmouseout = function()
-		// {
-		// 	this.style.backgroundColor = "#000";
-		// }
 	}
 
 	// initial state
