@@ -480,10 +480,10 @@ input[type=submit]:hover {
 }
 
 .checkmark {
-	/*position: relative;
+	position: absolute;
 	top: 0;
-	left: 0;*/
-	margin: auto;
+	left: 0;
+	/*margin: auto;*/
 	height: 25px;
 	width: 25px;
 	background-color: #eee;
