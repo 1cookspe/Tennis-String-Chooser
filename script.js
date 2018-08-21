@@ -99,8 +99,9 @@ function start() {
 	showSlides(slideIndex);
 
 	// Set dots and arrows to visible
+	// keep first dot hidden
 	var dots = document.getElementsByClassName("dot");
-	for (var i = 0; i < dots.length - 1; i++) {
+	for (var i = 1; i < dots.length - 1; i++) {
 		dots[i].style.visibility = "visible";
 	}
 }
