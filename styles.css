@@ -139,7 +139,7 @@ button {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 18px;
     left: 50%;
     margin: 1rem;
     margin-left: auto;
@@ -486,7 +486,7 @@ input[type=submit]:hover {
 	/*margin: auto;*/
 	height: 25px;
 	width: 25px;
-	background-color: #eee;
+	background-color: #000;
 }
 
 .container:hover input ~ .checkmark {
