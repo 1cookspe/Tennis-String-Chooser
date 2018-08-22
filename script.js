@@ -757,7 +757,7 @@ function indexToName(index) { // returns racquet object for each string
 			racquetObject = {name: "Luxilon 4G", link: "https://www.tennis-warehouse.com/reviews/LUX4G125/LUX4G125review.html", image: "https://i.imgur.com/w1RKGTY.png", caption: "Puts great bite on the ball to give it spin. Holds up tension well and offers great comfort."};
 		break;
 		case 7:
-			racquetObject = {name: "Luxilon Big Banger", link: "https://www.tennis-warehouse.com/reviews/BB16/BB16review.html", image: "https://i.imgur.com/N7WWcnY.png", caption: "This string packs a ton of control for players who love to crush the ball. Amazing durability as well ensure that string breaks will be far and few between."};
+			racquetObject = {name: "Luxilon Big Banger", link: "https://www.tennis-warehouse.com/reviews/BB16/BB16review.html", image: "https://i.imgur.com/N7WWcnY.png", caption: "This string packs a ton of control for players who love to crush the ball. Amazing durability ensures that string breaks will be far and few between."};
 		break;
 		case 8:
 			racquetObject = {name: "Wilson NXT Power", link: "https://www.tennis-warehouse.com/Reviews/NXTTPWR18/NXTTPWR18Review.html", image: "https://i.imgur.com/5xUXlyO.png", caption: "NXT Power allows you to add pop to your ball for extra power, while maintaining excellent comfort and feel."};
