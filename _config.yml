@@ -12,7 +12,7 @@ description: Learn which strings are best suited to complement your tennis game!
 avatar: https://i.imgur.com/hCUZYyR.png
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+google_analytics: UA-123180988-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
