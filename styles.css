@@ -2,7 +2,7 @@ body {
     /*background-color: white;*/
     font-family: 'Nunito';
     height: 100%;
-    background-image: url("https://i.imgur.com/taSW5Mb.png");
+    background-image: url("images/background.jpg");
     /* Cover photo */
     background-position: center;
     background-repeat: repeat;
@@ -588,7 +588,7 @@ input[type=submit]:hover {
 }
 
 .bgimg { 
-	background-image: url('https://i.imgur.com/taSW5Mb.png');
+	background-image: url('images/background.jpg');
 	background-position: center;
     background-size: cover;
     position: relative;
@@ -746,6 +746,11 @@ input[type=submit]:hover {
 	padding: 20px;
 	margin: auto;
 	/*text-align: center;*/
+}
+
+.policyLink {
+	color: blue;
+	text-decoration: underline;
 }
 
 /* For mobile devices */
