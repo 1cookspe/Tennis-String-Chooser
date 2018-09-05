@@ -753,6 +753,30 @@ input[type=submit]:hover {
 	text-decoration: underline;
 }
 
+#popupp {
+	visibility: hidden;
+	/* first element */
+	z-index: 1;
+	text-align: center;
+	background-color: #000;
+	/*opacity: 0.7;*/
+	color: #FFF;
+	position: fixed;
+	bottom: 0;
+	/*left: 50%;*/
+	width: 80%;
+	margin: auto;
+	padding: 20px;
+    border: 1px solid #888;
+
+}
+
+#cookiesButton {
+	/*position: relative;*/
+	background-color: #228B22;
+	cursor: pointer;
+}
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
 

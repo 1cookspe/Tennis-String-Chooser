@@ -53,18 +53,17 @@ const COMFORT_INDEX = 5;
 document.addEventListener("DOMContentLoaded", function(e){
 	showSlides(slideIndex);
 
-	// if (formSubmitted) {
-	// 	alert("Thank you for your feedback!");
-	// 	formSubmitted = false;
-	// }
-
-	// // send to Formspree
-	// var contactForm = document.getElementById("contactForm");
-	// contactForm.setAttribute('action', 'https://formspree.io/' + 'stringchooser' + '@' + 'gmail' + '.' + 'com');
-
 	// start at top of screen
 	document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+
+    // // show cookies popup if user has not visited yet
+    // var visited = localStorage.getItem('visited');
+    // if (!visited) { // first time on site for user
+    // 	// show popup
+    // 	document.getElementById("popupp").style.visibility = "visible";
+    // 	localStorage.setItem('visited', true);
+    // }
 });
 
 function start() {

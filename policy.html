@@ -3,7 +3,7 @@
 <head>
 	<title>Privacy Policy</title>
 	<link rel="stylesheet" href="styles.css">
-	<link rel="icon" href="images\icon">
+	<link rel="icon" href="images\icon.png">
 	<meta name="description" content="View the Privacy Policy of the data used by String Chooser.">
 
 	<!-- Icon library -->
@@ -16,12 +16,29 @@
 </head>
 
 <body id="contactBody">
+	<!-- Popup warning for cookies -->
+	<div id="popupp" style="visibility:hidden;">Welcome to String Chooser! Just letting you know that this website use cookies to deliver a perfect user experience! Cookies are used for delivering analytics of the website, personalized advertisements that appeal to the user, and storing the status of the user on String Chooser. For more information, please visit our <a class="policyLink" href="policy.html" target="_blank">Privacy Policy & Cookies Page</a>. By using this website, you consent to our use of cookies.
+		<button id="cookiesButton">OK</button>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(e){
+			// show cookies popup if user has not visited yet
+    		var visited = localStorage.getItem('visited');
+    		if (!visited) { // first time on site for user
+    			// show popup
+    			document.getElementById("popupp").style.visibility = "visible";
+    			localStorage.setItem('visited', true);
+    		}
+		});
+	</script>
+
+	<!-- Background header -->
 	<div class="bgimg">
 		<!-- Navigation bar for different pages (desktop) -->
 		<div class="desktopNav">
 			<ul>
 				<a href="index.html"><li><h1 id="titleHeader">String Chooser</h1></li></a>
-				<li><img id="logo" src="images/icon" alt="logo"></li>
+				<li><img id="logo" src="images/icon.png" alt="logo"></li>
 				<div class="rightPlaced">
 					<li><h5><a href="index.html">Choose Your Strings!</a></h5></li>
 					<li><h5><a href="about.html">About</a></h5></li>
@@ -77,10 +94,25 @@
 		<p class="answerPolicy">String Chooser does NOT collect any sensitive, personal data about you, such as your name, address, phone number, or email address. String Chooser has no intention of trying to collect or steal information from you for the company's own personal gain. Simply put, the only information that String Chooser collects from you is a general idea of your tennis playing style, obtained from the 7 survey questions, which is only computed once to determine optimal tennis strings for your performance, and is erased once the string results are displayed.</p>
 
 		<h3 class="titlePolicy">Use of Cookies</h3>
-		<p class="answerPolicy">String Chooser uses cookies </p>
+		<p class="answerPolicy">String Chooser only uses minimal cookies to deliver basic functionality of the website. The cookies present are used by Google services to perform routine behaviors of the website: Google Analytics and Google Adsense.</p>
+		<p class="answerPolicy">Google Analytics uses cookies to collect general information regarding the usage of the website; check out a more detailed description about the <a class="policyLink" target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">cookies from Google Analytics</a>.</p>
+		<p class="answerPolicy">Google Adsense uses cookies to improve the relevancy of the advertisements you see. The cookies are used to determine what types of advertisements would suit your interests. Please visit Google’s <a class="policyLink" target="_blank" href="https://support.google.com/adsense/answer/7549925?hl=en">Privacy Policy for Adsense</a>.</p>
+		<p class="answerPolicy">The cookies are used solely for the purposes listed above. In no way do the cookies track you for malicious reasons, and the broad information stored in these cookies are never to be shared with another party.</p>
 
 		<h3 class="titlePolicy">Contact Us</h3>
 		<p class="answerPolicy">If you have any questions about any of these policies, please do not hesitate to contact us on our <a class="policyLink" target="_blank" href="contact.html">Contact Page</a>.</p>
 	</div>
+
 </body>
+
+<!-- Footer -->
+<div class="footer">
+	<a href="index.html"><button class="footerButton">CHOOSE YOUR STRINGS</button></a>
+	<a href="contact.html"><button class="footerButton">CONTACT US</button></a>
+	<a href="policy.html"><button class="footerButton">PRIVACY POLICY</button></a>
+	<a href="https://www.twitter.com/stringchooser" target="_blank" class="fa fa-twitter"></a>
+	<a href="https://www.youtube.com/channel/UCf5IdZTZAfCAnohFNcv_pWQ" target="_blank" class="fa fa-youtube"></a>
+	<p class="footerParagraph">String Chooser | 2018</p>
+</div>
+
 </html>
