@@ -17,8 +17,8 @@
 
 <body id="contactBody">
 	<!-- Popup warning for cookies -->
-	<div id="popupp" style="visibility:hidden;">Welcome to String Chooser! Just letting you know that this website use cookies to deliver a perfect user experience! Cookies are used for delivering analytics of the website, personalized advertisements that appeal to the user, and storing the status of the user on String Chooser. For more information, please visit our <a class="policyLink" href="policy.html" target="_blank">Privacy Policy & Cookies Page</a>. By using this website, you consent to our use of cookies.
-		<button id="cookiesButton">OK</button>
+	<div id="popupp" style="visibility:hidden;">Welcome to String Chooser! Just letting you know that this website use cookies to deliver a perfect user experience! Cookies are used for delivering analytics of the website, personalized advertisements that appeal to the user, and storing the status of the user on String Chooser. For more information, please visit our <a id="cookiesLink" href="policy.html" target="_blank">Privacy Policy & Cookies Page</a>. By using this website, you consent to our use of cookies.
+		<button id="cookiesButton" onclick="dismissWarning()">OK</button>
 	</div>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(e){
@@ -30,6 +30,10 @@
     			localStorage.setItem('visited', true);
     		}
 		});
+
+		function dismissWarning() {
+			document.getElementById("popupp").style.visibility = "hidden";
+		}
 	</script>
 
 	<!-- Background header -->
@@ -91,12 +95,13 @@
 		<p class="answerPolicy">At most, String Chooser collects basic information from your website browser through Google Analytics about your general behavior on the site, including the country you are browsing from, the website that referred you to stringchooser.com, and the general time of your visit. This information is non-invasive, and is only collected to better understand the demographics and preferences of the users of String Chooser. These findings are also basic, and are in no way tied to you as a person; they are only displayed in a broad report that describes the types of users on stringchooser.com. Google Analytics is deployed on most websites simply for the purpose of gauging the general sector of String Chooser's users, to build a better experience to fit their needs or tendencies. For more information on Google's policy regarding their services, please check out <a class="policyLink" target="_blank" href="https://policies.google.com/technologies/partner-sites">HOW GOOGLE USES INFORMATION FROM SITES OR APPS THAT USE OUR SERVICES</a>.</p>
 
 		<h3 class="titlePolicy">What Information String Chooser Does NOT Collect</h3>
-		<p class="answerPolicy">String Chooser does NOT collect any sensitive, personal data about you, such as your name, address, phone number, or email address. String Chooser has no intention of trying to collect or steal information from you for the company's own personal gain. Simply put, the only information that String Chooser collects from you is a general idea of your tennis playing style, obtained from the 7 survey questions, which is only computed once to determine optimal tennis strings for your performance, and is erased once the string results are displayed.</p>
+		<p class="answerPolicy">String Chooser does NOT collect any sensitive, personal data about you, such as your name, address, phone number, or email address. String Chooser has no intention of trying to collect or steal information from you for the company's own personal gain. Simply put, the only information that String Chooser collects from you as a person is a general idea of your tennis playing style, obtained from the 7 survey questions, which is only computed once to determine optimal tennis strings for your performance, and is erased once the string results are displayed.</p>
 
 		<h3 class="titlePolicy">Use of Cookies</h3>
-		<p class="answerPolicy">String Chooser only uses minimal cookies to deliver basic functionality of the website. The cookies present are used by Google services to perform routine behaviors of the website: Google Analytics and Google Adsense.</p>
+		<p class="answerPolicy">String Chooser only uses minimal cookies to deliver basic functionality of the website. The cookies present are used by Google services to perform routine behaviors of the website: Google Analytics, Google Adsense, and local storage.</p>
 		<p class="answerPolicy">Google Analytics uses cookies to collect general information regarding the usage of the website; check out a more detailed description about the <a class="policyLink" target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">cookies from Google Analytics</a>.</p>
 		<p class="answerPolicy">Google Adsense uses cookies to improve the relevancy of the advertisements you see. The cookies are used to determine what types of advertisements would suit your interests. Please visit Google’s <a class="policyLink" target="_blank" href="https://support.google.com/adsense/answer/7549925?hl=en">Privacy Policy for Adsense</a>.</p>
+		<p class="answerPolicy">Lastly, String Chooser uses local storage in your web browser to save your current state or progress on the website. This is to simply store if you have agreed to our cookies policy. No information about you is extracted or stored in any way.</p>
 		<p class="answerPolicy">The cookies are used solely for the purposes listed above. In no way do the cookies track you for malicious reasons, and the broad information stored in these cookies are never to be shared with another party.</p>
 
 		<h3 class="titlePolicy">Contact Us</h3>

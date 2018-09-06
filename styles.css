@@ -768,6 +768,7 @@ input[type=submit]:hover {
 	margin: auto;
 	padding: 20px;
     border: 1px solid #888;
+    left: 10%;
 
 }
 
@@ -775,6 +776,11 @@ input[type=submit]:hover {
 	/*position: relative;*/
 	background-color: #228B22;
 	cursor: pointer;
+}
+
+#cookiesLink {
+	color: lightblue;
+	text-decoration: underline;
 }
 
 /* For mobile devices */
