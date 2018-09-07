@@ -16,24 +16,8 @@
 </head>
 
 <body id="contactBody">
-	<!-- Popup warning for cookies -->
-	<div id="popupp" style="visibility:hidden;">Welcome to String Chooser! Just letting you know that this website use cookies to deliver a perfect user experience! Cookies are used for delivering analytics of the website, personalized advertisements that appeal to the user, and storing the status of the user on String Chooser. For more information, please visit our <a id="cookiesLink" href="policy.html" target="_blank">Privacy Policy & Cookies Page</a>. By using this website, you consent to our use of cookies.
-		<button id="cookiesButton" onclick="dismissWarning()">OK</button>
-	</div>
 	<script>
-		document.addEventListener("DOMContentLoaded", function(e){
-			// show cookies popup if user has not visited yet
-    		var visited = localStorage.getItem('visited');
-    		if (!visited) { // first time on site for user
-    			// show popup
-    			document.getElementById("popupp").style.visibility = "visible";
-    			localStorage.setItem('visited', true);
-    		}
-		});
 
-		function dismissWarning() {
-			document.getElementById("popupp").style.visibility = "hidden";
-		}
 	</script>
 
 	<!-- Background header -->

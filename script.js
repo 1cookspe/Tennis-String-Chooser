@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function(e){
 	document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 
-    // // show cookies popup if user has not visited yet
-    // var visited = localStorage.getItem('visited');
-    // if (!visited) { // first time on site for user
-    // 	// show popup
-    // 	document.getElementById("popupp").style.visibility = "visible";
-    // 	localStorage.setItem('visited', true);
-    // }
+    // show cookies popup if user has not visited yet
+    var visited = localStorage.getItem('visited');
+    if (!visited) { // first time on site for user
+    	// show popup
+    	document.getElementById("popupp").style.visibility = "visible";
+    	// localStorage.setItem('visited', true);
+    }
 });
 
 function start() {
@@ -924,4 +924,9 @@ function showMenu() {
 	} else {
 		x.style.display = "block";
 	}
+}
+
+function dismissWarning() {
+	document.getElementById("popupp").style.visibility = "hidden";
+	localStorage.setItem('visited', true);
 }
