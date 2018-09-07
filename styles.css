@@ -778,6 +778,7 @@ input[type=submit]:hover {
 	background-color: #228B22;
 	cursor: pointer;
 	font-size: 10px;
+	padding: 7px 16px;
 }
 
 #cookiesLink {
