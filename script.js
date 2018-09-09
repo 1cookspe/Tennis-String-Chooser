@@ -716,19 +716,25 @@ function mostSimilarString() {
 	document.getElementById('firstStringImage').src = topString.image;
 	document.getElementById('firstStringCaption').innerHTML = topString.caption;
 	document.getElementsByClassName('stringName')[0].innerHTML = topString.name;
-	document.getElementById('firstStringLink').href = topString.link;
+	// document.getElementById('firstStringLink').href = topString.link;
+	// topLink = topString.link;
+	document.getElementsByClassName('shopLink')[0].href = topString.link;
 	
 	var secondString = indexToName(bestIndexes[1]);
 	document.getElementById('secondStringImage').src = secondString.image;
 	document.getElementById('secondStringCaption').innerHTML = secondString.caption;
 	document.getElementsByClassName('stringName')[1].innerHTML = secondString.name;
-	document.getElementById('secondStringLink').href = secondString.link;
+	// document.getElementById('secondStringLink').href = secondString.link;
+	// secondLink = secondString.link;
+	document.getElementsByClassName('shopLink')[1].href = secondString.link;
 	
 	var thirdString = indexToName(bestIndexes[2]);
 	document.getElementById('thirdStringImage').src = thirdString.image;
 	document.getElementById('thirdStringCaption').innerHTML = thirdString.caption;
 	document.getElementsByClassName('stringName')[2].innerHTML = thirdString.name;
-	document.getElementById('thirdStringLink').href = thirdString.link;
+	// document.getElementById('thirdStringLink').href = thirdString.link;
+	// thirdLink = thirdString.link;
+	document.getElementsByClassName('shopLink')[2].href = thirdString.link;
 }
 
 function indexToName(index) { // returns racquet object for each string
